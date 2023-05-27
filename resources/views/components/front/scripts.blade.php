@@ -6,50 +6,7 @@
 <script src="/issets/js/main.js"></script>
 
 
-<script>
-    function send1() {
 
-        let token1 = $("#token1").val();
-        let name = $('#first_name').val();
-        let phone = $('#phone').val();
-        let photo = $('#file1').val();
-        let client = $('#client').val();
-        let discription = $('#discription').val();
-
-        var formData = new FormData(); // Создаем объект FormData
-            formData.append('name', name);
-            formData.append('phone', phone);
-            formData.append('photo', $("#file1")[0].files[0]);
-            formData.append('client', client);
-            formData.append('discription', discription); // Добавляем файл в FormData
-
-        $.ajax({
-            type: "POST",
-            url: "upload.php",
-            cache: false,
-			contentType: false,
-			processData: false,
-			data: formData,
-			dataType : 'json',
-			success: function(response){
-				console.log(response)
-			}
-        });
-
-        // console.log(name, phone, formData, client, discription);
-        // setTimeout(() => {
-        //     $('.popup').hide()
-        //     $('.popup__success').show()
-        //     $("#first_name").val('');
-        //     $("#phone").val('');
-        // }, 1000)
-        // setTimeout(() => {
-        //     $('.popup').show()
-        //     $('.popup__success').hide()
-        //     $('.feedback').hide()
-        // }, 3000)
-    }
-</script>
 {{-- <script>
     function send2() {
 

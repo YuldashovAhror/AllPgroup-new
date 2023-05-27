@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use App\Models\Feedback;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class FeedbackController extends Controller
 {
@@ -85,8 +86,9 @@ class FeedbackController extends Controller
     public function destroy($id)
     {
         $feedback = Feedback::find($id);
-        if(is_file(public_path($feedback->photo))){
-            unlink(public_path($feedback->photo));
+        if (Storage::exists($feedback->photo)) {
+            // dd($feedback->photo);
+            Storage::delete($feedback->photo);
         }
         $feedback->delete();
         return redirect()->back();

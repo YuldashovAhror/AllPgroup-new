@@ -34,7 +34,7 @@
                                 <td>{{ $feedback->name }}</td>
                                 {{-- <td><img src="{{ $feedback->photo }}" alt=""></td> --}}
                                 @if ($feedback->photo != null)
-                                <td><img src="{{$feedback->photo}}" alt="" style="width: 100px; height: 100px;"></td>
+                                <td><a href="{{$feedback->photo}}"><img src="{{$feedback->photo}}" alt="" style="width: 100px; height: 100px;"></a></td>
                                 @endif
                                 @if ($feedback->photo == null)
                                 <td><h3>null</h3></td>

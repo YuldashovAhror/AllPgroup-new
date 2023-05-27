@@ -32,7 +32,7 @@ class Word extends Component
             'word_en' => $this->word_en
         ]);
         // dd($this->key);
-        $this->resetVariables();
+        $this->resetVariables();    
     }
 
     function resetVariables(){

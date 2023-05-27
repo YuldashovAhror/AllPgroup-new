@@ -1,3 +1,3 @@
-<a href="/" class="chat">
+{{-- <a href="/" class="chat">
 		<img src="/issets/img/chat.png" alt="ico">
-	</a>
+</a> --}}

@@ -12,23 +12,15 @@
 	<title>ALL-P Group | {{__('asd.О компании')}}</title>
 </head>
 <body>
-
 	<!-- CHAT -->
-
 	@include('components.front.logo')
-
 	<!-- MOBILE MENU -->
-
 	@include('components.front.mobile')
-
 	<!-- HEADER -->
 
 	@include('components.front.header')
 
-
-
 	<!-- PAGE-HEAD -->
-
 	<section class="page-head">
 		<div class="page-head__img">
 			<img src="/issets/img/about/bg.jpg" alt="about">
@@ -37,9 +29,7 @@
 			{{__('asd.О компании')}}
 		</h1>
 	</section>
-
 	<!-- ABOUT -->
-
 	<section class="about">
 		<div class="about-info">
 			<div class="container">
@@ -90,7 +80,6 @@
 						<span></span>
 					@endfor
 				@endforeach
-			
 				
 			</div>
 		</div>
@@ -120,11 +109,8 @@
 			</div>
 		</div>
 	</section>
-
 	<!-- FOOTER -->
-
 	@include('components.front.footer')
-
 	@include('components.front.scripts')
 </body>
 </html>

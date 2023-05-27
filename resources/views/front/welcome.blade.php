@@ -88,9 +88,7 @@
 			</div>
 		</div>
 	</section>
-
 	<!-- AREA -->
-	
 	<section class="area">
 		<div class="area-arrows arrows">
 			<span class="arrow-left">
@@ -119,13 +117,11 @@
 			</div>
 		</div>
 	</section>
-
 	<!-- ADVANTAGES -->
-	
 	<section class="advantages">
 		<div class="container">
 			<h2 class="advantages__title section-title">
-				Наши преимущества
+				{{__('asd.Наши преимущества')}}
 			</h2>
 			<div class="advantages-wrap">
 				<div class="advantages-item wow fadeInUp" data-wow-delay=".2s">
@@ -133,10 +129,10 @@
 						<img src="issets/img/advantages/1.svg" alt="ico">
 					</div>
 					<div class="advantages-item__title">
-						Специалисты с зарубежным опытом работы
+						{{__('asd.Специалисты с зарубежным опытом работы')}}
 					</div>
 					<div class="advantages-item__name">
-						Специалисты
+						{{__('asd.Специалисты')}}
 					</div>
 				</div>
 				<div class="advantages-item wow fadeInUp" data-wow-delay=".3s">
@@ -144,7 +140,7 @@
 						<img src="issets/img/advantages/2.svg" alt="ico">
 					</div>
 					<div class="advantages-item__title">
-						Знание методов и современных технологий
+						{{__('asd.Знание методов и современных технологий')}}
 					</div>
 				</div>
 				<div class="advantages-item wow fadeInUp" data-wow-delay=".4s">
@@ -152,7 +148,7 @@
 						<img src="issets/img/advantages/2.svg" alt="ico">
 					</div>
 					<div class="advantages-item__title">
-						Обширная география и многолетний опыт
+						{{__('asd.Обширная география и многолетний опыт')}}
 					</div>
 				</div>
 				<div class="advantages-item wow fadeInUp" data-wow-delay=".5s">
@@ -160,7 +156,7 @@
 						<img src="issets/img/advantages/4.svg" alt="ico">
 					</div>
 					<div class="advantages-item__title">
-						Контроль качества
+						{{__('asd.Контроль качества')}}
 					</div>
 				</div>
 				<div class="advantages-item wow fadeInUp" data-wow-delay=".6s">
@@ -168,7 +164,7 @@
 						<img src="issets/img/advantages/5.svg" alt="ico">
 					</div>
 					<div class="advantages-item__title">
-						Индивидуальный подход к каждому заказчику
+						{{__('asd.Индивидуальный подход к каждому заказчику')}}
 					</div>
 				</div>
 				<div class="advantages-item wow fadeInUp" data-wow-delay=".7s">
@@ -176,15 +172,13 @@
 						<img src="issets/img/advantages/6.svg" alt="ico">
 					</div>
 					<div class="advantages-item__title">
-						Экологичность, практичность, износостойкость
+						{{__('asd.Экологичность, практичность, износостойкость')}}
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-
 	<!-- NUMBERS -->
-	
 	<section class="numbers">
 		<div class="container">
 			<div class="numbers-wrap wow fadeInLeft" data-wow-delay=".2s">
@@ -197,7 +191,7 @@
 							3 200 000 м&sup2;
 						</div>
 						<div class="numbers-item__name">
-							Залитого бетона
+							{{__('asd.Залитого бетона')}}
 						</div>
 					</div>
 				</div>
@@ -210,7 +204,7 @@
 							1 800 000 м&sup2;
 						</div>
 						<div class="numbers-item__name">
-							Стяжки пола
+							{{__('asd.Стяжки пола')}}
 						</div>
 					</div>
 				</div>
@@ -223,7 +217,7 @@
 							1 200 000 м&sup2;
 						</div>
 						<div class="numbers-item__name">
-							Полимерных полов
+							{{__('asd.Полимерных полов')}}
 						</div>
 					</div>
 				</div>
@@ -236,7 +230,7 @@
 							120 000 м&sup2;
 						</div>
 						<div class="numbers-item__name">
-							Полированных бетонных полов
+							{{__('asd.Полированных бетонных полов')}}
 						</div>
 					</div>
 				</div>
@@ -257,7 +251,7 @@
 		</div>
 		<div class="container">
 			<h2 class="projects__title section-title section-title-white">
-				Наши проекты
+				{{__('asd.Наши проекты')}}
 			</h2>
 			<div class="projects-carousel owl-carousel">
 				@foreach ($projects as $project)		
@@ -269,13 +263,13 @@
 						{{$project->name_uz}}
 					</div>
 					<a href="{{route('project.show', $project)}}" class="projects-item__btn btn btn-white">
-						Узнать подробнее
+						{{__('asd.Узнать подробнее')}}
 					</a>
 				</div>
 				@endforeach
 			</div>
 			<h2 class="projects__title section-title section-title-white">
-				Часто задаваемые вопросы
+				{{__('asd.Часто задаваемые вопросы')}}
 			</h2>
 			<ul class="projects-faq">
 				@foreach ($comments as $comment)
@@ -299,8 +293,6 @@
 	
 	<section class="news">
 		<div class="container">
-			
-				
 				<div class="news-head">
 					<h2 class="news__title section-title">
 						{{__('asd.Наши новости')}}
@@ -317,106 +309,32 @@
 						
 						<div class="news-tab @if($key == 0) current @endif">
 							@foreach ($category->news as $new)
-							<div class="news-item">
-								<div class="news-item__img">
-									<img src="{{$new->photo}}" alt="img">
-								</div>
-								<div class="news-item__wrap">
-									<div class="news-item__top">
-										<div class="news-item__title">
-											{{$new['name_'.$lang]}}
+								<div class="news-item">
+									<div class="news-item__img">
+										<img src="{{$new->photo}}" alt="img">
+									</div>
+									<div class="news-item__wrap">
+										<div class="news-item__top">
+											<div class="news-item__title">
+												{{$new['name_'.$lang]}}
+											</div>
+											<div class="news-item__text">
+												{!!$new['discription_'.$lang]!!}
+											</div>
 										</div>
-										<div class="news-item__text">
-											{!!$new['discription_'.$lang]!!}
+										<div class="news-item__bot">
+											<div class="news-item__date">
+												<strong>{{$new->date}}</strong>
+											</div>
+											<a href="{{route('news.show', $new)}}" class="news-item__btn btn btn-gray">
+												{{__('asd.Читать подробнее')}}
+											</a>
 										</div>
 									</div>
-									<div class="news-item__bot">
-										<div class="news-item__date">
-											<strong>{{$new->date}}</strong>
-										</div>
-										<a href="{{route('news.show', $new)}}" class="news-item__btn btn btn-gray">
-											{{__('asd.Читать подробнее')}}
-										</a>
-									</div>
 								</div>
-							</div>
 							@endforeach
-							{{-- <div class="news-item">
-								<div class="news-item__img">
-									<img src="issets/img/project2.jpg" alt="img">
-								</div>
-								<div class="news-item__wrap">
-									<div class="news-item__top">
-										<div class="news-item__title">
-											ЗАВЕРШЕННЫЕ РАБОТЫ ПО ПРОЕКТУ IDS BORJOMI
-										</div>
-										<div class="news-item__text">
-											Имея богатый опыт, мы продолжаем наше многолетнее сотрудничество с компанией IDS Borjomi. Теперь для завода известного грузинского бренда на внешней территории осуществлено устройство бетонных покрытий, а для внутренней территории наши специалисты установили бетонный топпинговый пол. 
-											<br>Общая площадь проекта: 12 000 м2 
-										</div>
-									</div>
-									<div class="news-item__bot">
-										<div class="news-item__date">
-											<strong>15</strong>/04/2023
-										</div>
-										<a href="single.html" class="news-item__btn btn btn-gray">
-											Читать подробнее
-										</a>
-									</div>
-								</div>
-							</div> --}}
 						</div>
-						@endforeach
-					
-					{{-- <div class="news-tab">
-						<div class="news-item">
-							<div class="news-item__img">
-								<img src="issets/img/project2.jpg" alt="img">
-							</div>
-							<div class="news-item__wrap">
-								<div class="news-item__top">
-									<div class="news-item__title">
-										ЗАВЕРШЕННЫЕ РАБОТЫ ПО ПРОЕКТУ IDS BORJOMI
-									</div>
-									<div class="news-item__text">
-										Имея богатый опыт, мы продолжаем наше многолетнее сотрудничество с компанией IDS Borjomi. Теперь для завода известного грузинского бренда на внешней территории осуществлено устройство бетонных покрытий, а для внутренней территории наши специалисты установили бетонный топпинговый пол. 
-										<br>Общая площадь проекта: 12 000 м2 
-									</div>
-								</div>
-								<div class="news-item__bot">
-									<div class="news-item__date">
-										<strong>15</strong>/04/2023
-									</div>
-									<a href="single.html" class="news-item__btn btn btn-gray">
-										Читать подробнее
-									</a>
-								</div>
-							</div>
-						</div>
-						<div class="news-item">
-							<div class="news-item__img">
-								<img src="issets/img/project1.jpg" alt="img">
-							</div>
-							<div class="news-item__wrap">
-								<div class="news-item__top">
-									<div class="news-item__title">
-										РАБОТА НАД ПРОЕКТОМ HILTON GARDEN INN
-									</div>
-									<div class="news-item__text">
-										All-P-Group продолжает сотрудничать с Hilton Garden Inn в соответствии с британскими стандартами. В настоящее время на веранде отеля ведутся работы по стяжке полов. Что касается коридоров и общих зон строительной площадки, этот процесс уже завершен
-									</div>
-								</div>
-								<div class="news-item__bot">
-									<div class="news-item__date">
-										<strong>14</strong>/04/2023
-									</div>
-									<a href="single.html" class="news-item__btn btn btn-gray">
-										Читать подробнее
-									</a>
-								</div>
-							</div>
-						</div>
-					</div> --}}
+					@endforeach
 				</div>
 				
 			
@@ -435,9 +353,7 @@
 	</section>
 
 	<!-- FOOTER -->
-
 	@include('components.front.footer')
-
     @include('components.front.scripts')
 </body>
 </html>

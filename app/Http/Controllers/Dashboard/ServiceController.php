@@ -41,7 +41,6 @@ class ServiceController extends BaseController
      */
     public function store(Request $request)
     {
-        dd($request->all());
         $request = $request->toArray();
         
         if (!empty($request['photo'])){

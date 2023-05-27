@@ -16,11 +16,11 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $clients = Client::orderBy('id', 'desc')->get();
-        $vacancies = Vacancy::orderBy('id', 'desc')->get();
+        // $clients = Client::orderBy('id', 'desc')->get();
+        // $vacancies = Vacancy::orderBy('id', 'desc')->get();
         return view('front.contact', [
-            'clients'=>$clients,
-            'vacancies'=>$vacancies,
+            // 'clients'=>$clients,
+            // 'vacancies'=>$vacancies,
         ]);
     }
 
