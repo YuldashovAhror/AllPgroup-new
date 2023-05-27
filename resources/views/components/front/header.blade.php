@@ -1,0 +1,71 @@
+<header class="header">
+    <div class="container">
+        <div class="header__logo">
+            <a href="/">
+                <img src="/issets/img/logo.svg" alt="ALL-P Group" title="ALL-P group">
+            </a>
+        </div>
+        <ul class="header-menu">
+            <li>
+                <a href="/" class="current">
+                    {{__('asd.Главная')}}
+                </a>
+            </li>
+            <li>
+                <a href="{{route('about.index')}}">
+                    {{__('asd.О компании')}}
+                </a>
+            </li>
+            <li>
+                <a href="{{route('service.index')}}">
+                    {{__('asd.НАШИ УСЛУГИ')}}
+                </a>
+            </li>
+            <li>
+                <a href="{{route('project.index')}}">
+                    {{__('asd.Наши проекты')}}
+                </a>
+            </li>
+            <li>
+                <a href="{{route('news.index')}}">
+                    {{__('asd.Новости')}}
+                </a>
+            </li>
+            <li>
+                <a href="/contact">
+                    {{__('asd.Контакты')}}
+                </a>
+            </li>
+        </ul>
+        <div class="header-lang">
+            <div class="header-lang__btn">
+                <span>@if($lang == 'uz') UZ @elseif($lang == 'ru') RU @elseif($lang == 'en') EN @endif</span>
+                <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 6L8 0L0 0L4 6Z" fill="#4CAD3B"/>
+                </svg>
+            </div>
+            <div class="header-lang__list">
+                @if($lang != 'ru')<a href="/languages/ru">
+                    <span>RU</span>
+                </a>@endif
+                @if($lang != 'uz')<a href="/languages/uz">
+                    <span>UZ</span>
+                </a>@endif
+                @if($lang != 'en')<a href="/languages/en">
+                    <span>En</span>
+                </a>@endif
+            </div>
+        </div>
+        <div class="header-wrap">
+            <a href="tel:+998996354444" class="header__tel">
+                <img src="/issets/img/tel.svg" alt="ico">
+                <span>+998(99) 635-44-44</span>
+            </a>
+            <div class="header-mobile">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</header>
