@@ -10,8 +10,34 @@
 	<link rel="stylesheet" href="/issets/css/animate.css">
 	<link rel="stylesheet" href="/issets/css/main.css">
 	<title>ALL-P Group | {{__('asd.О компании')}}</title>
+	
+	<meta name="description" content="Компания All-P-Group предлагает полный спектр строительных, монтажных и ремонтных работ. Мы сотрудничаем с ведущими производителями строительной техники и материалов. Профессионализм, опыт и инновационный подход - основа нашего успеха.">
+	
+	<!-- Facebook -->
+    <meta property="og:title" content="ALL-P Group">
+    <meta property="og:site_name" content="ALL-P Group">
+    <meta property="og:description" content="Компания All-P-Group предлагает полный спектр строительных, монтажных и ремонтных работ. Мы сотрудничаем с ведущими производителями строительной техники и материалов. Профессионализм, опыт и инновационный подход - основа нашего успеха.">
+    <meta property="og:url" content="https://all-p.uz/">
+    <meta property="og:image" content="/meta.jpg">
+    <meta property="og:type" content="website">
+
+     <!-- Google Plus -->
+    <meta itemprop="name" content="ALL-P Group">
+    <meta itemprop="description" content="Компания All-P-Group предлагает полный спектр строительных, монтажных и ремонтных работ. Мы сотрудничаем с ведущими производителями строительной техники и материалов. Профессионализм, опыт и инновационный подход - основа нашего успеха.">
+    <meta itemprop="image" content="/meta.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ALL-P Group">
+    <meta name="twitter:description" content="Компания All-P-Group предлагает полный спектр строительных, монтажных и ремонтных работ. Мы сотрудничаем с ведущими производителями строительной техники и материалов. Профессионализм, опыт и инновационный подход - основа нашего успеха.">
+    <meta name="twitter:image" content="/meta.jpg">
 </head>
 <body>
+    <div class="preloader">
+		<div class="preloader__logo">
+			<img src="/issets/img/logo-white.svg" alt="logo">
+		</div>
+	</div>
 	<!-- CHAT -->
 	@include('components.front.logo')
 	<!-- MOBILE MENU -->
@@ -83,31 +109,31 @@
 				
 			</div>
 		</div>
-		<div class="about-management">
-			<div class="container">
-				<div class="about__title section-title">
-					{{__('asd.Менеджмент')}}
-				</div>
-				<ul class="about-management__list">
-					@foreach ($teams as $team)
-					<li class="about-management__item">
-						<div class="about-management__img">
-							<img src="{{$team->photo}}" alt="about">
-						</div>
-						<div class="about-management__wrap">
-							<div class="about-management__name">
-								{{$team['name_'.$lang]}}
-							</div>
-							<div class="about-management__pos">
-								{!!$team['discription_'.$lang]!!}
-							</div>
-						</div>
-					</li>
-					@endforeach
+		<!--<div class="about-management">-->
+		<!--	<div class="container">-->
+		<!--		<div class="about__title section-title">-->
+		<!--			{{__('asd.Менеджмент')}}-->
+		<!--		</div>-->
+		<!--		<ul class="about-management__list">-->
+		<!--			@foreach ($teams as $team)-->
+		<!--			<li class="about-management__item">-->
+		<!--				<div class="about-management__img">-->
+		<!--					<img src="{{$team->photo}}" alt="about">-->
+		<!--				</div>-->
+		<!--				<div class="about-management__wrap">-->
+		<!--					<div class="about-management__name">-->
+		<!--						{{$team['name_'.$lang]}}-->
+		<!--					</div>-->
+		<!--					<div class="about-management__pos">-->
+		<!--						{!!$team['discription_'.$lang]!!}-->
+		<!--					</div>-->
+		<!--				</div>-->
+		<!--			</li>-->
+		<!--			@endforeach-->
 					
-				</ul>
-			</div>
-		</div>
+		<!--		</ul>-->
+		<!--	</div>-->
+		<!--</div>-->
 	</section>
 	<!-- FOOTER -->
 	@include('components.front.footer')

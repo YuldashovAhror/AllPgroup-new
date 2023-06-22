@@ -15,7 +15,7 @@
                                 <div class="mb-3">
                                     <label class="form-label" for="exampleFormControlInput1">Фото </label>
                                     
-                                    <input class="form-control" id="exampleFormControlInput1" type="file" required name="photo">
+                                    <input class="form-control" id="exampleFormControlInput1" type="file" name="photo">
                                 </div>
                             </div>
                             <div class="col-3">

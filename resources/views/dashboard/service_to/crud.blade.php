@@ -15,7 +15,7 @@
                                 <div class="mb-3">
                                     <label class="form-label" for="exampleFormControlInput1">Фото </label>
                                     
-                                    <input class="form-control" id="exampleFormControlInput1" type="file" required name="photo">
+                                    <input class="form-control" id="exampleFormControlInput1" type="file" name="photo">
                                 </div>
                             </div>
                             <div class="col-6">
@@ -23,7 +23,7 @@
                                 <div class="mb-3">
                                     <select  class="calc__type" name="service"  id="calc__type" style="font-size: 20px">
                                         @foreach ($services as $service)
-                                            <option value="{{ $service->id }}">{{ $service->name_ru  }}</option>
+                                            <option value="{{ $service->id }}">{{ $service->title_ru  }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -81,7 +81,7 @@
                             <tr>
                                 <th scope="row">{{ ++$key }}</th>
                                 <td><img src="{{ $serviceto->photo }}" alt="" style="height: 100px; width: 100px"></td>
-                                <td>{{ $serviceto->services->name_ru }}</td>
+                                <td>{{ $serviceto->services->title_ru }}</td>
                                 <td class="text-center">
                                     <button class="btn btn-xs btn-success" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalCenter{{ $serviceto->id }}Edit"><i class="bx bx-pencil">Изменить</i></button>
                                     <div class="modal fade" id="exampleModalCenter{{ $serviceto->id }}Edit" tabindex="-1" aria-labelledby="exampleModalCenter" aria-hidden="true">
@@ -111,7 +111,7 @@
                                                                     <div >
                                                                         <select  class="calc__type" name="service"  id="calc__type" >
                                                                             @foreach ($services as $service)
-                                                                                <option value="{{ $service->id }}">{{ $service->name_ru }}</option>
+                                                                                <option value="{{ $service->id }}">{{ $service->title_ru }}</option>
                                                                             @endforeach
                                                                         </select>
                                                                     </div>

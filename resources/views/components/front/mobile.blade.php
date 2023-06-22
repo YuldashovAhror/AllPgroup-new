@@ -2,7 +2,7 @@
     <div class="mobile-menu__wrap">
         <ul class="mobile-menu__list">
             <li>
-                <a href="/" class="current">
+                <a href="/">
                     {{__('asd.Главная')}}
                 </a>
             </li>

@@ -25,7 +25,7 @@
                         @foreach($services as $service)
                             <tr>
                                 <th scope="row">{{ $k }}</th>
-                                <td><img src="{{ $service->main_photo }}" alt="" style="height: 100px; width: 200px"></td>
+                                <td><img src="{{ $service->photo }}" alt="" style="height: 100px; width: 200px"></td>
                                 <td><img src="{{ $service->second_photo }}" alt="" style="height: 100px; width: 200px"></td>
                                 <td>{{ $service->name_ru }}</td>
                                 <td>{{ $service->title_ru }}</td>

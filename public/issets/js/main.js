@@ -3,6 +3,8 @@ $(window).on('load', () => {
     let rootFont = parseInt($(':root').css('font-size'))
 
 
+    $('.preloader').delay(500).fadeOut(800)
+    
     
     //______________HEADER_______________
 
@@ -10,6 +12,7 @@ $(window).on('load', () => {
         $(this).toggleClass('active')
         $('.mobile-menu').slideToggle(500)
     })
+
 
     //_______________MAIN________________
 
@@ -178,15 +181,11 @@ $(window).on('load', () => {
     .add(new ymaps.Placemark([41.30990730039374, 69.27306037301392], {
     }, {
         iconLayout: 'default#image',
-        iconImageHref: 'img/marker.svg',
+        iconImageHref: '/issets/img/marker.svg',
         iconImageSize: [3.25*rootFont, 4.5*rootFont],
     }))
 
         myMap.behaviors.disable('scrollZoom')
-
-
-            
-        myMap.panes.get('ground').getElement().style.filter = 'grayscale(100%)'
         
     }
 
@@ -221,6 +220,11 @@ $(window).on('load', () => {
         const sanitizedValue = inputValue.replace(/[^\d+\-() ]/g, '');
         event.target.value = sanitizedValue;
       });
+
+    $('.contact-done').click(function() {
+        $(this).fadeOut(600)
+    })
+
 
     
     //__________WOW____________

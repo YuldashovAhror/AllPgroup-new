@@ -324,6 +324,42 @@ body {
 }
 
 
+
+//____________PRELOADER________
+
+
+@keyframes loader {
+	to {
+		opacity: 1;
+	}
+}
+
+
+.preloader {
+	background: $green;
+	z-index: 10;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	@include center();
+
+	&__logo {
+		width: 15rem;
+		opacity: 0;
+		animation: loader 1.5s linear forwards;
+
+		img {
+			width: 100%;
+			display: block;
+		}
+	}
+}
+
+
+
+
 //_____________HEADER_________
 
 
@@ -635,6 +671,8 @@ body {
 			width: calc(33.33333% - 1.66666rem);
 			overflow: hidden;
 			background: #FFFFFF;
+			position: relative;
+			padding-bottom: 3rem;
 			box-shadow: 0px 38.5185px 25.4815px rgba(0, 0, 0, 0.0425185), 0px 20px 13px rgba(0, 0, 0, 0.035), 0px 1.85185px 3.14815px rgba(0, 0, 0, 0.0168519);
 		}
 
@@ -689,6 +727,8 @@ body {
 
 		&__btn {
 			border: none;
+			@include absoluteCenterX();
+			bottom: 0;
 		}
 	}
 }
@@ -888,9 +928,12 @@ body {
 		&__name {
 			font-weight: 600;
 			font-size: 1.3rem;
-			line-height: 125%;
+			line-height: 1.6rem;
 			max-width: 20rem;
 			margin: 0 auto 1.7rem;
+			@include ellipsis();
+			-webkit-line-clamp: 2;
+			height: 3.2rem;
 		}
 	}
 
@@ -1036,12 +1079,14 @@ body {
 		&__title {
 			font-size: 1.15rem;
 			color: $green;
-			margin-bottom: 2.5rem;
+			margin-bottom: 1.5rem;
 		}
 
 		&__text {
 			font-size: 0.8rem;
 			line-height: 125%;
+			max-height: 8rem;
+			overflow: hidden;
 		}
 
 		&__btn {
@@ -1051,12 +1096,12 @@ body {
 		}
 
 		&__date {
-			color: $green;
+			color: $black;
 			font-weight: 300;
+			margin-bottom: 1.5rem;
 
 			strong {
 				font-weight: 500;
-				font-size: 1.25rem;
 			}
 		}
 	}
@@ -1168,17 +1213,17 @@ body {
 		p {
 			margin-bottom: 1.5rem;
 
-			a {
-				color: $gray;
-				font-weight: 600;
-
-				&:hover {
-					color: $green;
-				}
-			}
-
 			&:last-child {
 				margin-bottom: 0;
+			}
+		}
+
+		a {
+			color: $gray;
+			font-weight: 600;
+
+			&:hover {
+				color: $green;
 			}
 		}
 	}
@@ -1342,6 +1387,46 @@ body {
 	&__info {
 		margin-bottom: 2.5rem;
 	}
+
+	&-done {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		cursor: pointer;
+		z-index: 9;
+		display: none;
+
+		&__title {
+			font-size: 2rem;
+			font-weight: 700;
+			margin-bottom: 1.5rem;
+			color: $green;
+		}
+
+		&__text {
+			max-width: 20rem;
+			margin-bottom: 2rem;
+
+		}
+
+		&__img {
+			img {
+				width: 5rem;
+			}
+		}
+
+		&__wrap {
+			@include absoluteCenter();
+			background: #fff;
+			padding: 3rem 2.5rem;
+			border-radius: 1.6rem;
+			background: #fff;
+			text-align: center;
+			box-shadow: 7px 7px 1.6rem rgba(54, 54, 54, 0.25);
+		}
+	}
 }
 
 
@@ -1374,6 +1459,7 @@ body {
 			position: relative;
 			margin-bottom: 2rem;
 			line-height: 150%;
+			text-align: justify;
 
 			p {
 				margin-bottom: 1.5rem;
@@ -2636,6 +2722,8 @@ body {
 
 			&__name {
 				font-size: 1.1rem;
+				line-height: 1.3rem;
+				height: 2.6rem;
 				margin-bottom: 1.3rem;
 			}
 		}
@@ -2684,16 +2772,13 @@ body {
 
 			&__wrap {
 				width: 100%;
-				padding: 1.5rem 1.5rem .7rem;
+				padding: 1.5rem 1.5rem 4.5rem;
 			}
 
 			&__title {
-				margin-bottom: 1.5rem;
+				margin-bottom: 1rem;
 			}
 
-			&__date {
-				margin-top: 4rem;
-			}
 		}
 
 		&-page {
@@ -2757,6 +2842,18 @@ body {
 				width: 100%;
 			}
 			
+		}
+
+		&-done {
+			&__title {
+				font-size: 1.5rem;
+				margin-bottom: 1rem;
+			}
+
+			&__wrap {
+				width: 80vw;
+				padding: 2rem 1.5rem;
+			}
 		}
 	}
 

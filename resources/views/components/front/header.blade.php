@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header" >
     <div class="container">
         <div class="header__logo">
             <a href="/">
@@ -7,32 +7,32 @@
         </div>
         <ul class="header-menu">
             <li>
-                <a href="/" class="current">
+                <a href="/" @if(\Request::segment(1) == '') class=" current " @endif>
                     {{__('asd.Главная')}}
                 </a>
             </li>
-            <li>
-                <a href="{{route('about.index')}}">
+            <li >
+                <a href="{{route('about.index')}}" @if(\Request::segment(1) == 'about') class=" current " @endif >
                     {{__('asd.О компании')}}
                 </a>
             </li>
             <li>
-                <a href="{{route('service.index')}}">
+                <a href="{{route('service.index')}}" @if(\Request::segment(1) == 'service') class=" current " @endif>
                     {{__('asd.НАШИ УСЛУГИ')}}
                 </a>
             </li>
             <li>
-                <a href="{{route('project.index')}}">
+                <a href="{{route('project.index')}}" @if(\Request::segment(1) == 'project') class=" current " @endif>
                     {{__('asd.Наши проекты')}}
                 </a>
             </li>
             <li>
-                <a href="{{route('news.index')}}">
+                <a href="{{route('news.index')}}" @if(\Request::segment(1) == 'news') class=" current " @endif>
                     {{__('asd.Новости')}}
                 </a>
             </li>
             <li>
-                <a href="/contact">
+                <a href="/contact" @if(\Request::segment(1) == 'contact') class=" current " @endif>
                     {{__('asd.Контакты')}}
                 </a>
             </li>
@@ -52,7 +52,7 @@
                     <span>UZ</span>
                 </a>@endif
                 @if($lang != 'en')<a href="/languages/en">
-                    <span>En</span>
+                    <span>EN</span>
                 </a>@endif
             </div>
         </div>
