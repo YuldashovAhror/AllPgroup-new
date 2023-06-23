@@ -39,13 +39,18 @@ class MainSliderController extends BaseController
      */
     public function store(Request $request)
     {
-        $request = $request->toArray();
+        $validatedData = $request->validate([
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'name_uz' => 'required|string|max:255',
+            'name_ru' => 'required|string|max:255',
+            'name_en' => 'required|string|max:255',
+        ]);
         
-        if (!empty($request['photo'])){
-            $request['photo'] = $this->photoSave($request['photo'], 'image/mainslider');
+        if (!empty($validatedData['photo'])){
+            $validatedData['photo'] = $this->photoSave($validatedData['photo'], 'image/mainslider');
         }
-        MainSlider::create($request);
-        return redirect()->route('dashboard.mainslider.index');
+        MainSlider::create($validatedData);
+        return redirect()->route('dashboard.mainslider.index')->with('success', 'Data uploaded successfully.');
     }
 
     /**
@@ -79,13 +84,18 @@ class MainSliderController extends BaseController
      */
     public function update(Request $request, $id)
     {
-        $request = $request->toArray();
-        if (!empty($request['photo'])){
+        $validatedData = $request->validate([
+            'photo' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'name_uz' => 'required|string|max:255',
+            'name_ru' => 'required|string|max:255',
+            'name_en' => 'required|string|max:255',
+        ]);
+        if (!empty($validatedData['photo'])){
             $this->fileDelete('\MainSlider', $id, 'photo');
-            $request['photo'] = $this->photoSave($request['photo'], 'image/mainslider');
+            $validatedData['photo'] = $this->photoSave($validatedData['photo'], 'image/mainslider');
         }
-        MainSlider::find($id)->update($request);
-        return back();
+        MainSlider::find($id)->update($validatedData);
+        return back()->with('success', 'Data updated successfully.');
     }
 
     /**
@@ -98,6 +108,6 @@ class MainSliderController extends BaseController
     {
         $this->fileDelete('\MainSlider', $id, 'photo');
         MainSlider::find($id)->delete();
-        return back();
+        return back()->with('success', 'Data deleted.');
     }
 }

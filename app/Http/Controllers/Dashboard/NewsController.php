@@ -46,25 +46,38 @@ class NewsController extends BaseController
      */
     public function store(Request $request)
     {
-        // dd($request->all());
+        $validatedData = $request->validate([
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'second_photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'name_uz' => 'required|string|max:255',
+            'name_ru' => 'required|string|max:255',
+            'name_en' => 'required|string|max:255',
+            'discription_uz' => 'nullable',
+            'discription_ru' => 'nullable',
+            'discription_en' => 'nullable',
+            'newcategory' => 'integer',
+            'youtube' => 'nullable',
+            'date' => 'nullable',
+        ]);
+
         $news = new News();
-        if($request->file('photo')){
-            $news['photo'] = $this->photoSave($request->file('photo'), 'image/news');
+        if(!empty($validatedData['photo'])){
+            $news['photo'] = $this->photoSave($validatedData['photo'], 'image/news');
         }
-        if($request->file('second_photo')){
-            $news['second_photo'] = $this->photoSave($request->file('second_photo'), 'image/news');
+        if(!empty($validatedData['second_photo'])){
+            $news['second_photo'] = $this->photoSave($validatedData['second_photo'], 'image/news');
         }
-        $news->newcategory_id = $request->newcategory;
-        $news->name_uz = $request->name_uz;
-        $news->name_ru = $request->name_ru;
-        $news->name_en = $request->name_en;
-        $news->discription_uz = $request->discription_uz;
-        $news->discription_ru = $request->discription_ru;
-        $news->discription_en = $request->discription_en;
-        $news->date = $request->date;
-        $news->youtube = $request->youtube;
+        $news->newcategory_id = $validatedData['newcategory'];
+        $news->name_uz = $validatedData['name_uz'];
+        $news->name_ru = $validatedData['name_ru'];
+        $news->name_en = $validatedData['name_en'];
+        $news->discription_uz = $validatedData['discription_uz'];
+        $news->discription_ru = $validatedData['discription_ru'];
+        $news->discription_en = $validatedData['discription_en'];
+        $news->date = $validatedData['date'];
+        $news->youtube = $validatedData['youtube'];
         $news->save();
-        return redirect()->route('dashboard.news.index');
+        return redirect()->route('dashboard.news.index')->with('success', 'Data uploaded successfully.');
     }
 
     /**
@@ -103,26 +116,41 @@ class NewsController extends BaseController
      */
     public function update(Request $request, $id)
     {
+        // dd($request->all());
+        $validatedData = $request->validate([
+            'photo' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'second_photo' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'name_uz' => 'required|string|max:255',
+            'name_ru' => 'required|string|max:255',
+            'name_en' => 'required|string|max:255',
+            'discription_uz' => 'nullable',
+            'discription_ru' => 'nullable',
+            'discription_en' => 'nullable',
+            'newcategory' => 'integer',
+            'youtube' => 'nullable',
+            'date' => 'nullable',
+        ]);
+        // dd($validatedData);
         $new = News::find($id);
-        if($request->file('photo')){
+        if(!empty($validatedData['photo'])){
             $this->fileDelete('\News', $id, 'photo');
-            $new['photo'] = $this->photoSave($request->file('photo'), 'image/news');
+            $news['photo'] = $this->photoSave($validatedData['photo'], 'image/news');
         }
-        if($request->file('second_photo')){
+        if(!empty($validatedData['second_photo'])){
             $this->fileDelete('\News', $id, 'second_photo');
-            $new['second_photo'] = $this->photoSave($request->file('second_photo'), 'image/news');
+            $news['second_photo'] = $this->photoSave($validatedData['second_photo'], 'image/news');
         }
-        $new->newcategory_id = $request->newcategory;
-        $new->name_uz = $request->name_uz;
-        $new->name_ru = $request->name_ru;
-        $new->name_en = $request->name_en;
-        $new->discription_uz = $request->discription_uz;
-        $new->discription_ru = $request->discription_ru;
-        $new->discription_en = $request->discription_en;
-        $new->date = $request->date;
-        $new->youtube = $request->youtube;
+        $new->newcategory_id = $validatedData['newcategory'];
+        $new->name_uz = $validatedData['name_uz'];
+        $new->name_ru = $validatedData['name_ru'];
+        $new->name_en = $validatedData['name_en'];
+        $new->discription_uz = $validatedData['discription_uz'];
+        $new->discription_ru = $validatedData['discription_ru'];
+        $new->discription_en = $validatedData['discription_en'];
+        $new->date = $validatedData['date'];
+        $new->youtube = $validatedData['youtube'];
         $new->save();
-        return redirect()->route('dashboard.news.index');
+        return redirect()->route('dashboard.news.index')->with('success', 'Data updated successfully.');
     }
 
     /**
@@ -144,6 +172,6 @@ class NewsController extends BaseController
             $this->newstotController->destroy($prod->id);
         }
         $new->delete();
-        return back();
+        return back()->with('success', 'Data deleted.');
     }
 }

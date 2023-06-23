@@ -42,16 +42,23 @@ class NewsToController extends BaseController
      */
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'discription_uz' => 'nullable',
+            'discription_ru' => 'nullable',
+            'discription_en' => 'nullable',
+            'news' => 'integer',
+        ]);
         $newstos = new NewsTo();
-        if($request->file('photo')){
-            $newstos['photo'] = $this->photoSave($request->file('photo'), 'image/newsto');
+        if(!empty($validatedData['photo'])){
+            $newstos['photo'] = $this->photoSave($validatedData['photo'], 'image/newsto');
         }
         $newstos->news_id = $request->news;
-        $newstos->discription_uz = $request->discription_uz;
-        $newstos->discription_ru = $request->discription_ru;
-        $newstos->discription_en = $request->discription_en;
+        $newstos->discription_uz = $request['discription_uz'];
+        $newstos->discription_ru = $request['discription_ru'];
+        $newstos->discription_en = $request['discription_en'];
         $newstos->save();
-        return back();
+        return back()->with('success', 'Data uploaded successfully.');
     }
 
     /**
@@ -85,19 +92,29 @@ class NewsToController extends BaseController
      */
     public function update(Request $request, $id)
     {
+
+        $validatedData = $request->validate([
+            'photo' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'discription_uz' => 'nullable',
+            'discription_ru' => 'nullable',
+            'discription_en' => 'nullable',
+            'news' => 'integer',
+        ]);
+
         $newstos = NewsTo::find($id);
-        if($request->file('photo')){
+
+        if(!empty($validatedData['photo'])){
             if(is_file(public_path($newstos->photo))){
                 unlink(public_path($newstos->photo));
             }
-            $newstos['photo'] = $this->photoSave($request->file('photo'), 'image/newsto');
+            $newstos['photo'] = $this->photoSave($validatedData['photo'], 'image/newsto');
         }
-        $newstos->news_id = $request->news;
-        $newstos->discription_uz = $request->discription_uz;
-        $newstos->discription_ru = $request->discription_ru;
-        $newstos->discription_en = $request->discription_en;
+        $newstos->news_id = $validatedData['news'];
+        $newstos->discription_uz = $request['discription_uz'];
+        $newstos->discription_ru = $request['discription_ru'];
+        $newstos->discription_en = $request['discription_en'];
         $newstos->save();
-        return back();
+        return back()->with('success', 'Data updated successfully.');
     }
 
     /**
@@ -113,6 +130,6 @@ class NewsToController extends BaseController
             unlink(public_path($newstos->photo));
         }
         $newstos->delete();
-        return back();
+        return back()->with('success', 'Data deleted.');
     }
 }

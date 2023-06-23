@@ -40,7 +40,7 @@ class ClientController extends Controller
     public function store(Request $request)
     {
         Client::create($request->all());
-        return back();
+        return back()->with('success', 'Data uploaded successfully.');
     }
 
     /**
@@ -75,7 +75,7 @@ class ClientController extends Controller
     public function update(Request $request, $id)
     {
         Client::find($id)->update($request->all());
-        return back();
+        return back()->with('success', 'Data updated successfully.');
     }
 
     /**
@@ -87,6 +87,6 @@ class ClientController extends Controller
     public function destroy($id)
     {
         Client::find($id)->delete();
-        return back();
+        return back()->with('success', 'Data deleted .');
     }
 }

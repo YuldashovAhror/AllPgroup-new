@@ -87,10 +87,9 @@ class FeedbackController extends Controller
     {
         $feedback = Feedback::find($id);
         if (Storage::exists($feedback->photo)) {
-            // dd($feedback->photo);
             Storage::delete($feedback->photo);
         }
         $feedback->delete();
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Data deleted.');
     }
 }

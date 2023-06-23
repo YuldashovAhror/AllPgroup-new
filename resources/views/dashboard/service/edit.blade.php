@@ -12,28 +12,26 @@
                     {{ method_field('put') }}
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-6 text-center mt-3">
-                                <img style="height: 200px; width: 300px" src="{{ $service->photo }}">
-                            </div>
-                            <div class="col-6 text-center mt-3">
-                                <img style="height: 200px; width: 300px" src="{{ $service->second_photo }}">
-                            </div>
                             <div class="col-6">
                                 <div class="mb-3">
                                     <label class="form-label" for="exampleFormControlInput1">Фото</label>
                                     <div class="col-12 text-center">
-                                        <i data-feather="loader" style="height: 100px; width: 100px"></i>
+                                        <div class="col-6 text-center mt-3">
+                                            <img style="height: 200px; width: 300px" src="{{ $service->photo }}">
+                                        </div>
                                     </div>
-                                    <input class="form-control" id="exampleFormControlInput1" type="file" name="photo">
+                                    <input class="form-control mt-2" id="exampleFormControlInput1" type="file" name="photo">
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="mb-3">
                                     <label class="form-label" for="exampleFormControlInput1">Второй фото</label>
                                     <div class="col-12 text-center">
-                                        <i data-feather="loader" style="height: 100px; width: 100px"></i>
+                                        <div class="col-6 text-center mt-3">
+                                            <img style="height: 200px; width: 300px" src="{{ $service->second_photo }}">
+                                        </div>
                                     </div>
-                                    <input class="form-control" id="exampleFormControlInput1" type="file"  name="second_photo">
+                                    <input class="form-control mt-2" id="exampleFormControlInput1" type="file"  name="second_photo">
                                 </div>
                             </div>
                         </div>

@@ -43,7 +43,7 @@ class NewCategoryController extends Controller
     {
         $request = $request->toArray(); 
         NewCategory::create($request);
-        return back();
+        return back()->with('success', 'Data uploaded successfully.');
     }
 
     /**
@@ -79,7 +79,7 @@ class NewCategoryController extends Controller
     {
         $request = $request->toArray();
         NewCategory::find($id)->update($request);
-        return back();
+        return back()->with('success', 'Data updated successfully.');
     }
 
     /**
@@ -95,6 +95,6 @@ class NewCategoryController extends Controller
         foreach (News::where('newcategory_id', $id)->get() as $prod){
             $this->newsController->destroy($prod->id);
         }
-        return back();
+        return back()->with('success', 'Data deleted .');
     }
 }

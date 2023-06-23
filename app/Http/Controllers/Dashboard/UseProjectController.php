@@ -38,13 +38,21 @@ class UseProjectController extends BaseController
      */
     public function store(Request $request)
     {
-        $request = $request->toArray();
+        $validatedData = $request->validate([
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'name_uz' => 'required|string|max:255',
+            'name_ru' => 'required|string|max:255',
+            'name_en' => 'required|string|max:255',
+            'discription_uz' => 'nullable',
+            'discription_ru' => 'nullable',
+            'discription_en' => 'nullable',
+        ]);
         
-        if (!empty($request['photo'])){
-            $request['photo'] = $this->photoSave($request['photo'], 'image/useproject');
+        if (!empty($validatedData['photo'])){
+            $validatedData['photo'] = $this->photoSave($validatedData['photo'], 'image/useproject');
         }
-        UserProject::create($request);
-        return redirect()->route('dashboard.useproject.index');
+        UserProject::create($validatedData);
+        return redirect()->route('dashboard.useproject.index')->with('success', 'Data uploaded successfully.');
     }
 
     /**
@@ -78,13 +86,21 @@ class UseProjectController extends BaseController
      */
     public function update(Request $request, $id)
     {
-        $request = $request->toArray();
-        if (!empty($request['photo'])){
+        $validatedData = $request->validate([
+            'photo' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'name_uz' => 'required|string|max:255',
+            'name_ru' => 'required|string|max:255',
+            'name_en' => 'required|string|max:255',
+            'discription_uz' => 'nullable',
+            'discription_ru' => 'nullable',
+            'discription_en' => 'nullable',
+        ]);
+        if (!empty($validatedData['photo'])){
             $this->fileDelete('\UserProject', $id, 'photo');
-            $request['photo'] = $this->photoSave($request['photo'], 'image/useproject');
+            $validatedData['photo'] = $this->photoSave($validatedData['photo'], 'image/useproject');
         }
-        UserProject::find($id)->update($request);
-        return back();
+        UserProject::find($id)->update($validatedData);
+        return back()->with('success', 'Data updated successfully.');
     }
 
     /**
@@ -97,6 +113,6 @@ class UseProjectController extends BaseController
     {
         $this->fileDelete('\UserProject', $id, 'photo');
         UserProject::find($id)->delete();
-        return back();
+        return back()->with('success', 'Data deleted.');
     }
 }

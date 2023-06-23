@@ -40,7 +40,7 @@ class VacancyController extends Controller
     public function store(Request $request)
     {
         Vacancy::create($request->all());
-        return redirect()->route('dashboard.vacancy.index');
+        return redirect()->route('dashboard.vacancy.index')->with('success', 'Data uploaded successfully.');
     }
 
     /**
@@ -75,7 +75,7 @@ class VacancyController extends Controller
     public function update(Request $request, $id)
     {
         Vacancy::find($id)->update($request->all());
-        return back();
+        return back()->with('success', 'Data updated successfully.');
     }
 
     /**
@@ -87,6 +87,6 @@ class VacancyController extends Controller
     public function destroy($id)
     {
         Vacancy::find($id)->delete();
-        return back();
+        return back()->with('success', 'Data deleted.');
     }
 }

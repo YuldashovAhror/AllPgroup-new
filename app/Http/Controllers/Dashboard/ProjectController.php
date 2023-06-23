@@ -41,17 +41,26 @@ class ProjectController extends BaseController
      */
     public function store(Request $request)
     {
-        $request = $request->toArray();
+        $validatedData = $request->validate([
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'second_photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'name_uz' => 'required|string|max:255',
+            'name_ru' => 'required|string|max:255',
+            'name_en' => 'required|string|max:255',
+            'discription_uz' => 'nullable',
+            'discription_ru' => 'nullable',
+            'discription_en' => 'nullable',
+        ]);
         
-        if (!empty($request['photo'])){
-            $request['photo'] = $this->photoSave($request['photo'], 'image/project');   
+        if (!empty($validatedData['photo'])){
+            $validatedData['photo'] = $this->photoSave($validatedData['photo'], 'image/project');   
         }
-        if (!empty($request['second_photo'])){
-            $request['second_photo'] = $this->photoSave($request['second_photo'], 'image/project');
+        if (!empty($validatedData['second_photo'])){
+            $validatedData['second_photo'] = $this->photoSave($validatedData['second_photo'], 'image/project');
         }
         
-        Project::create($request);
-        return redirect()->route('dashboard.project.index');
+        Project::create($validatedData);
+        return redirect()->route('dashboard.project.index')->with('success', 'Data uploaded successfully.');
     }
 
     /**
@@ -88,18 +97,27 @@ class ProjectController extends BaseController
      */
     public function update(Request $request, $id)
     {
-        $request = $request->toArray();
+        $validatedData = $request->validate([
+            'photo' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'second_photo' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'name_uz' => 'required|string|max:255',
+            'name_ru' => 'required|string|max:255',
+            'name_en' => 'required|string|max:255',
+            'discription_uz' => 'nullable',
+            'discription_ru' => 'nullable',
+            'discription_en' => 'nullable',
+        ]);
         
-        if (!empty($request['photo'])){
+        if (!empty($validatedData['photo'])){
             $this->fileDelete('\Project', $id, 'photo');
-            $request['photo'] = $this->photoSave($request['photo'], 'image/project');
+            $validatedData['photo'] = $this->photoSave($validatedData['photo'], 'image/project');
         }
-        if (!empty($request['second_photo'])){
+        if (!empty($validatedData['second_photo'])){
             $this->fileDelete('\Project', $id, 'second_photo');
-            $request['second_photo'] = $this->photoSave($request['second_photo'], 'image/project');
+            $validatedData['second_photo'] = $this->photoSave($validatedData['second_photo'], 'image/project');
         }
         
-        Project::find($id)->update($request);
+        Project::find($id)->update($validatedData);
         return redirect()->route('dashboard.project.index');
     }
 
@@ -118,6 +136,6 @@ class ProjectController extends BaseController
         }
 
         Project::find($id)->delete();
-        return back();
+        return back()->with('success', 'Data deleted.');
     }
 }

@@ -41,7 +41,7 @@ class StorieController extends Controller
     {
         $request = $request->toArray(); 
         Storie::create($request);
-        return back();
+        return back()->with('success', 'Data uploaded successfully.');
     }
 
     /**
@@ -77,7 +77,7 @@ class StorieController extends Controller
     {
         $request = $request->toArray();
         Storie::find($id)->update($request);
-        return back();
+        return back()->with('success', 'Data updated successfully.');
     }
 
     /**
@@ -89,6 +89,6 @@ class StorieController extends Controller
     public function destroy($id)
     {
         Storie::find($id)->delete();
-        return back();
+        return back()->with('success', 'Data deleted.');
     }
 }

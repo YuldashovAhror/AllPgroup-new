@@ -41,17 +41,29 @@ class ServiceController extends BaseController
      */
     public function store(Request $request)
     {
-        $request = $request->toArray();
+        $validatedData = $request->validate([
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'second_photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'name_uz' => 'required|string|max:255',
+            'name_ru' => 'required|string|max:255',
+            'name_en' => 'required|string|max:255',
+            'title_uz' => 'nullable',
+            'title_ru' => 'nullable',
+            'title_en' => 'nullable',
+            'discription_uz' => 'nullable',
+            'discription_ru' => 'nullable',
+            'discription_en' => 'nullable',
+        ]);
         
-        if (!empty($request['photo'])){
-            $request['photo'] = $this->photoSave($request['photo'], 'image/service');   
+        if (!empty($validatedData['photo'])){
+            $validatedData['photo'] = $this->photoSave($validatedData['photo'], 'image/service');   
         }
-        if (!empty($request['second_photo'])){
-            $request['second_photo'] = $this->photoSave($request['second_photo'], 'image/service');
+        if (!empty($validatedData['second_photo'])){
+            $validatedData['second_photo'] = $this->photoSave($validatedData['second_photo'], 'image/service');
         }
         
-        Service::create($request);
-        return redirect()->route('dashboard.Service.index');
+        Service::create($validatedData);
+        return redirect()->route('dashboard.Service.index')->with('success', 'Data uploaded successfully.');
     }
 
     /**
@@ -88,19 +100,31 @@ class ServiceController extends BaseController
      */
     public function update(Request $request, $id)
     {
-        $request = $request->toArray();
+        $validatedData = $request->validate([
+            'photo' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'second_photo' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'name_uz' => 'required|string|max:255',
+            'name_ru' => 'required|string|max:255',
+            'name_en' => 'required|string|max:255',
+            'title_uz' => 'nullable',
+            'title_ru' => 'nullable',
+            'title_en' => 'nullable',
+            'discription_uz' => 'nullable',
+            'discription_ru' => 'nullable',
+            'discription_en' => 'nullable',
+        ]);
         
-        if (!empty($request['photo'])){
+        if (!empty($validatedData['photo'])){
             $this->fileDelete('\Service', $id, 'photo');
-            $request['photo'] = $this->photoSave($request['photo'], 'image/service');
+            $validatedData['photo'] = $this->photoSave($validatedData['photo'], 'image/service');
         }
-        if (!empty($request['second_photo'])){
+        if (!empty($validatedData['second_photo'])){
             $this->fileDelete('\Service', $id, 'second_photo');
-            $request['second_photo'] = $this->photoSave($request['second_photo'], 'image/service');
+            $validatedData['second_photo'] = $this->photoSave($validatedData['second_photo'], 'image/service');
         }
         
-        Service::find($id)->update($request);
-        return redirect()->route('dashboard.Service.index');
+        Service::find($id)->update($validatedData);
+        return redirect()->route('dashboard.Service.index')->with('success', 'Data updated successfully.');
     }
 
     /**
@@ -118,6 +142,6 @@ class ServiceController extends BaseController
             $this->serviceController->destroy($prod->id);
         }
         Service::find($id)->delete();
-        return back();
+        return back()->with('success', 'Data uploaded successfully.')->with('success', 'Data deleted.');
     }
 }

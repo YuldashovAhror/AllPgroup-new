@@ -42,16 +42,24 @@ class ProjectToController extends BaseController
      */
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'discription_uz' => 'nullable',
+            'discription_ru' => 'nullable',
+            'discription_en' => 'nullable',
+            'project' => 'integer',
+        ]);
+
         $projecttos = new ProjectTo();
-        if($request->file('photo')){
-            $projecttos['photo'] = $this->photoSave($request->file('photo'), 'image/projecttos');
+        if(!empty($validatedData['photo'])){
+            $projecttos['photo'] = $this->photoSave($validatedData['photo'], 'image/projecttos');
         }
-        $projecttos->project_id = $request->project;
-        $projecttos->discription_uz = $request->discription_uz;
-        $projecttos->discription_ru = $request->discription_ru;
-        $projecttos->discription_en = $request->discription_en;
+        $projecttos->project_id = $validatedData['project'];
+        $projecttos->discription_uz = $validatedData['discription_uz'];
+        $projecttos->discription_ru = $validatedData['discription_ru'];
+        $projecttos->discription_en = $validatedData['discription_en'];
         $projecttos->save();
-        return back();
+        return back()->with('success', 'Data uploaded successfully.');
     }
 
     /**
@@ -85,19 +93,26 @@ class ProjectToController extends BaseController
      */
     public function update(Request $request, $id)
     {
+        $validatedData = $request->validate([
+            'photo' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'discription_uz' => 'nullable',
+            'discription_ru' => 'nullable',
+            'discription_en' => 'nullable',
+            'project' => 'integer',
+        ]);
         $projecttos = ProjectTo::find($id);
-        if($request->file('photo')){
+        if(!empty($validatedData['photo'])){
             if(is_file(public_path($projecttos->photo))){
                 unlink(public_path($projecttos->photo));
             }
-            $projecttos['photo'] = $this->photoSave($request->file('photo'), 'image/projecttos');
+            $projecttos['photo'] = $this->photoSave($validatedData['photo'], 'image/projecttos');
         }
-        $projecttos->project_id = $request->project;
-        $projecttos->discription_uz = $request->discription_uz;
-        $projecttos->discription_ru = $request->discription_ru;
-        $projecttos->discription_en = $request->discription_en;
+        $projecttos->project_id = $validatedData['project'];
+        $projecttos->discription_uz = $validatedData['discription_uz'];
+        $projecttos->discription_ru = $validatedData['discription_ru'];
+        $projecttos->discription_en = $validatedData['discription_en'];
         $projecttos->save();
-        return back();
+        return back()->with('success', 'Data updated successfully.');
     }
 
     /**
@@ -113,6 +128,6 @@ class ProjectToController extends BaseController
             unlink(public_path($projecttos->photo));
         }
         $projecttos->delete();
-        return back();
+        return back()->with('success', 'Data deleted.');
     }
 }

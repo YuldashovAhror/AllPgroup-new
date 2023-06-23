@@ -39,12 +39,21 @@ class TeamController extends BaseController
      */
     public function store(Request $request)
     {
-        $request = $request->toArray(); 
-        if (!empty($request['photo'])){
-            $request['photo'] = $this->photoSave($request['photo'], 'image/team');   
+        $validatedData = $request->validate([
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'name_uz' => 'required|string|max:255',
+            'name_ru' => 'required|string|max:255',
+            'name_en' => 'required|string|max:255',
+            'type_uz' => 'nullable',
+            'type_ru' => 'nullable',
+            'type_en' => 'nullable',
+        ]);
+        
+        if (!empty($validatedData['photo'])){
+            $validatedData['photo'] = $this->photoSave($validatedData['photo'], 'image/team');   
         }
-        Team::create($request);
-        return back();
+        Team::create($validatedData);
+        return back()->with('success', 'Data uploaded successfully.');
     }
 
     /**
@@ -78,14 +87,22 @@ class TeamController extends BaseController
      */
     public function update(Request $request, $id)
     {
-        $request = $request->toArray();
+        $validatedData = $request->validate([
+            'photo' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'name_uz' => 'required|string|max:255',
+            'name_ru' => 'required|string|max:255',
+            'name_en' => 'required|string|max:255',
+            'type_uz' => 'nullable',
+            'type_ru' => 'nullable',
+            'type_en' => 'nullable',
+        ]);
         
-        if (!empty($request['photo'])){
+        if (!empty($validatedData['photo'])){
             $this->fileDelete('\Team', $id, 'photo');
-            $request['photo'] = $this->photoSave($request['photo'], 'image/team');
+            $validatedData['photo'] = $this->photoSave($validatedData['photo'], 'image/team');
         }
-        Team::find($id)->update($request);
-        return back();
+        Team::find($id)->update($validatedData);
+        return back()->with('success', 'Data updated successfully.');
     }
 
     /**
@@ -98,6 +115,6 @@ class TeamController extends BaseController
     {
         $this->fileDelete('\Team', $id, 'photo');
         Team::find($id)->delete();
-        return back();
+        return back()->with('success', 'Data deleted.');
     }
 }

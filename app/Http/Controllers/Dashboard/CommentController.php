@@ -41,7 +41,7 @@ class CommentController extends Controller
     {
         $request = $request->toArray(); 
         Comment::create($request);
-        return back();
+        return back()->with('success', 'Data uploaded successfully.');
     }
 
     /**
@@ -77,7 +77,7 @@ class CommentController extends Controller
     {
         $request = $request->toArray();
         Comment::find($id)->update($request);
-        return back();
+        return back()->with('success', 'Data updated successfully.');
     }
 
     /**
@@ -89,6 +89,6 @@ class CommentController extends Controller
     public function destroy($id)
     {
         Comment::find($id)->delete();
-        return back();
+        return back()->with('success', 'Data deleted.');
     }
 }

@@ -43,16 +43,24 @@ class ServiceToController extends BaseController
      */
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'discription_uz' => 'nullable',
+            'discription_ru' => 'nullable',
+            'discription_en' => 'nullable',
+            'service' => 'integer',
+        ]);
+
         $servicetos = new ServiceTo();
-        if($request->file('photo')){
-            $servicetos['photo'] = $this->photoSave($request->file('photo'), 'image/servicetos');
+        if(!empty($validatedData['photo'])){
+            $servicetos['photo'] = $this->photoSave($validatedData['photo'], 'image/servicetos');
         }
-        $servicetos->service_id = $request->service;
-        $servicetos->discription_uz = $request->discription_uz;
-        $servicetos->discription_ru = $request->discription_ru;
-        $servicetos->discription_en = $request->discription_en;
+        $servicetos->service_id = $validatedData['service'];
+        $servicetos->discription_uz = $validatedData['discription_uz'];
+        $servicetos->discription_ru = $validatedData['discription_ru'];
+        $servicetos->discription_en = $validatedData['discription_en'];
         $servicetos->save();
-        return back();
+        return back()->with('success', 'Data uploaded successfully.')->with('success', 'Data uploaded successfully.');
     }
 
     /**
@@ -86,19 +94,26 @@ class ServiceToController extends BaseController
      */
     public function update(Request $request, $id)
     {
+        $validatedData = $request->validate([
+            'photo' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'discription_uz' => 'nullable',
+            'discription_ru' => 'nullable',
+            'discription_en' => 'nullable',
+            'service' => 'integer',
+        ]);
         $servicetos = ServiceTo::find($id);
-        if($request->file('photo')){
+        if(!empty($validatedData['photo'])){
             if(is_file(public_path($servicetos->photo))){
                 unlink(public_path($servicetos->photo));
             }
-            $servicetos['photo'] = $this->photoSave($request->file('photo'), 'image/servicetos');
+            $servicetos['photo'] = $this->photoSave($validatedData['photo'], 'image/servicetos');
         }   
-        $servicetos->service_id = $request->service;
-        $servicetos->discription_uz = $request->discription_uz;
-        $servicetos->discription_ru = $request->discription_ru;
-        $servicetos->discription_en = $request->discription_en;
+        $servicetos->service_id = $validatedData['service'];
+        $servicetos->discription_uz = $validatedData['discription_uz'];
+        $servicetos->discription_ru = $validatedData['discription_ru'];
+        $servicetos->discription_en = $validatedData['discription_en'];
         $servicetos->save();
-        return back();
+        return back()->with('success', 'Data updated successfully.');
     }
 
     /**
@@ -114,6 +129,6 @@ class ServiceToController extends BaseController
             unlink(public_path($servicetos->photo));
         }
         $servicetos->delete();
-        return back();
+        return back()->with('success', 'Data deleted.');
     }
 }
