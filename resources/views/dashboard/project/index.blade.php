@@ -45,7 +45,7 @@
                                     <td>{{ $project->name_ru }}</td>
                                     <td class="text-center">
                                         <a href="{{ route('dashboard.project.edit', $project) }}">
-                                            <button class="btn btn-xs btn-success">Изменить
+                                            <button class="btn btn-xs btn-success mb-1">Изменить
                                                 <i class="bx bx-pencil"></i>
                                             </button>
                                         </a>

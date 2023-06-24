@@ -46,7 +46,7 @@
                                     <td>{{ $new->newcategories->name_ru }}</td>
                                     <td class="text-center">
                                         <a href="{{ route('dashboard.news.edit', $new) }}">
-                                            <button class="btn btn-xs btn-success">Изменить
+                                            <button class="btn btn-xs btn-success mb-1">Изменить
                                                 <i class="bx bx-pencil"></i>
                                             </button>
                                         </a>

@@ -35,7 +35,7 @@
                             <div class="col-6">
                                 <label class="form-label" for="exampleFormControlInput1">service</label>
                                 <div class="mb-3">
-                                    <select class="calc__type" name="service" id="calc__type" style="font-size: 20px">
+                                    <select class="calc__type" name="service" id="calc__type" style="width: 100%; padding:6px 12px; border-color: #ced4da; border-radius: 5px">
                                         @foreach ($services as $service)
                                             <option value="{{ $service->id }}">{{ $service->title_ru }}</option>
                                         @endforeach
@@ -131,12 +131,13 @@
                                                                                 name="photo">
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-2 mt-5">
+                                                                    <div class="col-6">
                                                                         <label class="form-label"
                                                                             for="exampleFormControlInput1">service</label>
                                                                         <div>
+                                                                            <i data-feather="loader" style="height: 100px; width: 100px"></i>
                                                                             <select class="calc__type" name="service"
-                                                                                id="calc__type">
+                                                                                id="calc__type" style="width: 100%; padding:6px 12px; border-color: #ced4da; border-radius: 5px">
                                                                                 @foreach ($services as $service)
                                                                                     <option value="{{ $service->id }}">
                                                                                         {{ $service->title_ru }}</option>

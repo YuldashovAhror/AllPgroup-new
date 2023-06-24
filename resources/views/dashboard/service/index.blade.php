@@ -47,7 +47,7 @@
                                     <td>{{ $service->title_ru }}</td>
                                     <td class="text-center">
                                         <a href="{{ route('dashboard.Service.edit', $service) }}">
-                                            <button class="btn btn-xs btn-success">Изменить
+                                            <button class="btn btn-xs btn-success mb-1">Изменить
                                                 <i class="bx bx-pencil"></i>
                                             </button>
                                         </a>

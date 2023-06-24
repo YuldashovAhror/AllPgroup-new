@@ -120,8 +120,8 @@
                                                                             <label class="form-label"
                                                                                 for="exampleFormControlInput1">Фото
                                                                             </label>
-                                                                            <div class="col-6 text-center">
-                                                                                <img style="height: 100px; width: 100px"
+                                                                            <div class="col-12 text-center">
+                                                                                <img style="height: 150px; width: 150px"
                                                                                     src="{{ $useproject->photo }}">
                                                                             </div>
                                                                             <input class="form-control mt-1"

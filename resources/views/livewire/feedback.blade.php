@@ -18,8 +18,7 @@
                         <p>{{ __('asd.Мы успешно развивающаяся динамичная компания, вот уже 15 лет, как мы вместе с нашими заказчиками и партнерами реализуем разнообразные проекты и добиваемся хороших результатов. Будем рады, если и вы присоединитесь к нам, и мы вместе с Вами разработаем индивидуальные варианты предложений сотрудничества и решения ваших задач в отрасли устройства бетонных покрытий, устройства наливных декоративных, виниловых, полимерных покрытий. Компания All-P-Group открыта к сотрудничеству и реализации совместных проектов.') }}
                         </p>
 
-                        <p>{{ __('asd.Свои предложения вы можете направлять на нашу электронную почту:') }} <a
-                                href="mailto:sales@all-p.uz">sales@all-p.uz</a></p>
+                        <p>{{ __('asd.Свои предложения вы можете направлять на нашу электронную почту:') }} <a href="mailto:sales@all-p.uz">sales@all-p.uz</a></p>
 
                         <p>{{ __('asd.Также можете воспользоваться нашей формой быстрого заполнения.') }}</p>
                     </div>
@@ -35,11 +34,11 @@
                                         placeholder=" ">
                                     <span>{{ __('asd.Номер телефона:') }}</span>
                                 </div>
+                                {{-- @dd($clients->all()) --}}
                                 <div class="contact-form__select">
-                                    <select class="customSelect" wire:model="clients1">
+                                    <select class="customSelect" wire:model.defer="clients1" style="width: 100%; padding:6px 12px; border-color: #ced4da; border-radius: 5px">
                                         @foreach ($clients as $client)
-                                            <option value="{{ $client->id }}" selected disabled >{{ $client['name_' . $lang] }}
-                                            </option>
+                                            <option value="{{ $client->id }}" selected  >{{ $client['name_' . $lang] }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -89,9 +88,9 @@
                                         <span>{{ __('asd.Номер телефона:') }}</span>
                                     </div>
                                     <div class="contact-form__select">
-                                        <select class="customSelect" wire:model="clients2">
+                                        <select class="customSelect" wire:model="clients2" style="width: 100%; padding:6px 12px; border-color: #ced4da; border-radius: 5px">
                                             @foreach ($clients as $client)
-                                                <option value="{{ $client->id }}">{{ $client['name_' . $lang] }}
+                                                <option value="{{ $client->id }}" selected>{{ $client['name_' . $lang] }}
                                                 </option>
                                             @endforeach
                                         </select>

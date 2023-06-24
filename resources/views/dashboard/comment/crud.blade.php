@@ -101,7 +101,7 @@
                                     <td>{{ $comment->name_ru }}</td>
                                     <td>{!! $comment->discription_ru !!}</td>
                                     <td class="text-center">
-                                        <button class="btn btn-xs btn-success" type="button" data-bs-toggle="modal"
+                                        <button class="btn btn-xs btn-success mb-1" type="button" data-bs-toggle="modal"
                                             data-bs-target="#exampleModalCenter{{ $comment->id }}Edit"><i
                                                 class="bx bx-pencil"></i>Изменить</button>
                                         <div class="modal fade" id="exampleModalCenter{{ $comment->id }}Edit"

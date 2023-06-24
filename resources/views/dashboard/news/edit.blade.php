@@ -12,35 +12,33 @@
                     {{ method_field('put') }}
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-12 mt-5">
+                            <div>
                                 <span >Категории новостей:</span>
-                                <div style="font-size: 20px" class="mt-3">
-                                    <select id="newcategory" class="calc__type" name="newcategory"  id="calc__type" >
+                                <div >
+                                    <select class="col-4 mb-3"  id="newcategory" class="calc__type" name="newcategory"  id="calc__type" style="width: 100%; padding:6px 12px; border-color: #ced4da; border-radius: 5px">
                                         @foreach ($categories as $category)
                                             <option value="{{ $category->id }}" >{{ $category['name_' . $lang] }}</option>
                                         @endforeach
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-6 text-center mt-3">
-                                <img style="height: 200px; width: 300px" src="{{ $new->photo }}">
-                            </div>
-                            <div class="col-6 text-center mt-3">
-                                <img style="height: 200px; width: 300px" src="{{ $new->second_photo }}">
-                            </div>
                             
                             <div class="col-6">
-                                <div class="mb-3">
+                                <div>
                                     <label class="form-label" for="exampleFormControlInput1">Фото</label>
-                                    
-                                    <input class="form-control" id="exampleFormControlInput1" type="file" name="photo">
+                                    <div  class="mb-3">
+                                        <img style="height: 200px; width: 300px" src="{{ $new->photo }}">
+                                    </div>
+                                    <input class="form-control mb-3" id="exampleFormControlInput1" type="file" name="photo">
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="mb-3">
+                                <div>
                                     <label class="form-label" for="exampleFormControlInput1">Второй фото</label>
-                            
-                                    <input class="form-control" id="exampleFormControlInput1" type="file"  name="second_photo">
+                                    <div class="mb-3">
+                                        <img style="height: 200px; width: 300px" src="{{ $new->second_photo }}">
+                                    </div>
+                                    <input class="form-control mb-3" id="exampleFormControlInput1" type="file"  name="second_photo">
                                 </div>
                             </div>
                         </div>

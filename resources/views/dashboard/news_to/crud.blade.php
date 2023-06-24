@@ -35,7 +35,7 @@
                             <div class="col-6">
                                 <label class="form-label" for="exampleFormControlInput1">new</label>
                                 <div class="mb-3">
-                                    <select class="calc__type" name="news" id="calc__type" style="font-size: 20px">
+                                    <select class="calc__type" name="news" id="calc__type" style="width: 100%; padding:6px 12px; border-color: #ced4da; border-radius: 5px">
                                         @foreach ($news as $new)
                                             <option value="{{ $new->id }}">{{ $new->name_ru }}</option>
                                         @endforeach

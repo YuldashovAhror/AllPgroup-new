@@ -32,10 +32,10 @@
                                     <input class="form-control" id="exampleFormControlInput1" type="file" name="photo">
                                 </div>
                             </div>
-                            <div class="col-3">
+                            <div class="col-6">
                                 <label class="form-label" for="exampleFormControlInput1">project</label>
                                 <div class="mb-3">
-                                    <select class="calc__type" name="project" id="calc__type" style="font-size: 20px">
+                                    <select class="calc__type" name="project" id="calc__type" style="width: 100%; padding:6px 12px; border-color: #ced4da; border-radius: 5px">
                                         @foreach ($projects as $project)
                                             <option value="{{ $project->id }}">{{ $project->name_ru }}</option>
                                         @endforeach
@@ -98,7 +98,7 @@
                                             style="height: 100px; width: 100px"></td>
                                     <td>{{ $projectto->projects->name_ru }}</td>
                                     <td class="text-center">
-                                        <button class="btn btn-xs btn-success" type="button" data-bs-toggle="modal"
+                                        <button class="btn btn-xs btn-success mb-1" type="button" data-bs-toggle="modal"
                                             data-bs-target="#exampleModalCenter{{ $projectto->id }}Edit"><i
                                                 class="bx bx-pencil">Изменить</i></button>
                                         <div class="modal fade" id="exampleModalCenter{{ $projectto->id }}Edit"
@@ -131,12 +131,13 @@
                                                                                 name="photo">
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-2">
+                                                                    <div class="col-6">
                                                                         <label class="form-label"
                                                                             for="exampleFormControlInput1">project</label>
                                                                         <div>
-                                                                            <select class="calc__type" name="project"
-                                                                                id="calc__type">
+                                                                            <i data-feather="loader" style="height: 100px; width: 100px"></i>
+                                                                            <select class="calc__type mt-6" name="project"
+                                                                                id="calc__type" style="width: 100%; padding:6px 12px; border-color: #ced4da; border-radius: 5px">
                                                                                 @foreach ($projects as $project)
                                                                                     <option value="{{ $project->id }}">
                                                                                         {{ $project->name_ru }}</option>

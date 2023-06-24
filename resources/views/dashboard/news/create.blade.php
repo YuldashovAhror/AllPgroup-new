@@ -11,32 +11,28 @@
                 <form action="{{ route('dashboard.news.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="card-body">
-                        <div class="row ">
-                            <div class="col-4 mt-5">
-                                <span >Категории новостей:</span>
-                                <div style="font-size: 20px" class="mt-3">
-                                    <select id="newcategory" class="calc__type" name="newcategory"  id="calc__type" >
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div>
+                                    <span >Категории новостей:</span>
+                                    <select class="mt-2" id="newcategory" class="calc__type" name="newcategory"  id="calc__type" style="width: 100%; padding:6px 12px; border-color: #ced4da; border-radius: 5px" >
                                         @foreach ($categories as $category)
                                             <option value="{{ $category->id }}" >{{ $category['name_' . $lang] }}</option>
                                         @endforeach
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-md-4">
                                 <div class="mb-3">
                                     <label class="form-label" for="exampleFormControlInput1">Основной Фото</label>
-                                    <div class="col-12 text-center">
-                                        <i data-feather="loader" style="height: 100px; width: 100px"></i>
-                                    </div>
                                     <input class="form-control" id="exampleFormControlInput1" type="file" required
                                         name="photo">
                                 </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-md-4">
                                 <div class="mb-3">
                                     <label class="form-label" for="exampleFormControlInput1">Второй фото</label>
                                     <div class="col-12 text-center">
-                                        <i data-feather="loader" style="height: 100px; width: 100px"></i>
                                     </div>
                                     <input class="form-control" id="exampleFormControlInput1" type="file" required
                                         name="second_photo">

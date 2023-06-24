@@ -1,4 +1,4 @@
-@extends('layouts.auth.main')
+{{-- @extends('layouts.auth.main')
 
 @section('content')
     <form class="theme-form login-form" style="border-radius: 10px" action="{{ route('register') }}" method="post">
@@ -47,4 +47,4 @@
     </form>
 @endsection
 
-
+ --}}

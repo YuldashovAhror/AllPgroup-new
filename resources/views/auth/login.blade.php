@@ -25,6 +25,6 @@
         <div class="form-group">
             <button class="btn btn-primary btn-block" type="submit">Войти</button>
         </div>
-        <p>Нет аккаунта?<a class="ms-2" href="{{ route('register') }}">Зарегистрироваться</a></p>
+        {{-- <p>Нет аккаунта?<a class="ms-2" href="{{ route('register') }}">Зарегистрироваться</a></p> --}}
     </form>
 @endsection

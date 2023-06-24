@@ -101,7 +101,7 @@
                                     <td>{{ $vacancy->name_ru }}</td>
                                     <td>{!! $vacancy->discription_ru !!}</td>
                                     <td class="text-center">
-                                        <button class="btn btn-xs btn-success" type="button" data-bs-toggle="modal"
+                                        <button class="btn btn-xs btn-success mb-1" type="button" data-bs-toggle="modal"
                                             data-bs-target="#exampleModalCenter{{ $vacancy->id }}Edit"><i
                                                 class="bx bx-pencil"></i>Изменить</button>
                                         <div class="modal fade" id="exampleModalCenter{{ $vacancy->id }}Edit"
