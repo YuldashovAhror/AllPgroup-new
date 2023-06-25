@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Models\Comment;
+use App\Models\HomeMetateg;
 use App\Models\MainSlider;
 use App\Models\NewCategory;
 use App\Models\News;
@@ -28,6 +29,7 @@ class FrontController
         $projects = Project::orderBy('id', 'desc')->get();
         $mainsliders = MainSlider::orderBy('id', 'desc')->get();
         $services = Service::orderBy('id', 'desc')->get();
+        $metateg = HomeMetateg::find(1);
         return view('front.welcome', [
             'mainsliders'=>$mainsliders,
             'services'=>$services,
@@ -35,6 +37,7 @@ class FrontController
             'projects'=>$projects,
             'comments'=>$comments,
             'newcategories'=>$newcategories,
+            'metateg'=>$metateg,
         ]);
     }
 }

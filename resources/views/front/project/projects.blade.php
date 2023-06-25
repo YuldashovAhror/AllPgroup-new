@@ -9,28 +9,28 @@
 	<link rel="stylesheet" href="/issets/css/custom.select.css">
 	<link rel="stylesheet" href="/issets/css/animate.css">
 	<link rel="stylesheet" href="/issets/css/main.css">
-	<title>ALL-P Group | {{__('asd.Наши проекты')}}</title>
+	<title>ALL-P Group | {{$metateg->name}}</title>
 	
-		<meta name="description" content="Компания All-P-Group предлагает полный спектр строительных, монтажных и ремонтных работ. Мы сотрудничаем с ведущими производителями строительной техники и материалов. Профессионализм, опыт и инновационный подход - основа нашего успеха.">
+	<meta name="description" content="{{$metateg->discription}}">
 	
 	<!-- Facebook -->
     <meta property="og:title" content="ALL-P Group">
     <meta property="og:site_name" content="ALL-P Group">
-    <meta property="og:description" content="Компания All-P-Group предлагает полный спектр строительных, монтажных и ремонтных работ. Мы сотрудничаем с ведущими производителями строительной техники и материалов. Профессионализм, опыт и инновационный подход - основа нашего успеха.">
+    <meta property="og:description" content="{{$metateg->discription}}">
     <meta property="og:url" content="https://all-p.uz/">
-    <meta property="og:image" content="/meta.jpg">
+    <meta property="og:image" content="{{$metateg->photo}}">
     <meta property="og:type" content="website">
 
-     <!-- Google Plus -->
+    <!-- Google Plus -->
     <meta itemprop="name" content="ALL-P Group">
-    <meta itemprop="description" content="Компания All-P-Group предлагает полный спектр строительных, монтажных и ремонтных работ. Мы сотрудничаем с ведущими производителями строительной техники и материалов. Профессионализм, опыт и инновационный подход - основа нашего успеха.">
-    <meta itemprop="image" content="/meta.jpg">
+    <meta itemprop="description" content="{{$metateg->discription}}">
+    <meta itemprop="image" content="{{$metateg->photo}}">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ALL-P Group">
-    <meta name="twitter:description" content="Компания All-P-Group предлагает полный спектр строительных, монтажных и ремонтных работ. Мы сотрудничаем с ведущими производителями строительной техники и материалов. Профессионализм, опыт и инновационный подход - основа нашего успеха.">
-    <meta name="twitter:image" content="/meta.jpg">
+    <meta name="twitter:description" content="{{$metateg->discription}}">
+    <meta name="twitter:image" content="{{$metateg->photo}}">
 </head>
 <body>
     <div class="preloader">

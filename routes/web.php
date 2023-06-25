@@ -7,6 +7,7 @@ use App\Http\Controllers\Dashboard\ClientController;
 use App\Http\Controllers\Dashboard\CommentController;
 use App\Http\Controllers\Dashboard\FeedbackController;
 use App\Http\Controllers\Dashboard\MainSliderController;
+use App\Http\Controllers\Dashboard\MetategController;
 use App\Http\Controllers\Dashboard\NewCategoryController;
 use App\Http\Controllers\Dashboard\NewsController;
 use App\Http\Controllers\Dashboard\NewsToController as DashboardNewsToController;
@@ -52,6 +53,16 @@ Route::resource('project', FrontProjectController::class);
 Route::resource('about', AboutController::class);
 Route::post('feedback/store', [FrontFeedbackController::class, 'store'])->name('front.feedback.store');
 Route::resource('/contact', ContactController::class);
+Route::get('/optimize', function (){
+    \Illuminate\Support\Facades\Artisan::call('route:clear');
+    \Illuminate\Support\Facades\Artisan::call('cache:clear');
+    \Illuminate\Support\Facades\Artisan::call('config:clear');
+    \Illuminate\Support\Facades\Artisan::call('config:cache');
+    \Illuminate\Support\Facades\Artisan::call('route:cache');
+    \Illuminate\Support\Facades\Artisan::call('optimize:clear');
+    \Illuminate\Support\Facades\Artisan::call('migrate');
+    return 'success';
+});
 
 
 //Dashboard
@@ -76,7 +87,13 @@ Route::group(['prefix' => 'dashboard'], function (){
         Route::resource('/projectto', DashboardProjectToController::class);
         Route::resource('/newsto', DashboardNewsToController::class);
         Route::resource('/serviceto', DashboardServiceToController::class);
-
+        Route::get('/homemetateg', [MetategController::class, 'index'])->name('homemetateg');
+        Route::put('/homemetateg/{id}', [MetategController::class, 'update'])->name('homemetateg.update');
+        Route::put('/aboutmetateg/{id}', [MetategController::class, 'aboute'])->name('aboutmetateg.update');
+        Route::put('/servicemetateg/{id}', [MetategController::class, 'service'])->name('servicemetateg.update');
+        Route::put('/projectmetateg/{id}', [MetategController::class, 'project'])->name('projectmetateg.update');
+        Route::put('/newsmetateg/{id}', [MetategController::class, 'news'])->name('newsmetateg.update');
+        Route::put('/contactmetateg/{id}', [MetategController::class, 'contact'])->name('contactmetateg.update');
 
         Route::get('dashboar/words', [WordController::class, 'index'])->name('words.index');
     });

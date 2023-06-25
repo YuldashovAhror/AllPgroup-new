@@ -108,6 +108,11 @@
                             </i><span>Словарь</span>
                         </a>
                     </li>
+                    <li class="dropdown">
+                        <a class="nav-link menu-title link-nav" href="{{route('dashboard.homemetateg')}}"><i data-feather="file-text">
+                            </i><span>Метатег</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>

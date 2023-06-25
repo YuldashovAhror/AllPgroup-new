@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Service;
+use App\Models\ServiceMetateg;
 use Illuminate\Http\Request;
 
 class ServiceController extends Controller
@@ -16,8 +17,10 @@ class ServiceController extends Controller
     public function index()
     {
         $services = Service::orderBy('id', 'desc')->get();
+        $metateg = ServiceMetateg::find(1);
         return view('front.service.services', [
-            'services'=>$services
+            'services'=>$services,
+            'metateg'=>$metateg,
         ]);
     }
 

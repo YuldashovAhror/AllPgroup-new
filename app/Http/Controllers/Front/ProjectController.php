@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Project;
+use App\Models\ProjectMetateg;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -16,8 +17,10 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::orderBy('id', 'desc')->get();
+        $metateg = ProjectMetateg::find(1);
         return view('front.project.projects', [
-            'projects'=>$projects
+            'projects'=>$projects,
+            'metateg'=>$metateg,
         ]);
     }
 

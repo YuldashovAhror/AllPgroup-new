@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\AboutMetateg;
 use App\Models\Storie;
 use App\Models\Team;
 use Illuminate\Http\Request;
@@ -18,9 +19,11 @@ class AboutController extends Controller
     {
         $stories = Storie::orderBy('id', 'desc')->get();
         $teams = Team::orderBy('id', 'desc')->get();
+        $metateg = AboutMetateg::find(1);
         return view('front.about', [
             'stories'=>$stories,
             'teams'=>$teams,
+            'metateg'=>$metateg,
         ]);
     }
 

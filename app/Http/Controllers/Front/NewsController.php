@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use App\Models\NewCategory;
 use App\Models\News;
+use App\Models\NewsMetateg;
 use Illuminate\Http\Request;
 
 class NewsController extends Controller
@@ -17,8 +18,10 @@ class NewsController extends Controller
     public function index()
     {
         $newcategories = NewCategory::with('news')->orderBy('id', 'desc')->get();
+        $metateg = NewsMetateg::find(1);
         return view('front.news.news', [
-            'newcategories'=>$newcategories
+            'newcategories'=>$newcategories,
+            'metateg'=>$metateg,
         ]);
     }
 
