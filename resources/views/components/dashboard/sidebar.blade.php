@@ -18,21 +18,16 @@
                             <h6>Меню</h6>
                         </div>
                     </li>
-                    <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="file-text"></i><span>Услуга</span></a>
+                    <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="file-text"></i><span>Услугe</span></a>
                         <ul class="nav-submenu menu-content">
                             <li><a href="{{route('dashboard.Service.index')}}">Лист</a></li>
                             <li><a href="{{route('dashboard.Service.create')}}">Создать</a></li>
-                            <li><a href="{{route('dashboard.serviceto.index')}}">Дополнения к Услуга</a></li>
+                            <li><a href="{{route('dashboard.serviceto.index')}}">Дополнения к Услугe</a></li>
                         </ul>
-                        {{-- <li class="dropdown">
-                            <a class="nav-link menu-title link-nav" href="{{route('dashboard.serviceto.index')}}"><i data-feather="file-text">
-                                </i><span>Дополнения к Услуга</span>
-                            </a>
-                        </li> --}}
                     </li>
                     <li class="dropdown">
                         <a class="nav-link menu-title link-nav" href="{{route('dashboard.mainslider.index')}}"><i data-feather="file-text">
-                            </i><span>ГлавнаяСлайдер</span>
+                            </i><span>Главный Слайдер</span>
                         </a>
                     </li>
                     <li class="dropdown">
@@ -43,39 +38,19 @@
                     
                     <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="file-text"></i><span>Новости</span></a>
                         <ul class="nav-submenu menu-content">
-                            <li><a href="{{route('dashboard.newcategory.index')}}">Новости Категория</a></li>
-                            <li><a href="{{route('dashboard.news.index')}}">Новости Лист</a></li>
-                            <li><a href="{{route('dashboard.news.create')}}">Новости Создать</a></li>
+                            <li><a href="{{route('dashboard.newcategory.index')}}">Категория</a></li>
+                            <li><a href="{{route('dashboard.news.index')}}">Лист</a></li>
+                            <li><a href="{{route('dashboard.news.create')}}">Создать</a></li>
                             <li><a href="{{route('dashboard.newsto.index')}}">Дополнения к Новости</a></li>
                         </ul>
-                        {{-- <li class="dropdown">
-                            <a class="nav-link menu-title link-nav" href="{{route('dashboard.newcategory.index')}}"><i data-feather="file-text">
-                                </i><span>Новости Категория</span>
-                            </a>
-                        </li> --}}
-                        {{-- <li class="dropdown">
-                            <a class="nav-link menu-title link-nav" href="{{route('dashboard.newsto.index')}}"><i data-feather="file-text">
-                                </i><span>Дополнения к Новости</span>
-                            </a>
-                        </li> --}}
                     </li>
                     <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="file-text"></i><span>Проект</span></a>
                         <ul class="nav-submenu menu-content">
-                            <li><a href="{{route('dashboard.project.index')}}">Проект Лист</a></li>
-                            <li><a href="{{route('dashboard.project.create')}}">Проект Создать</a></li>
+                            <li><a href="{{route('dashboard.project.index')}}">Лист</a></li>
+                            <li><a href="{{route('dashboard.project.create')}}">Создать</a></li>
                             <li><a href="{{route('dashboard.projectto.index')}}">Дополнения к проекту</a></li>
                             <li><a href="{{route('dashboard.useproject.index')}}">Использовать проект</a></li>
                         </ul>
-                        {{-- <li class="dropdown">
-                            <a class="nav-link menu-title link-nav" href="{{route('dashboard.useproject.index')}}"><i data-feather="file-text">
-                                </i><span>Использовать проект</span>
-                            </a>
-                        </li> --}}
-                        {{-- <li class="dropdown">
-                            <a class="nav-link menu-title link-nav" href="{{route('dashboard.projectto.index')}}"><i data-feather="file-text">
-                                </i><span>Дополнения к проекту</span>
-                            </a>
-                        </li> --}}
                     </li>
                     <li class="dropdown">
                         <a class="nav-link menu-title link-nav" href="{{route('dashboard.storie.index')}}"><i data-feather="file-text">
@@ -87,22 +62,21 @@
                             </i><span>Команда</span>
                         </a>
                     </li>
-                    <li class="dropdown">
-                        <a class="nav-link menu-title link-nav" href="{{route('dashboard.client.index')}}"><i data-feather="file-text">
-                            </i><span>Клиент</span>
-                        </a>
+
+                    <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="file-text"></i><span>Контакты</span></a>
+                        <ul class="nav-submenu menu-content">
+                            <li><a href="{{route('dashboard.client.index')}}">Клиент</a></li>
+                            <li><a href="{{route('dashboard.partner.index')}}">Партнеры</a></li>
+                            <li><a href="{{route('dashboard.feedback.index')}}">Обратная связь</a></li>
+                        </ul>
                     </li>
+
                     <li class="dropdown">
                         <a class="nav-link menu-title link-nav" href="{{route('dashboard.vacancy.index')}}"><i data-feather="file-text">
                             </i><span>Вакансия</span>
                         </a>
                     </li>
                     
-                    <li class="dropdown">
-                        <a class="nav-link menu-title link-nav" href="{{route('dashboard.feedback.index')}}"><i data-feather="file-text">
-                            </i><span>Обратная связь</span>
-                        </a>
-                    </li>
                     <li class="dropdown">
                         <a class="nav-link menu-title link-nav" href="{{route('dashboard.words.index')}}"><i data-feather="file-text">
                             </i><span>Словарь</span>

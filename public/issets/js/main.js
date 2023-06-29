@@ -224,6 +224,31 @@ $(window).on('load', () => {
     $('.contact-done').click(function() {
         $(this).fadeOut(600)
     })
+    
+    
+    //_____________FEEDBACK_________________
+
+
+    $('.feedback-open').click(e => {
+        e.preventDefault()
+        $('.feedback').fadeIn(600); 
+    })
+
+
+    $('.feedback-done .feedback-form__btn').click(e => {
+        e.preventDefault()
+        $('.feedback').fadeOut(600); 
+    })
+
+
+
+    $('.feedback').click(e => {
+        let div = $(".feedback-content");
+        if (!div.is(e.target) 
+            && div.has(e.target).length === 0) { 
+            $('.feedback').fadeOut(600); 
+        }
+    })
 
 
     

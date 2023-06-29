@@ -7,7 +7,7 @@ use App\Models\Feedback;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class FeedbackController extends Controller
+class FeedbackController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -85,11 +85,8 @@ class FeedbackController extends Controller
      */
     public function destroy($id)
     {
-        $feedback = Feedback::find($id);
-        if (Storage::exists($feedback->photo)) {
-            Storage::delete($feedback->photo);
-        }
-        $feedback->delete();
+        $this->fileDelete('\Feedback', $id, 'photo');
+        Feedback::find($id)->delete();
         return redirect()->back()->with('success', 'Data deleted.');
     }
 }

@@ -1,14 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Front;
+namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Models\Client;
-use App\Models\Feedback;
+use App\Models\Partners;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 
-class FeedbackController extends Controller
+class PartnersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +15,10 @@ class FeedbackController extends Controller
      */
     public function index()
     {
-        //
+        $partners = Partners::orderBy('id', 'desc')->get();
+        return view('dashboard.partner.crud', [
+            'partners'=>$partners
+        ]);
     }
 
     /**
@@ -38,21 +39,8 @@ class FeedbackController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
-        $feedback = new Feedback();
-        if(!empty($request->file('photo'))){
-            $img_name = Str::random(10).'.'.$request->file('photo')->getClientOriginalExtension();
-            $request->file('photo')->move(public_path('/image/feedback'), $img_name);
-            $feedback->photo = '/image/feedback/'.$img_name;
-        }
-        $feedback->client_id = $request->client;
-        $feedback->partner_id = $request->partner;
-        $feedback->name = $request->name;
-        $feedback->phone = $request->phone;
-        $feedback->discription = $request->discription;
-        $feedback->vacancy_number = $request->vacancy_number;
-        $feedback->save();
-        return back();
+        Partners::create($request->all());
+        return back()->with('success', 'Data uploaded successfully.');
     }
 
     /**
@@ -86,7 +74,8 @@ class FeedbackController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Partners::find($id)->update($request->all());
+        return back()->with('success', 'Data updated successfully.');
     }
 
     /**
@@ -97,6 +86,7 @@ class FeedbackController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Partners::find($id)->delete();
+        return back()->with('success', 'Data deleted .');
     }
 }

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Client;
 use App\Models\ContactMetateg;
 use App\Models\Feedback;
+use App\Models\Partners;
 use App\Models\Vacancy;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -21,12 +22,14 @@ class ContactController extends Controller
     public function index()
     {
         $clients = Client::orderBy('id', 'desc')->get();
+        $partners = Partners::orderBy('id', 'desc')->get();
         $vacancies = Vacancy::orderBy('id', 'desc')->get();
         $metateg = ContactMetateg::find(1);
         return view('front.contact', [
             'clients'=>$clients,
             'vacancies'=>$vacancies,
             'metateg'=>$metateg,
+            'partners'=>$partners,
         ]);
     }
 
@@ -57,7 +60,9 @@ class ContactController extends Controller
         }
 
         $feedback->name = $request->name;
+        $feedback->email = $request->email;
         $feedback->client_id = $request->client_id;
+        $feedback->partner_id = $request->partner_id;
         $feedback->phone = $request->phone;
         $feedback->discription = $request->discription;
         $feedback->vacancy_number = $request->vacancy_number;

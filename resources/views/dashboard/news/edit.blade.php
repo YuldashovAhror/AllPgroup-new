@@ -26,6 +26,7 @@
                             <div class="col-6">
                                 <div>
                                     <label class="form-label" for="exampleFormControlInput1">Фото</label>
+                                    <p>max.20 MB</p>
                                     <div  class="mb-3">
                                         <img style="height: 200px; width: 300px" src="{{ $new->photo }}">
                                     </div>
@@ -35,6 +36,7 @@
                             <div class="col-6">
                                 <div>
                                     <label class="form-label" for="exampleFormControlInput1">Второй фото</label>
+                                    <p>max.20 MB</p>
                                     <div class="mb-3">
                                         <img style="height: 200px; width: 300px" src="{{ $new->second_photo }}">
                                     </div>

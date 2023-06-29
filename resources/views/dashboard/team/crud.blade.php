@@ -25,9 +25,10 @@
                     @csrf
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-12">
-                                <div class="mb-3">
-                                    <label class="form-label" for="exampleFormControlInput1">Фото</label>
+                            <div class="col-12 text-center">
+                                <label class="form-label" for="exampleFormControlInput1">Фото</label>
+                                <div class="">
+                                    <img class="mb-3" src="/issets/size.png" alt="" style="height: 150px; width: 150px">
                                     <input class="form-control" id="exampleFormControlInput1" type="file" required
                                         name="photo">
                                 </div>
@@ -135,10 +136,11 @@
                                                                     <div class="mb-3">
                                                                         <label class="form-label"
                                                                             for="exampleFormControlInput1">Фото</label>
-                                                                        <div class="col-6 text-center mb-3">
+                                                                        <div class="col-12 text-center mb-3">
                                                                             <img style="height: 100px; width: 100px"
                                                                                 src="{{ $team->photo }}">
                                                                         </div>
+                                                                        <p>max.20 MB</p>
                                                                         <input class="form-control"
                                                                             id="exampleFormControlInput1" type="file"
                                                                             name="photo">

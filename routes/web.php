@@ -11,6 +11,7 @@ use App\Http\Controllers\Dashboard\MetategController;
 use App\Http\Controllers\Dashboard\NewCategoryController;
 use App\Http\Controllers\Dashboard\NewsController;
 use App\Http\Controllers\Dashboard\NewsToController as DashboardNewsToController;
+use App\Http\Controllers\Dashboard\PartnersController;
 use App\Http\Controllers\Dashboard\ProjectController;
 use App\Http\Controllers\Dashboard\ProjectToController as DashboardProjectToController;
 use App\Http\Controllers\Dashboard\ServiceController;
@@ -82,7 +83,7 @@ Route::group(['prefix' => 'dashboard'], function (){
 
         Route::resource('/feedback', FeedbackController::class);
         Route::resource('/client', ClientController::class);
-        // Route::resource('/feedback', FeedbackController::class);
+        Route::resource('/partner', PartnersController::class);
         Route::resource('/vacancy', VacancyController::class);
         Route::resource('/projectto', DashboardProjectToController::class);
         Route::resource('/newsto', DashboardNewsToController::class);

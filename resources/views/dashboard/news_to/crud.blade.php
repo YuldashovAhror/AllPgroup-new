@@ -28,14 +28,14 @@
                             <div class="col-6">
                                 <div class="mb-3">
                                     <label class="form-label" for="exampleFormControlInput1">Фото </label>
-
+                                    <p>max.20 MB</p>
                                     <input class="form-control" id="exampleFormControlInput1" type="file" name="photo">
                                 </div>
                             </div>
                             <div class="col-6">
                                 <label class="form-label" for="exampleFormControlInput1">new</label>
-                                <div class="mb-3">
-                                    <select class="calc__type" name="news" id="calc__type" style="width: 100%; padding:6px 12px; border-color: #ced4da; border-radius: 5px">
+                                <div >
+                                    <select class="calc__type" name="news" id="calc__type" style="width: 100%; padding:6px 12px; border-color: #ced4da; border-radius: 5px; margin-top: 39px">
                                         @foreach ($news as $new)
                                             <option value="{{ $new->id }}">{{ $new->name_ru }}</option>
                                         @endforeach
@@ -121,23 +121,25 @@
                                                                             <label class="form-label"
                                                                                 for="exampleFormControlInput1">Фото
                                                                             </label>
-                                                                            <div class="col-6 text-center">
+                                                                            <div class="col-12 text-center">
                                                                                 <img style="height: 100px; width: 100px"
                                                                                     src="{{ $newsto->photo }}">
                                                                             </div>
-                                                                            <input class="form-control mt-1"
+                                                                            <p>max.20 MB</p>
+                                                                            <input class="form-control " style="padding-bottom: 10px"
                                                                                 id="exampleFormControlInput1" type="file"
                                                                                 name="photo">
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-2 mt-5">
+                                                                    <div class="col-6 mt-4">
                                                                         <label class="form-label"
                                                                             for="exampleFormControlInput1">new</label>
                                                                         <div>
+                                                                            <i data-feather="loader" style="height: 100px; width: 100px"></i>
                                                                             <select class="calc__type" name="news"
-                                                                                id="calc__type">
+                                                                                id="calc__type" style="width: 100%; height: 100%; padding:6px 12px; border-color: #ced4da; border-radius: 5px;">
                                                                                 @foreach ($news as $new)
-                                                                                    <option value="{{ $new->id }}">
+                                                                                    <option value="{{ $new->id }}" >
                                                                                         {{ $new->name_ru }}</option>
                                                                                 @endforeach
                                                                             </select>

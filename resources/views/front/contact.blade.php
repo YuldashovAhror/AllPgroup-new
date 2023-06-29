@@ -156,10 +156,10 @@
                                             <span>{{ __('asd.Номер телефона:') }}</span>
                                         </div>
                                         <div class="contact-form__select">
-                                            <select class="customSelect" name="client_id">
-                                                @foreach ($clients as $client)
-                                                    <option value="{{ $client->id }}" selected>
-                                                        {{ $client['name_' . $lang] }}
+                                            <select class="customSelect" name="partner_id">
+                                                @foreach ($partners as $partner)
+                                                    <option value="{{ $partner->id }}" selected>
+                                                        {{ $partner['name_' . $lang] }}
                                                     </option>
                                                 @endforeach
                                             </select>
@@ -228,7 +228,7 @@
                                         <span>{{ __('asd.Номер телефона:') }}</span>
                                     </div>
                                 </div>
-                                <div class="contact-form__col">
+                                <div class="contact-form__col" >
                                     <div class="contact-form__input">
                                         <input class="form_tel" placeholder=" " id="vacancy_number"
                                             name="vacancy_number">
@@ -253,7 +253,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section >
 
 
     <!-- ПОКАЗАТЬ ЭТОТ БЛОК ПРИ ОТПРАВКЕ $('.contact-done').fadeIn(600 -->
@@ -281,50 +281,6 @@
     @include('components.front.scripts')
 
     @livewireScripts
-    {{-- <script>
-        function send1() {
-    
-            let token1 = $("#token1").val();
-            let name = $('#first_name1').val();
-            let phone = $('#phone1').val();
-            let photo = $('#file1').val();
-            let client = $('#client').val();
-            let discription = $('#discription1').val();
-    
-            var formData = new FormData(); // Создаем объект FormData
-                formData.append('name', name);
-                formData.append('phone', phone);
-                formData.append('photo', $("#file1")[0].files[0]);
-                formData.append('client', client);
-                formData.append('discription', discription); // Добавляем файл в FormData
-    
-            $.ajax({
-                type: "POST",
-                url: "feedback/store",
-                cache: false,
-                contentType: false,
-                processData: false,
-                data: formData,
-                dataType : 'json',
-                // success: function(response){
-                //     console.log(response)
-                // }
-            });
-    
-            // console.log(name, phone, formData, client, discription);
-            // setTimeout(() => {
-            //     $('.popup').hide()
-            //     $('.popup__success').show()
-            //     $("#first_name").val('');
-            //     $("#phone").val('');
-            // }, 1000)
-            // setTimeout(() => {
-            //     $('.popup').show()
-            //     $('.popup__success').hide()
-            //     $('.feedback').hide()
-            // }, 3000)
-        }
-    </script> --}}
 </body>
 
 </html>

@@ -27,6 +27,7 @@
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Клиент</th>
+                                <th scope="col">Партнеры</th>
                                 <th scope="col">Название</th>
                                 <th scope="col">Фото</th>
                                 <th scope="col">Телефон</th>
@@ -43,6 +44,15 @@
                                         <td>{{ $feedback->clients->name_ru }}</td>
                                     @endif
                                     @if ($feedback->clients == null)
+                                        <td>
+                                            <h3>null</h3>
+                                        </td>
+                                    @endif
+
+                                    @if ($feedback->partners != null)
+                                        <td>{{ $feedback->partners->name_ru }}</td>
+                                    @endif
+                                    @if ($feedback->partners == null)
                                         <td>
                                             <h3>null</h3>
                                         </td>

@@ -15,7 +15,8 @@
                             <div class="col-md-4">
                                 <div>
                                     <span >Категории новостей:</span>
-                                    <select class="mt-2" id="newcategory" class="calc__type" name="newcategory"  id="calc__type" style="width: 100%; padding:6px 12px; border-color: #ced4da; border-radius: 5px" >
+                                    <i data-feather="loader" style="height: 100px; width: 100px" ></i>
+                                    <select class="" id="newcategory" class="calc__type" name="newcategory"  id="calc__type" style="width: 100%; padding:6px 12px; border-color: #ced4da; border-radius: 5px " >
                                         @foreach ($categories as $category)
                                             <option value="{{ $category->id }}" >{{ $category['name_' . $lang] }}</option>
                                         @endforeach
@@ -25,6 +26,7 @@
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label class="form-label" for="exampleFormControlInput1">Основной Фото</label>
+                                    <img class="mb-3" src="/issets/size.png" alt="" style="height: 84px; width: 150px">
                                     <input class="form-control" id="exampleFormControlInput1" type="file" required
                                         name="photo">
                                 </div>
@@ -32,6 +34,7 @@
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label class="form-label" for="exampleFormControlInput1">Второй фото</label>
+                                    <img class="mb-3" src="/issets/size.png" alt="" style="height: 84px; width: 150px">
                                     <div class="col-12 text-center">
                                     </div>
                                     <input class="form-control" id="exampleFormControlInput1" type="file" required

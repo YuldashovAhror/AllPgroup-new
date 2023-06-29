@@ -28,8 +28,8 @@
                             <div class="col-12">
                                 <div class="mb-3">
                                     <label class="form-label" for="exampleFormControlInput1">Фото </label>
-                                    <div class="col-6 text-center">
-                                        <i data-feather="loader" style="height: 100px; width: 100px"></i>
+                                    <div class="col-12 text-center">
+                                        <img class="mb-3" src="/issets/size.png" alt="" style="height: 150px; width: 150px">
                                     </div>
                                     <input class="form-control" id="exampleFormControlInput1" type="file" required
                                         name="photo">
@@ -124,6 +124,7 @@
                                                                                 <img style="height: 150px; width: 150px"
                                                                                     src="{{ $useproject->photo }}">
                                                                             </div>
+                                                                            <p>max.20 MB</p>
                                                                             <input class="form-control mt-1"
                                                                                 id="exampleFormControlInput1" type="file"
                                                                                 name="photo">

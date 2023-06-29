@@ -37,21 +37,21 @@
                             <div class="col-4">
                                 <div class="mb-3">
                                     <label class="form-label" for="exampleFormControlInput1">Название RU</label>
-                                    <input class="form-control" id="exampleFormControlInput1" required type="text"
+                                    <input class="form-control" id="exampleFormControlInput1"  type="text"
                                         name="name_ru">
                                 </div>
                             </div>
                             <div class="col-4">
                                 <div class="mb-3">
                                     <label class="form-label" for="exampleFormControlInput1">Название UZ</label>
-                                    <input class="form-control" id="exampleFormControlInput1" required type="text"
+                                    <input class="form-control" id="exampleFormControlInput1"  type="text"
                                         name="name_uz">
                                 </div>
                             </div>
                             <div class="col-4">
                                 <div class="mb-3">
                                     <label class="form-label" for="exampleFormControlInput1">Название EN</label>
-                                    <input class="form-control" id="exampleFormControlInput1" required type="text"
+                                    <input class="form-control" id="exampleFormControlInput1"  type="text"
                                         name="name_en">
                                 </div>
                             </div>
@@ -149,7 +149,7 @@
                                                                                 RU</label>
                                                                             <input class="form-control"
                                                                                 id="exampleFormControlInput1"
-                                                                                type="text" required name="name_ru"
+                                                                                type="text"  name="name_ru"
                                                                                 value="{{ $stor->name_ru }}">
                                                                         </div>
                                                                     </div>
@@ -160,7 +160,7 @@
                                                                                 UZ</label>
                                                                             <input class="form-control"
                                                                                 id="exampleFormControlInput1"
-                                                                                type="text" required name="name_uz"
+                                                                                type="text"  name="name_uz"
                                                                                 value="{{ $stor->name_uz }}">
                                                                         </div>
                                                                     </div>
@@ -171,7 +171,7 @@
                                                                                 EN</label>
                                                                             <input class="form-control"
                                                                                 id="exampleFormControlInput1"
-                                                                                type="text" required name="name_en"
+                                                                                type="text"  name="name_en"
                                                                                 value="{{ $stor->name_en }}">
                                                                         </div>
                                                                     </div>

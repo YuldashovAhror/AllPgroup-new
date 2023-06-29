@@ -19,9 +19,9 @@
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-header pb-0">
-                    <h5>Добавить Клиент</h5>
+                    <h5>Добавить Партнеры</h5>
                 </div>
-                <form action="{{ route('dashboard.client.store') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('dashboard.partner.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="card-body">
                         <div class="row">
@@ -61,7 +61,7 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-md-10">
-                            <h5>Все Клиент</h5>
+                            <h5>Все Партнеры</h5>
                         </div>
                     </div>
                 </div>
@@ -76,15 +76,15 @@
                         </thead>
                         <tbody>
 
-                            @foreach ($clients as $key => $client)
+                            @foreach ($partners as $key => $partner)
                                 <tr>
                                     <th scope="row">{{ ++$key }}</th>
-                                    <td>{{ $client->name_ru }}</td>
+                                    <td>{{ $partner->name_ru }}</td>
                                     <td class="text-center">
                                         <button class="btn btn-xs btn-success" type="button" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModalCenter{{ $client->id }}Edit"><i
+                                            data-bs-target="#exampleModalCenter{{ $partner->id }}Edit"><i
                                                 class="bx bx-pencil"></i>Изменить</button>
-                                        <div class="modal fade" id="exampleModalCenter{{ $client->id }}Edit"
+                                        <div class="modal fade" id="exampleModalCenter{{ $partner->id }}Edit"
                                             tabindex="-1" aria-labelledby="exampleModalCenter" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog-centered" role="document"
                                                 style="max-width: 50vw">
@@ -93,7 +93,7 @@
                                                         <h5 class="modal-title">Изменить</h5>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <form action="{{ route('dashboard.client.update', $client) }}"
+                                                        <form action="{{ route('dashboard.partner.update', $partner) }}"
                                                             method="post" enctype="multipart/form-data">
                                                             @csrf
                                                             {{ method_field('put') }}
@@ -108,7 +108,7 @@
                                                                         <input class="form-control"
                                                                             id="exampleFormControlInput1" type="text"
                                                                             required name="name_ru"
-                                                                            value="{{ $client->name_ru }}">
+                                                                            value="{{ $partner->name_ru }}">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-4">
@@ -119,7 +119,7 @@
                                                                         <input class="form-control"
                                                                             id="exampleFormControlInput1" type="text"
                                                                             required name="name_uz"
-                                                                            value="{{ $client->name_uz }}">
+                                                                            value="{{ $partner->name_uz }}">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-4">
@@ -130,7 +130,7 @@
                                                                         <input class="form-control"
                                                                             id="exampleFormControlInput1" type="text"
                                                                             required name="name_en"
-                                                                            value="{{ $client->name_en }}">
+                                                                            value="{{ $partner->name_en }}">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -145,8 +145,8 @@
                 </div>
 
                 <button class="btn btn-xs btn-danger" type="button" data-bs-toggle="modal"
-                    data-bs-target="#exampleModalCenter{{ $client->id }}"><i class="bx bx-trash"></i>Удалить</button>
-                <div class="modal fade" id="exampleModalCenter{{ $client->id }}" tabindex="-1"
+                    data-bs-target="#exampleModalCenter{{ $partner->id }}"><i class="bx bx-trash"></i>Удалить</button>
+                <div class="modal fade" id="exampleModalCenter{{ $partner->id }}" tabindex="-1"
                     aria-labelledby="exampleModalCenter" style="display: none;" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
@@ -154,7 +154,7 @@
                                 <h5 class="modal-title">Удалить?</h5>
                             </div>
                             <div class="modal-footer">
-                                <form action="{{ route('dashboard.client.destroy', $client->id) }}" method="post">
+                                <form action="{{ route('dashboard.partner.destroy', $partner->id) }}" method="post">
                                     @csrf
                                     {{ method_field('delete') }}
                                     <button class="btn btn-primary" type="submit" data-bs-original-title=""

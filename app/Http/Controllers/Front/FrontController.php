@@ -22,13 +22,12 @@ class FrontController
         //     app()->setLocale(session()->get('locale'));
         // }
         // $lang = session()->get('locale');
-
-        $useprojects = UserProject::orderBy('id', 'desc')->get();
+        $useprojects = UserProject::orderBy('id', 'asc')->get();
         $newcategories = NewCategory::with('news')->orderBy('id', 'desc')->get();
-        $comments = Comment::orderBy('id', 'desc')->get();
-        $projects = Project::orderBy('id', 'desc')->get();
-        $mainsliders = MainSlider::orderBy('id', 'desc')->get();
-        $services = Service::orderBy('id', 'desc')->get();
+        $comments = Comment::orderBy('id', 'asc')->get();
+        $projects = Project::orderBy('id', 'asc')->get();
+        $mainsliders = MainSlider::orderBy('id', 'asc')->get();
+        $services = Service::orderBy('id', 'asc')->get();
         $metateg = HomeMetateg::find(1);
         return view('front.welcome', [
             'mainsliders'=>$mainsliders,

@@ -16,21 +16,25 @@
                             <div class="col-6">
                                 <div class="mb-3">
                                     <label class="form-label" for="exampleFormControlInput1">Фото</label>
+                                    
                                     <div class="col-12 text-center">
                                         <div class="col-6 text-center mt-3">
                                             <img style="height: 200px; width: 300px" src="{{ $project->photo }}">
                                         </div>
                                     </div>
+                                    <p>max.20 MB</p>
                                     <input class="form-control mt-2" id="exampleFormControlInput1" type="file" name="photo">
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="mb-3">
                                     <label class="form-label" for="exampleFormControlInput1">Второй фото</label>
+                                    
                                     <div class="col-12 text-center">
                                         <div class="col-6 text-center mt-3">
                                             <img style="height: 200px; width: 300px" src="{{ $project->second_photo }}">
                                         </div>
+                                        <p>max.20 MB</p>
                                     </div>
                                     <input class="form-control mt-2" id="exampleFormControlInput1" type="file"  name="second_photo">
                                 </div>

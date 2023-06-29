@@ -28,14 +28,14 @@
                             <div class="col-6">
                                 <div class="mb-3">
                                     <label class="form-label" for="exampleFormControlInput1">Фото </label>
-
+                                    <p>max.20 MB</p>
                                     <input class="form-control" id="exampleFormControlInput1" type="file" name="photo">
                                 </div>
                             </div>
                             <div class="col-6">
                                 <label class="form-label" for="exampleFormControlInput1">project</label>
                                 <div class="mb-3">
-                                    <select class="calc__type" name="project" id="calc__type" style="width: 100%; padding:6px 12px; border-color: #ced4da; border-radius: 5px">
+                                    <select class="calc__type" name="project" id="calc__type" style="width: 100%; padding:6px 12px; border-color: #ced4da; border-radius: 5px; margin-top: 35px;">
                                         @foreach ($projects as $project)
                                             <option value="{{ $project->id }}">{{ $project->name_ru }}</option>
                                         @endforeach
@@ -122,10 +122,11 @@
                                                                             <label class="form-label"
                                                                                 for="exampleFormControlInput1">Фото
                                                                             </label>
-                                                                            <div class="col-6 text-center">
+                                                                            <div class="col-12 text-center">
                                                                                 <img style="height: 100px; width: 100px"
                                                                                     src="{{ $projectto->photo }}">
                                                                             </div>
+                                                                            <p>max.20 MB</p>
                                                                             <input class="form-control mt-1"
                                                                                 id="exampleFormControlInput1" type="file"
                                                                                 name="photo">
@@ -134,9 +135,9 @@
                                                                     <div class="col-6">
                                                                         <label class="form-label"
                                                                             for="exampleFormControlInput1">project</label>
-                                                                        <div>
-                                                                            <i data-feather="loader" style="height: 100px; width: 100px"></i>
-                                                                            <select class="calc__type mt-6" name="project"
+                                                                        <div style="padding-top: 30px">
+                                                                            <i data-feather="loader" style="height: 100px; width: 100px; "></i>
+                                                                            <select class="calc__type" name="project"
                                                                                 id="calc__type" style="width: 100%; padding:6px 12px; border-color: #ced4da; border-radius: 5px">
                                                                                 @foreach ($projects as $project)
                                                                                     <option value="{{ $project->id }}">

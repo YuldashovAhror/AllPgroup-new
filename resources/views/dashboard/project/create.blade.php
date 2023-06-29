@@ -15,7 +15,7 @@
                                 <div class="mb-3">
                                     <label class="form-label" for="exampleFormControlInput1">Основной Фото</label>
                                     <div class="col-12 text-center">
-                                        <i data-feather="loader" style="height: 100px; width: 100px"></i>
+                                        <img class="mb-3" src="/issets/size.png" alt="" style="height: 150px; width: 150px">
                                     </div>
                                     <input class="form-control" id="exampleFormControlInput1" type="file" required name="photo">
                                 </div>
@@ -24,7 +24,7 @@
                                 <div class="mb-3">
                                     <label class="form-label" for="exampleFormControlInput1">Второй фото</label>
                                     <div class="col-12 text-center">
-                                        <i data-feather="loader" style="height: 100px; width: 100px"></i>
+                                        <img class="mb-3" src="/issets/size.png" alt="" style="height: 150px; width: 150px">
                                     </div>
                                     <input class="form-control" id="exampleFormControlInput1" type="file" required name="second_photo">
                                 </div>

@@ -109,31 +109,30 @@
 				
 			</div>
 		</div>
-		<!--<div class="about-management">-->
-		<!--	<div class="container">-->
-		<!--		<div class="about__title section-title">-->
-		<!--			{{__('asd.Менеджмент')}}-->
-		<!--		</div>-->
-		<!--		<ul class="about-management__list">-->
-		<!--			@foreach ($teams as $team)-->
-		<!--			<li class="about-management__item">-->
-		<!--				<div class="about-management__img">-->
-		<!--					<img src="{{$team->photo}}" alt="about">-->
-		<!--				</div>-->
-		<!--				<div class="about-management__wrap">-->
-		<!--					<div class="about-management__name">-->
-		<!--						{{$team['name_'.$lang]}}-->
-		<!--					</div>-->
-		<!--					<div class="about-management__pos">-->
-		<!--						{!!$team['discription_'.$lang]!!}-->
-		<!--					</div>-->
-		<!--				</div>-->
-		<!--			</li>-->
-		<!--			@endforeach-->
-					
-		<!--		</ul>-->
-		<!--	</div>-->
-		<!--</div>-->
+		<div class="about-management">
+			<div class="container">
+				<div class="about__title section-title">
+					{{__('asd.Менеджмент')}}
+				</div>
+				<ul class="about-management__list">
+					@foreach ($teams as $team)
+					<li class="about-management__item">
+						<div class="about-management__img">
+							<img src="{{$team->photo}}" alt="about">
+						</div>
+						<div class="about-management__wrap">
+							<div class="about-management__name">
+								{{$team['name_'.$lang]}}
+							</div>
+							<div class="about-management__pos">
+								{!!$team['discription_'.$lang]!!}
+							</div>
+						</div>
+					</li>
+					@endforeach	
+				</ul>
+			</div>
+		</div>
 	</section>
 	<!-- FOOTER -->
 	@include('components.front.footer')

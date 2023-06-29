@@ -20,6 +20,7 @@
                                             <img style="height: 200px; width: 300px" src="{{ $service->photo }}">
                                         </div>
                                     </div>
+                                    <p>max.20 MB</p>
                                     <input class="form-control mt-2" id="exampleFormControlInput1" type="file" name="photo">
                                 </div>
                             </div>
@@ -30,7 +31,9 @@
                                         <div class="col-6 text-center mt-3">
                                             <img style="height: 200px; width: 300px" src="{{ $service->second_photo }}">
                                         </div>
+
                                     </div>
+                                    <p>max.20 MB</p>
                                     <input class="form-control mt-2" id="exampleFormControlInput1" type="file"  name="second_photo">
                                 </div>
                             </div>

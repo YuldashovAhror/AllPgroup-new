@@ -13,6 +13,7 @@ class Feedback extends Model
         'client_id',
         'photo',
         'name',
+        'email',
         'phone',
         'discription',
         'vacancy_number',
@@ -21,5 +22,10 @@ class Feedback extends Model
     public function clients()
     {
         return $this->belongsTo(Client::class, 'client_id');
+    }
+
+    public function partners()
+    {
+        return $this->belongsTo(Partners::class, 'partner_id');
     }
 }
