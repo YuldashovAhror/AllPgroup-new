@@ -14,7 +14,7 @@ class UseProjectController extends BaseController
      */
     public function index()
     {
-        $useprojects = UserProject::orderBy('id', 'desc')->get();
+        $useprojects = UserProject::orderBy('id', 'asc')->get();
         return view('dashboard.useproject.crud', [
             'useprojects'=>$useprojects
         ]);
@@ -39,7 +39,7 @@ class UseProjectController extends BaseController
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:20480',
             'name_uz' => 'required|string|max:255',
             'name_ru' => 'required|string|max:255',
             'name_en' => 'required|string|max:255',
@@ -87,7 +87,7 @@ class UseProjectController extends BaseController
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
-            'photo' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'photo' => 'image|mimes:jpeg,png,jpg,gif|max:20480',
             'name_uz' => 'required|string|max:255',
             'name_ru' => 'required|string|max:255',
             'name_en' => 'required|string|max:255',

@@ -9,11 +9,6 @@ use Illuminate\Http\Request;
 
 class ProjectToController extends BaseController
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $projects = Project::orderBy('id', 'desc')->get();
@@ -24,26 +19,10 @@ class ProjectToController extends BaseController
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:20480',
             'discription_uz' => 'nullable',
             'discription_ru' => 'nullable',
             'discription_en' => 'nullable',
@@ -62,39 +41,10 @@ class ProjectToController extends BaseController
         return back()->with('success', 'Data uploaded successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
-            'photo' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'photo' => 'image|mimes:jpeg,png,jpg,gif|max:20480',
             'discription_uz' => 'nullable',
             'discription_ru' => 'nullable',
             'discription_en' => 'nullable',
@@ -115,12 +65,6 @@ class ProjectToController extends BaseController
         return back()->with('success', 'Data updated successfully.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         $projecttos = ProjectTo::find($id);

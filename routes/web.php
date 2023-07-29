@@ -3,17 +3,25 @@
 use App\Http\Controllers\Dashbaord\NewsToController;
 use App\Http\Controllers\Dashbaord\ProjectToController;
 use App\Http\Controllers\Dashbaord\ServiceToController;
+use App\Http\Controllers\DashboarAboutPhotoController;
+use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\Dashboard\ClientController;
 use App\Http\Controllers\Dashboard\CommentController;
+use App\Http\Controllers\Dashboard\EmailFileController;
 use App\Http\Controllers\Dashboard\FeedbackController;
+use App\Http\Controllers\Dashboard\FileController;
+use App\Http\Controllers\Dashboard\ItemController;
 use App\Http\Controllers\Dashboard\MainSliderController;
 use App\Http\Controllers\Dashboard\MetategController;
 use App\Http\Controllers\Dashboard\NewCategoryController;
 use App\Http\Controllers\Dashboard\NewsController;
 use App\Http\Controllers\Dashboard\NewsToController as DashboardNewsToController;
+use App\Http\Controllers\Dashboard\ParknyorController;
 use App\Http\Controllers\Dashboard\PartnersController;
+use App\Http\Controllers\Dashboard\PostavchikController;
 use App\Http\Controllers\Dashboard\ProjectController;
 use App\Http\Controllers\Dashboard\ProjectToController as DashboardProjectToController;
+use App\Http\Controllers\Dashboard\SectionController;
 use App\Http\Controllers\Dashboard\ServiceController;
 use App\Http\Controllers\Dashboard\ServiceToController as DashboardServiceToController;
 use App\Http\Controllers\Dashboard\StorieController;
@@ -22,6 +30,7 @@ use App\Http\Controllers\Dashboard\UseProjectController;
 use App\Http\Controllers\Dashboard\VacancyController;
 use App\Http\Controllers\Dashboard\WordController;
 use App\Http\Controllers\Front\AboutController;
+use App\Http\Controllers\Front\CategoryController as FrontCategoryController;
 use App\Http\Controllers\Front\ContactController;
 use App\Http\Controllers\Front\FeedbackController as FrontFeedbackController;
 use App\Http\Controllers\Front\NewsController as FrontNewsController;
@@ -52,7 +61,9 @@ Route::resource('news', FrontNewsController::class);
 Route::resource('/service', FrontServiceController::class);
 Route::resource('project', FrontProjectController::class);
 Route::resource('about', AboutController::class);
-Route::post('feedback/store', [FrontFeedbackController::class, 'store'])->name('front.feedback.store');
+Route::resource('category', FrontCategoryController::class);
+Route::post('/feedback/store', [FrontFeedbackController::class, 'store'])->name('front.feedback.store');
+
 Route::resource('/contact', ContactController::class);
 Route::get('/optimize', function (){
     \Illuminate\Support\Facades\Artisan::call('route:clear');
@@ -80,6 +91,22 @@ Route::group(['prefix' => 'dashboard'], function (){
         Route::resource('/news', NewsController::class);
         Route::resource('/storie', StorieController::class);
         Route::resource('/team', TeamController::class);
+        Route::resource('/category', CategoryController::class);
+        Route::resource('/parknyor', ParknyorController::class);
+        Route::resource('/aboutphoto', DashboarAboutPhotoController::class);
+        Route::resource('/postavchik', PostavchikController::class);
+        Route::resource('/file', FileController::class);
+        Route::resource('/emailfile', EmailFileController::class);
+
+        Route::get('service/{id}/section', [SectionController::class, 'index'])->name('section.index');
+        Route::post('section', [SectionController::class, 'store'])->name('section.store');
+        Route::put('section/{id}/update', [SectionController::class, 'update'])->name('section.update');
+        Route::delete('section/{id}', [SectionController::class, 'destroy'])->name('section.destroy');
+
+        Route::get('section/{id}/item', [ItemController::class, 'index'])->name('item.index');
+        Route::post('item', [ItemController::class, 'store'])->name('item.store');
+        Route::put('item/{id}/update', [ItemController::class, 'update'])->name('item.update');
+        Route::delete('item/{id}', [ItemController::class, 'destroy'])->name('item.destroy');
 
         Route::resource('/feedback', FeedbackController::class);
         Route::resource('/client', ClientController::class);

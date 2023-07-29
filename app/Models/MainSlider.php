@@ -10,6 +10,7 @@ class MainSlider extends Model
     use HasFactory;
 
     protected $fillable = [
+        'link',
         'photo',
         'name_uz',
         'name_ru',

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\NewCategory;
 use App\Models\News;
 use App\Models\NewsMetateg;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class NewsController extends Controller
@@ -19,9 +20,11 @@ class NewsController extends Controller
     {
         $newcategories = NewCategory::with('news')->orderBy('id', 'desc')->get();
         $metateg = NewsMetateg::find(1);
+        $services = Service::orderBy('id', 'asc')->get();
         return view('front.news.news', [
             'newcategories'=>$newcategories,
             'metateg'=>$metateg,
+            'services'=>$services,
         ]);
     }
 

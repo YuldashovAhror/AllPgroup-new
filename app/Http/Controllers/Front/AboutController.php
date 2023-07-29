@@ -4,6 +4,10 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\AboutMetateg;
+use App\Models\AboutPhoto;
+use App\Models\Parknyor;
+use App\Models\Postavchik;
+use App\Models\Service;
 use App\Models\Storie;
 use App\Models\Team;
 use Illuminate\Http\Request;
@@ -17,13 +21,21 @@ class AboutController extends Controller
      */
     public function index()
     {
-        $stories = Storie::orderBy('id', 'desc')->get();
+        $stories = Storie::orderBy('id')->get();
         $teams = Team::orderBy('id', 'desc')->get();
+        $parknyors = Parknyor::orderBy('id', 'desc')->get();
+        $postavchiks = Postavchik::orderBy('id', 'desc')->get();
         $metateg = AboutMetateg::find(1);
+        $aboutphoto = AboutPhoto::find(1);
+        $services = Service::orderBy('id', 'asc')->get();
         return view('front.about', [
             'stories'=>$stories,
             'teams'=>$teams,
             'metateg'=>$metateg,
+            'services'=>$services,
+            'parknyors'=>$parknyors,
+            'aboutphoto'=>$aboutphoto,
+            'postavchiks'=>$postavchiks,
         ]);
     }
 

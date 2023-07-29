@@ -26,10 +26,9 @@
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Основной Фото</th>
-                                <th scope="col">Второй Фото</th>
-                                <th scope="col">Заголовок</th>
-                                <th scope="col">Позиция</th>
+                                <th scope="col">Фото</th>
+                                <th scope="col">Название</th>
+                                <th scope="col">Разделы</th>
                                 <th scope="col" class="text-center">Действия</th>
                             </tr>
                         </thead>
@@ -41,10 +40,8 @@
                                     <th scope="row">{{ $k }}</th>
                                     <td><img src="{{ $service->photo }}" alt="" style="height: 100px; width: 200px">
                                     </td>
-                                    <td><img src="{{ $service->second_photo }}" alt=""
-                                            style="height: 100px; width: 200px"></td>
                                     <td>{{ $service->name_ru }}</td>
-                                    <td>{{ $service->title_ru }}</td>
+                                    <td class="text-center"><a href="{{ route('dashboard.section.index', $service) }}"><button class="btn btn-primary"><i class="bx bxs-file-doc"></i>+</button></a></td>
                                     <td class="text-center">
                                         <a href="{{ route('dashboard.Service.edit', $service) }}">
                                             <button class="btn btn-xs btn-success mb-1">Изменить

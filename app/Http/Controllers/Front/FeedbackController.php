@@ -38,7 +38,7 @@ class FeedbackController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+
         $feedback = new Feedback();
         if(!empty($request->file('photo'))){
             $img_name = Str::random(10).'.'.$request->file('photo')->getClientOriginalExtension();
@@ -49,6 +49,7 @@ class FeedbackController extends Controller
         $feedback->partner_id = $request->partner;
         $feedback->name = $request->name;
         $feedback->phone = $request->phone;
+        $feedback->email = $request->email;
         $feedback->discription = $request->discription;
         $feedback->vacancy_number = $request->vacancy_number;
         $feedback->save();

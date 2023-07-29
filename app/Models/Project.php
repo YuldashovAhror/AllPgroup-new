@@ -10,6 +10,7 @@ class Project extends Model
     use HasFactory;
 
     protected $fillable = [
+        'category_id',
         'photo',
         'second_photo',
         'name_uz',
@@ -23,5 +24,9 @@ class Project extends Model
     public function projecttos()
     {
         return $this->hasMany(ProjectTo::class, 'project_id');
+    }
+    public function categories()
+    {
+        return $this->belongsTo(Category::class, 'category_id');
     }
 }

@@ -103,6 +103,11 @@
 						{!! $new->youtube !!}
 
                 </div>
+                
+                
+                <button class="single-main__btn btn feedback-open">
+					{{__('asd.Консультация со специалистом')}}
+				</button>
 
             </div>
             <div class="single-side">
@@ -124,6 +129,29 @@
             </div>
         </div>
     </section>
+    
+    
+    
+	<div class="single-get">
+		<div class="container">
+			<div class="get">
+				<div class="get-wrap">
+					<div class="get__title">
+						{{__('asd.Получите презентацию о компании All-P Group (Олпи Груп) и каталог реализованных проектов на  e-mail :')}}
+					</div>
+					<div class="get__form">
+						<input type="email" placeholder="e-mail">
+						<button class="btn btn-white">
+							{{__('asd.Получить')}}
+						</button>
+					</div>
+				</div>
+				<div class="get__img">
+					<img src="/issets/img/get.png" alt="get">
+				</div>
+			</div>
+		</div>
+	</div>
 
     <!-- FOOTER -->
 

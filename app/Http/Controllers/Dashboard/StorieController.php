@@ -15,7 +15,7 @@ class StorieController extends Controller
      */
     public function index()
     {
-        $stories = Storie::orderBy('id', 'desc')->get();
+        $stories = Storie::orderBy('id', 'asc')->get();
         return view('dashboard.stories.crud', [
             'stories'=>$stories
         ]);

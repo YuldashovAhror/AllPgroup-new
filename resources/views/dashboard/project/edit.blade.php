@@ -12,8 +12,22 @@
                     {{ method_field('put') }}
                     <div class="card-body">
                         <div class="row">
-                            
-                            <div class="col-6">
+                            <div class="col-4">
+                                <label class="form-label" for="exampleFormControlInput1">Категории</label>
+                                <div class="col-12 text-center">
+                                    <img class="mb-3" src="/issets/size.png" alt=""
+                                    style="height: 242px; width: 270px">
+                                </div>
+                                <div>
+                                    <select class="calc__type" name="category_id" id="calc__type"
+                                        style="width: 100%; padding:6px 12px; border-color: #ced4da; border-radius: 5px">
+                                        @foreach ($categories as $category)
+                                            <option value="{{ $category->id }}">{{ $category->name_ru }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-4">
                                 <div class="mb-3">
                                     <label class="form-label" for="exampleFormControlInput1">Фото</label>
                                     
@@ -26,7 +40,7 @@
                                     <input class="form-control mt-2" id="exampleFormControlInput1" type="file" name="photo">
                                 </div>
                             </div>
-                            <div class="col-6">
+                            <div class="col-4">
                                 <div class="mb-3">
                                     <label class="form-label" for="exampleFormControlInput1">Второй фото</label>
                                     

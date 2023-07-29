@@ -12,9 +12,21 @@
                 </a>
             </li>
             <li>
-                <a href="{{route('service.index')}}">
+                <a href="#">
                     {{__('asd.НАШИ УСЛУГИ')}}
                 </a>
+                {{-- {{route('service.index')}} --}}
+                <!-- changes -->
+                
+                <div class="submenu">
+					@foreach (App\Models\Service::all() as $service)
+                        <div>
+                            <a href="{{route('service.show', $service->id)}}">
+                                {{$service['name_'.$lang]}}
+                            </a>
+                        </div>
+                    @endforeach
+				</div>
             </li>
             <li>
                 <a href="{{route('project.index')}}">

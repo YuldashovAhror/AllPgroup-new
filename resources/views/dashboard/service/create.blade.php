@@ -12,22 +12,13 @@
                     @csrf
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-6">
+                            <div class="col-12">
                                 <div class="mb-3">
-                                    <label class="form-label" for="exampleFormControlInput1">Основной Фото</label>
+                                    <label class="form-label" for="exampleFormControlInput1">Фото</label>
                                     <div class="col-12 text-center">
                                         <img class="mb-3" src="/issets/size.png" alt="" style="height: 150px; width: 150px">
                                     </div>
                                     <input class="form-control" id="exampleFormControlInput1" type="file" required name="photo">
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="mb-3">
-                                    <label class="form-label" for="exampleFormControlInput1">Второй фото</label>
-                                    <div class="col-12 text-center">
-                                        <img class="mb-3" src="/issets/size.png" alt="" style="height: 150px; width: 150px">
-                                    </div>
-                                    <input class="form-control" id="exampleFormControlInput1" type="file" required name="second_photo">
                                 </div>
                             </div>
                         </div>
@@ -44,22 +35,6 @@
                                 <label class="form-label" for="name_en">Название En</label>
                                 <div class="input-group">
                                     <input class="form-control" name="name_en" id="name_en" type="text" placeholder="..." aria-describedby="inputGroupPrepend2" required="" value="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <label class="form-label" for="title_uz">Заголовок Uz</label>
-                                <input class="form-control" name="title_uz" id="title_uz" type="text" placeholder="..." required value="">
-                            </div>
-                            <div class="col-md-4">
-                                <label class="form-label" for="title_ru">Заголовок Ru</label>
-                                <input class="form-control" name="title_ru" id="title_ru" type="text" placeholder="..." required value="">
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label class="form-label" for="title_en">Заголовок En</label>
-                                <div class="input-group">
-                                    <input class="form-control" name="title_en" id="title_en" type="text" placeholder="..." required aria-describedby="inputGroupPrepend2" value="">
                                 </div>
                             </div>
                         </div>

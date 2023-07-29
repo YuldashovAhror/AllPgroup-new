@@ -29,6 +29,7 @@
                                 <th scope="col">Основной Фото</th>
                                 <th scope="col">Второй Фото</th>
                                 <th scope="col">Название</th>
+                                <th scope="col">Категории Название</th>
                                 <th scope="col" class="text-center">Действия</th>
                             </tr>
                         </thead>
@@ -43,6 +44,12 @@
                                     <td><img src="{{ $project->second_photo }}" alt=""
                                             style="height: 100px; width: 200px"></td>
                                     <td>{{ $project->name_ru }}</td>
+                                    @if ($project->categories != null)
+                                        <td>{{ $project->name_ru }}</td>
+                                    @endif
+                                    @if ($project->categories == null)
+                                        <td><h3>Null</h3></td>
+                                    @endif
                                     <td class="text-center">
                                         <a href="{{ route('dashboard.project.edit', $project) }}">
                                             <button class="btn btn-xs btn-success mb-1">Изменить

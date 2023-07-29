@@ -60,6 +60,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label class="form-label" for="exampleFormControlInput1">Ссылки</label>
+                                    <input class="form-control" id="exampleFormControlInput1" required type="text"
+                                        name="link">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="card-footer text-end">
                         <button class="btn btn-primary" type="submit">Сохранить</button>
@@ -85,6 +94,7 @@
                                 <th scope="col">#</th>
                                 <th scope="col">Фото</th>
                                 <th scope="col">Название</th>
+                                <th scope="col">Ссылки</th>
                                 <th scope="col" class="text-center">Действия</th>
                             </tr>
                         </thead>
@@ -96,6 +106,7 @@
                                     <td><img src="{{ $mainslider->photo }}" alt=""
                                             style="height: 100px; width: 100px"></td>
                                     <td>{{ $mainslider->name_ru }}</td>
+                                    <td>{{ $mainslider->link }}</td>
                                     <td class="text-center">
                                         <button class="btn btn-xs btn-success" type="button" data-bs-toggle="modal"
                                             data-bs-target="#exampleModalCenter{{ $mainslider->id }}Edit"><i
@@ -169,7 +180,15 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-
+                                                                <div class="row">
+                                                                    <div class="col-12">
+                                                                        <div class="mb-3">
+                                                                            <label class="form-label" for="exampleFormControlInput1">Ссылки</label>
+                                                                            <input class="form-control" id="exampleFormControlInput1" required type="text"
+                                                                                name="link" value="{{ $mainslider->link }}">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                             <div class="card-footer text-end">
                                                                 <button class="btn btn-primary"

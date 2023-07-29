@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Project;
 use App\Models\ProjectTo;
 use Illuminate\Http\Request;
@@ -17,33 +18,27 @@ class ProjectController extends BaseController
 
     public function index()
     {
-        $projects = Project::orderBy('id', 'desc')->get();
+        $projects = Project::with('categories')->orderBy('id', 'asc')->get();
         return view('dashboard.project.index', [
             'projects'=>$projects
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        return view('dashboard.project.create');
+        $categories = Category::orderBy('id', 'desc')->get();
+        return view('dashboard.project.create', [
+            'categories'=>$categories
+        ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
+        // dd($request->all());
         $validatedData = $request->validate([
-            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'second_photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:20480',
+            'second_photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:20480',
+            'category_id' => 'required|string|',
             'name_uz' => 'required|string|max:255',
             'name_ru' => 'required|string|max:255',
             'name_en' => 'required|string|max:255',
@@ -63,43 +58,22 @@ class ProjectController extends BaseController
         return redirect()->route('dashboard.project.index')->with('success', 'Data uploaded successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
+        $categories = Category::orderBy('id', 'desc')->get();
         $project = Project::find($id);
         return view('dashboard.project.edit', [
-            'project'=>$project
+            'project'=>$project,
+            'categories'=>$categories,
         ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
-            'photo' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
-            'second_photo' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'photo' => 'image|mimes:jpeg,png,jpg,gif|max:20480',
+            'second_photo' => 'image|mimes:jpeg,png,jpg,gif|max:20480',
+            'category_id' => 'required|string|',
             'name_uz' => 'required|string|max:255',
             'name_ru' => 'required|string|max:255',
             'name_en' => 'required|string|max:255',
@@ -118,15 +92,9 @@ class ProjectController extends BaseController
         }
         
         Project::find($id)->update($validatedData);
-        return redirect()->route('dashboard.project.index');
+        return redirect()->route('dashboard.project.index')->with('success', 'Data updated successfully.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         $this->fileDelete('\Project', $id, 'photo');

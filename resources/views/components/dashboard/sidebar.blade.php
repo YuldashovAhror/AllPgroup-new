@@ -22,7 +22,7 @@
                         <ul class="nav-submenu menu-content">
                             <li><a href="{{route('dashboard.Service.index')}}">Лист</a></li>
                             <li><a href="{{route('dashboard.Service.create')}}">Создать</a></li>
-                            <li><a href="{{route('dashboard.serviceto.index')}}">Дополнения к Услугe</a></li>
+                            <li><a href="{{route('dashboard.file.index')}}">Файлы</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -46,6 +46,7 @@
                     </li>
                     <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="file-text"></i><span>Проект</span></a>
                         <ul class="nav-submenu menu-content">
+                            <li><a href="{{route('dashboard.category.index')}}">Категории</a></li>
                             <li><a href="{{route('dashboard.project.index')}}">Лист</a></li>
                             <li><a href="{{route('dashboard.project.create')}}">Создать</a></li>
                             <li><a href="{{route('dashboard.projectto.index')}}">Дополнения к проекту</a></li>
@@ -76,7 +77,23 @@
                             </i><span>Вакансия</span>
                         </a>
                     </li>
-                    
+                    <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="file-text"></i><span>О компании</span></a>
+                        <ul class="nav-submenu menu-content">
+                            <li><a href="{{route('dashboard.parknyor.index')}}">О компании Партнеры</a></li>
+                            <li><a href="{{route('dashboard.aboutphoto.index')}}">О кампании фото</a></li>
+                            <li><a href="{{route('dashboard.postavchik.index')}}">Наши поставщики</a></li>
+                        </ul>
+                    </li>
+                    {{-- <li class="dropdown">
+                        <a class="nav-link menu-title link-nav" href="{{route('dashboard.parknyor.index')}}"><i data-feather="file-text">
+                            </i><span>О компании Партнеры</span>
+                        </a>
+                    </li> --}}
+                    <li class="dropdown">
+                        <a class="nav-link menu-title link-nav" href="{{route('dashboard.emailfile.index')}}"><i data-feather="file-text">
+                            </i><span>Электронный файл</span>
+                        </a>
+                    </li>
                     <li class="dropdown">
                         <a class="nav-link menu-title link-nav" href="{{route('dashboard.words.index')}}"><i data-feather="file-text">
                             </i><span>Словарь</span>

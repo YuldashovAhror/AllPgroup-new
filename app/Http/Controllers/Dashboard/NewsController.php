@@ -19,17 +19,12 @@ class NewsController extends BaseController
     public function index()
     {
         
-        $news = News::with('newcategories')->orderBy('id', 'desc')->get();
+        $news = News::with('newcategories')->orderBy('id', 'asc')->get();
         return view('dashboard.news.index', [
             'news'=>$news,
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         $categories = NewCategory::orderBy('id', 'desc')->get();
@@ -38,17 +33,11 @@ class NewsController extends BaseController
         ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'second_photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:20480',
+            'second_photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:20480',
             'name_uz' => 'required|string|max:255',
             'name_ru' => 'required|string|max:255',
             'name_en' => 'required|string|max:255',
@@ -80,23 +69,11 @@ class NewsController extends BaseController
         return redirect()->route('dashboard.news.index')->with('success', 'Data uploaded successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $categories = NewCategory::orderBy('id', 'desc')->get();
@@ -107,18 +84,11 @@ class NewsController extends BaseController
         ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         // dd($request->all());
         $validatedData = $request->validate([
-            'photo' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'photo' => 'image|mimes:jpeg,png,jpg,gif|max:20480',
             'second_photo' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
             'name_uz' => 'required|string|max:255',
             'name_ru' => 'required|string|max:255',
@@ -153,12 +123,6 @@ class NewsController extends BaseController
         return redirect()->route('dashboard.news.index')->with('success', 'Data updated successfully.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         $new = News::find($id);

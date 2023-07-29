@@ -12,29 +12,16 @@
                     {{ method_field('put') }}
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-6">
+                            <div class="col-12">
                                 <div class="mb-3">
                                     <label class="form-label" for="exampleFormControlInput1">Фото</label>
                                     <div class="col-12 text-center">
-                                        <div class="col-6 text-center mt-3">
+                                        <div class="col-12 text-center mt-3">
                                             <img style="height: 200px; width: 300px" src="{{ $service->photo }}">
+                                            <p>max.20 MB</p>
                                         </div>
                                     </div>
-                                    <p>max.20 MB</p>
                                     <input class="form-control mt-2" id="exampleFormControlInput1" type="file" name="photo">
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="mb-3">
-                                    <label class="form-label" for="exampleFormControlInput1">Второй фото</label>
-                                    <div class="col-12 text-center">
-                                        <div class="col-6 text-center mt-3">
-                                            <img style="height: 200px; width: 300px" src="{{ $service->second_photo }}">
-                                        </div>
-
-                                    </div>
-                                    <p>max.20 MB</p>
-                                    <input class="form-control mt-2" id="exampleFormControlInput1" type="file"  name="second_photo">
                                 </div>
                             </div>
                         </div>
@@ -51,22 +38,6 @@
                                 <label class="form-label" for="name_en">Название En</label>
                                 <div class="input-group">
                                     <input class="form-control" name="name_en" id="name_en" type="text" placeholder="..." aria-describedby="inputGroupPrepend2" required="" value="{{$service->name_en}}">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <label class="form-label" for="title_uz">Заголовок Uz</label>
-                                <input class="form-control" name="title_uz" id="title_uz" type="text" placeholder="..." required value="{{$service->title_uz}}">
-                            </div>
-                            <div class="col-md-4">
-                                <label class="form-label" for="title_ru">Заголовок Ru</label>
-                                <input class="form-control" name="title_ru" id="title_ru" type="text" placeholder="..." required value="{{$service->title_ru}}">
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label class="form-label" for="title_en">Заголовок En</label>
-                                <div class="input-group">
-                                    <input class="form-control" name="title_en" id="title_en" type="text" placeholder="..." required aria-describedby="inputGroupPrepend2" value="{{$service->title_en}}">
                                 </div>
                             </div>
                         </div>

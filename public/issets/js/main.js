@@ -12,6 +12,15 @@ $(window).on('load', () => {
         $(this).toggleClass('active')
         $('.mobile-menu').slideToggle(500)
     })
+    
+    $('.header-submenu').mouseenter(function() {
+        $(this).find('.submenu').fadeIn(400)
+    })
+
+    $('.submenu').mouseleave(function() {
+        $(this).fadeOut(400)
+    })
+
 
 
     //_______________MAIN________________
@@ -34,6 +43,30 @@ $(window).on('load', () => {
         $(this).parent().addClass('hover')
     }, function() {
         $(this).parent().removeClass('hover')
+    })
+    
+    
+    //_________________NUMBERS_________________
+
+    let showCounter = true;
+    $(window).on("scroll load resize", function () {
+        if (!showCounter) return false; 
+        let w_top = $(window).scrollTop()
+        if (w_top >= $(window).height()/5) {
+            
+            $(".numbers-item__square span").each(function() {
+            $(this).prop("col",0).animate({
+                    counter:$(this).text()},{
+                    duration: 3000,
+                    easing: "swing",
+                    step:function(now){
+                        $(this).text(Math.ceil(now));
+                    }
+                });
+            });
+            showCounter = false;
+        }
+
     })
 
 
@@ -59,6 +92,34 @@ $(window).on('load', () => {
 
     $('.services-arrows .arrow-right').click(() => {
         $('.services-carousel').trigger('next.owl.carousel', [700]);
+    })
+    
+    
+     let sectionIds = $('.services-side__list li a');
+
+    $(document).scroll(function(){
+        sectionIds.each(function(){ 
+
+            let container = $(this).attr('href')
+            let containerOffset = $(container).offset().top
+            let containerHeight = $(container).outerHeight()
+            let containerBottom = containerOffset + containerHeight;
+            let scrollPosition = $(document).scrollTop();
+
+            if(scrollPosition < containerBottom - 6*rootFont && scrollPosition >= containerOffset - 6*rootFont){
+                sectionIds.removeClass('current')
+                $(this).addClass('current')
+            } 
+
+
+        });
+    })
+
+    $('.services-side__list li a').click(function(e) {
+        e.preventDefault()
+        let container = $(this).attr('href')
+        let containerOffset = $(container).offset().top
+        window.scrollTo({top: containerOffset - 6*rootFont, behavior: 'smooth'})
     })
 
 
@@ -100,7 +161,12 @@ $(window).on('load', () => {
     $('.area-arrows .arrow-right').click(() => {
         $('.area-carousel').trigger('next.owl.carousel', [700]);
     })
-
+    
+    
+    if($(window).width() < 768) {
+        $('.area-carousel').owlCarousel('destroy') 
+        $('.area-carousel').removeClass('owl-carousel')
+    }
 
     
     //_______________PROJECTS________________
@@ -135,19 +201,50 @@ $(window).on('load', () => {
     $('.projects-arrows .arrow-right').click(() => {
         $('.projects-carousel').trigger('next.owl.carousel', [700]);
     })
+    
+    
+        
+    //______________ABOUT________________
 
 
-    $('.projects-faq__question').click(function() {
-        if($(this).parent().hasClass('active')) {
-            $(this).parent().removeClass('active')
-            $(this).parent().find('.projects-faq__answer').slideUp(400)
-        } else {
-            $('.projects-faq__item').removeClass('active')
-            $('.projects-faq__answer').slideUp(400)
-            $(this).parent().addClass('active')
-            $(this).parent().find('.projects-faq__answer').slideDown(400)
+    $('.about-provider__carousel').owlCarousel({
+        smartSpeed: 1000,
+        dots: false,
+        nav: false,
+        items: 1,
+        margin: rootFont*2,
+        mouseDrag: false,
+        loop: true,
+        responsive: {
+            0: {
+                items: 1,
+                stagePadding: rootFont*2.5,
+                margin: rootFont,
+            },
+
+            500: {
+                items: 2,
+            },
+    
+            992: {
+                items: 3,
+            },
+
+            1200: {
+                items: 4,
+            },
         }
     })
+
+
+    $('.about-arrows .arrow-left').click(() => {
+        $('.about-provider__carousel').trigger('prev.owl.carousel', [700]);
+    })
+
+    $('.about-arrows .arrow-right').click(() => {
+        $('.about-provider__carousel').trigger('next.owl.carousel', [700]);
+    })
+
 
 
     // __________NEWS__________
@@ -227,6 +324,12 @@ $(window).on('load', () => {
     
     
     //_____________FEEDBACK_________________
+    
+    
+    $('.services-main__content button').click(e => {
+        e.preventDefault()
+        $('.feedback').fadeIn(600); 
+    })
 
 
     $('.feedback-open').click(e => {

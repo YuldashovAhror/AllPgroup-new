@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('name_uz')->nullable();
             $table->string('name_ru')->nullable();
             $table->string('name_en')->nullable();
+            $table->string('link')->nullable();
             $table->timestamps();
         });
     }

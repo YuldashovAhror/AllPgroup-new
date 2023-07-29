@@ -11,20 +11,16 @@ class Service extends Model
 
     protected $fillable = [
         'photo',
-        'second_photo',
         'name_uz',
         'name_ru',
         'name_en',
-        'title_uz',
-        'title_ru',
-        'title_en',
         'discription_uz',
         'discription_ru',
         'discription_en',
     ];
 
-    public function servicetos()
+    public function sections()
     {
-        return $this->hasMany(ServiceTo::class, 'service_id');
+        return $this->hasMany(Section::class, 'service_id');
     }
 }

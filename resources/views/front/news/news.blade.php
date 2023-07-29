@@ -83,15 +83,15 @@
 								<div class="news-item__title">
 									{{$new['name_'.$lang]}}
 								</div>
-								<div class="news-item__date">
-									<strong>{{$new->date}}</strong>
-								</div>
 								<div class="news-item__text">
 									{{-- {!!$new['discription_'.$lang]!!} --}}
 									{!!mb_substr($new['discription_'.$lang], 0, 500)!!}...
 								</div>
 							</div>
 							<div class="news-item__bot">
+								<div class="news-item__date">
+									<strong>{{$new->date}}</strong>
+								</div>
 								<a href="{{route('news.show', $new)}}" class="news-item__btn btn btn-gray">
 									{{__('asd.Читать подробнее')}}
 								</a>

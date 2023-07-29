@@ -29,6 +29,7 @@
                                 <th scope="col">Клиент</th>
                                 <th scope="col">Партнеры</th>
                                 <th scope="col">Название</th>
+                                <th scope="col">Электронная почта</th>
                                 <th scope="col">Фото</th>
                                 <th scope="col">Телефон</th>
                                 <th scope="col">Описание</th>
@@ -58,6 +59,7 @@
                                         </td>
                                     @endif
                                     <td>{{ $feedback->name }}</td>
+                                    <td>{{ $feedback->email }}</td>
                                     {{-- <td><img src="{{ $feedback->photo }}" alt=""></td> --}}
                                     @if ($feedback->photo != null)
                                         <td><a href="{{ $feedback->photo }}"><img src="{{ $feedback->photo }}"
@@ -68,6 +70,7 @@
                                             <h3>null</h3>
                                         </td>
                                     @endif
+                                    
                                     <td>{{ $feedback->phone }}</td>
                                     <td>{{ $feedback->discription }}</td>
                                     <td class="text-center">
