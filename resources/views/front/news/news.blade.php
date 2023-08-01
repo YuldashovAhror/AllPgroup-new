@@ -52,7 +52,7 @@
 
 	<section class="page-head">
 		<div class="page-head__img">
-			<img src="issets/img/news-bg.jpg" alt="contact">
+			<img src="issets/img/news-bg.jpg" alt="{{$metateg->name}}">
 		</div>
 		<h1 class="page-head__title">
 			{{__('asd.Новости')}}
@@ -76,7 +76,7 @@
 					@foreach ($category->news as $new)
 					<div class="news-item">
 						<div class="news-item__img">
-							<img src="{{$new->photo}}" alt="img">
+							<img src="{{$new->photo}}" alt="{{$new['name_'.$lang]}}">
 						</div>
 						<div class="news-item__wrap">
 							<div class="news-item__top">

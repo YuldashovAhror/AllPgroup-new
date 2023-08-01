@@ -111,7 +111,7 @@
     </div>
     <section class="page-head">
         <div class="page-head__img">
-            <img src="{{$serviceess->photo}}" alt="services">
+            <img src="{{$serviceess->photo}}" alt="{{ $serviceess['name_' . $lang] }}">
         </div>
         <h1 class="page-head__title">
             {{ $serviceess['name_' . $lang] }}
@@ -135,7 +135,7 @@
                                 <ul class="services-side__list">
                                     @foreach ($service->sections as $section)
                                         <li>
-                                            <a href="#{{ $section->name_uz }}"
+                                            <a href="#{{ $section->id }}"
                                                 class="current">{{ $section['name_' . $lang] }}</a>
                                         </li>
                                     @endforeach
@@ -152,7 +152,7 @@
                             </p>
                         </div>
                         @foreach ($sections as $section)
-                            <section class="services-main__block" id="{{ $section->name_uz }}" >
+                            <section class="services-main__block" id="{{ $section->id }}" >
                                 <div >
                                     <h3 class="services-main__title">
                                         {{ $section['name_' . $lang] }}
@@ -170,14 +170,14 @@
                                                     {!! $item['discription_' . $lang] !!}
                                                 </p>
                                             </div>
-                                            @if ($item->ok != null)
+                                            @if ($item->ok != 0)
                                                 <button class="services-main__btn feedback-open">
                                                     {{ __('asd.Рассчитать стоимость монтажа') }}
                                                 </button>
                                             @endif
                                         </div>
                                     @endforeach
-                                    @if ($service->ok != null)
+                                    @if ($service->ok != 0)
                                         <button class="services-main__btn feedback-open">
                                             {{ __('asd.Рассчитать стоимость монтажа') }}
                                         </button>

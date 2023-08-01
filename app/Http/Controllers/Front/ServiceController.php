@@ -24,6 +24,7 @@ class ServiceController extends Controller
     {
         $services = Service::with('sections')->orderBy('id', 'desc')->get();
         $serviceess = Service::find($id);
+        $serviceess->increment('view');
         $sections = Section::with('items')->where('service_id', $serviceess->id)->get();
         return view('front.service.services', [
             'serviceess'=>$serviceess,

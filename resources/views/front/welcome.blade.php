@@ -103,7 +103,6 @@
         </div>
     </div>
 
-
     <!-- CHAT -->
 
     @include('components.front.logo')
@@ -123,7 +122,7 @@
                 <div class="main-item">
                     <div class="container">
                         <div class="main-item__img">
-                            <img src="{{ $mainslider->photo }}" alt="main">
+                            <img src="{{ $mainslider->photo }}" alt="{{ $mainslider['name_' . $lang] }}">
                         </div>
                         <h2 class="main-item__title">
                             {{ $mainslider['name_' . $lang] }}
@@ -210,48 +209,6 @@
             </div>
         </div>
     </section>
-
-    <!-- SERVICES -->
-
-    <!-- changes -->
-
-    <!--	<section class="services">
-  <div class="services-arrows arrows">
-   <span class="arrow-left">
-    <img src="issets/img/arrow-left.svg" alt="ico">
-   </span>
-   <span class="arrow-right">
-    <img src="issets/img/arrow-right.svg" alt="ico">
-   </span>
-  </div>
-  <div class="container">
-   <div class="services-carousel owl-carousel">
-    @foreach ($services as $service)
-<div class="services-item">
-     <div class="services-item__wrap">
-      <h2 class="services__title section-title section-title-white">
-       {{ $service['name_' . $lang] }}
-      </h2>
-      <div class="services-item__title">
-       {{ $service['title_' . $lang] }}
-      </div>
-      <div class="services-item__text">
-       {!! $service['discription_' . $lang] !!}
-      </div>
-      <a href="{{ route('service.show', $service->id) }}" class="services-item__btn btn btn-white">
-       {{ __('asd.Узнать подробнее') }}
-      </a>
-     </div>
-     <div class="services-item__img">
-      <img src="{{ $service->photo }}" alt="services">
-     </div>
-    </div>
-@endforeach
-   </div>
-  </div>
- </section> -->
-
-
     <section class="services-page">
         <div class="container">
             <h2 class="section-title wow fadeInUp" data-wow-delay=".2s">
@@ -261,7 +218,7 @@
                 @foreach ($services as $service)
                     <li class="services-list__item">
                         <div class="services-list__img">
-                            <img src="{{ $service->photo }}" alt="service">
+                            <img src="{{ $service->photo }}" alt="{{ $service['name_' . $lang] }}">
                         </div>
                         <div class="services-list__wrap">
                             <div class="services-list__title">
@@ -300,7 +257,7 @@
                 @foreach ($useprojects as $useproject)
                     <div class="area-item">
                         <div class="area-item__img">
-                            <img src="{{ $useproject->photo }}" alt="area">
+                            <img src="{{ $useproject->photo }}" alt="{{ $useproject['name_' . $lang] }}">
                         </div>
                         <div class="area-item__title">
                             {{ $useproject['name_' . $lang] }}
@@ -401,7 +358,7 @@
                             <img src="{{ $project->photo }}" alt="project">
                         </div>
                         <div class="projects-item__name">
-                            {{ $project->name_uz }}
+                            {{ $project['name_'.$lang] }}
                         </div>
                         <a href="{{ route('project.show', $project) }}" class="projects-item__btn btn btn-white">
                             {{ __('asd.Узнать подробнее') }}
@@ -409,7 +366,7 @@
                     </div>
                 @endforeach
             </div>
-            <!--<h2 class="projects__title section-title section-title-white">-->
+            {{-- <!--<h2 class="projects__title section-title section-title-white">-->
             <!--	{{ __('asd.Часто задаваемые вопросы') }}-->
             <!--</h2>-->
             <!--<ul class="projects-faq">-->
@@ -427,8 +384,8 @@
             <!--		</div>-->
             <!--	</li>-->
             <!--
-@endforeach-->
-            <!--</ul>-->
+                @endforeach-->
+            <!--</ul>--> --}}
         </div>
     </section>
 
@@ -463,12 +420,15 @@
                     <div class="get__title">
                         {{ __('asd.Получите презентацию о компании All-P Group (Олпи Груп) и каталог реализованных проектов на e-mail :') }}
                     </div>
-                    <div class="get__form">
-                        <input type="email" placeholder="e-mail">
-                        <button class="btn btn-white">
-                            {{ __('asd.Получить') }}
-                        </button>
-                    </div>
+                    <form action="{{route('email.store')}}" method="POST">
+                        @csrf
+                        <div class="get__form">
+                            <input type="email" name="email_name" placeholder="e-mail">
+                            <button class="btn btn-white">
+                                {{ __('asd.Получить') }}
+                            </button>
+                        </div>
+                    </form>
                 </div>
                 <div class="get__img">
                     <img src="issets/img/get.png" alt="get">
@@ -479,60 +439,60 @@
 
     <!-- NEWS -->
 
-    <!--<section class="news">-->
-    <!--	<div class="container">-->
-    <!--			<div class="news-head">-->
-    <!--				<h2 class="news__title section-title">-->
-    <!--					{{ __('asd.Наши новости') }}-->
-    <!--				</h2>-->
-    <!--				<ul class="news-choose">-->
-    <!--					@foreach ($newcategories as $key => $category)
--->
-    <!--						<li @if ($key == 0) class="current" @endif>{{ $category->name_uz }}</li>-->
-    <!--
-@endforeach-->
-    <!--				</ul>-->
-    <!--			</div>-->
+        {{-- <!--<section class="news">-->
+        <!--	<div class="container">-->
+        <!--			<div class="news-head">-->
+        <!--				<h2 class="news__title section-title">-->
+        <!--					{{ __('asd.Наши новости') }}-->
+        <!--				</h2>-->
+        <!--				<ul class="news-choose">-->
+        <!--					@foreach ($newcategories as $key => $category)
+    -->
+        <!--						<li @if ($key == 0) class="current" @endif>{{ $category->name_uz }}</li>-->
+        <!--
+    @endforeach-->
+        <!--				</ul>-->
+        <!--			</div>-->
 
-    <!--			<div class="news-tabs">-->
-    <!--				@foreach ($newcategories as $key => $category)
--->
+        <!--			<div class="news-tabs">-->
+        <!--				@foreach ($newcategories as $key => $category)
+    -->
 
-    <!--					<div class="news-tab @if ($key == 0) current @endif">-->
-    <!--						@foreach ($category->news as $new)
--->
-    <!--							<div class="news-item">-->
-    <!--								<div class="news-item__img">-->
-    <!--									<img src="{{ $new->photo }}" alt="img">-->
-    <!--								</div>-->
-    <!--								<div class="news-item__wrap">-->
-    <!--									<div class="news-item__top">-->
-    <!--										<div class="news-item__title">-->
-    <!--											{{ $new['name_' . $lang] }}-->
-    <!--										</div>-->
-    <!--										<div class="news-item__date">-->
-    <!--											<strong>{{ $new->date }}</strong>-->
-    <!--										</div>-->
-    <!--										<div class="news-item__text">-->
-    <!--											{!! $new['discription_' . $lang] !!}-->
-    <!--										</div>-->
-    <!--									</div>-->
-    <!--									<div class="news-item__bot">-->
-    <!--										<a href="{{ route('news.show', $new) }}" class="news-item__btn btn btn-gray">-->
-    <!--											{{ __('asd.Читать подробнее') }}-->
-    <!--										</a>-->
-    <!--									</div>-->
-    <!--								</div>-->
-    <!--							</div>-->
-    <!--
-@endforeach-->
-    <!--					</div>-->
-    <!--
-@endforeach-->
-    <!--			</div>-->
+        <!--					<div class="news-tab @if ($key == 0) current @endif">-->
+        <!--						@foreach ($category->news as $new)
+    -->
+        <!--							<div class="news-item">-->
+        <!--								<div class="news-item__img">-->
+        <!--									<img src="{{ $new->photo }}" alt="img">-->
+        <!--								</div>-->
+        <!--								<div class="news-item__wrap">-->
+        <!--									<div class="news-item__top">-->
+        <!--										<div class="news-item__title">-->
+        <!--											{{ $new['name_' . $lang] }}-->
+        <!--										</div>-->
+        <!--										<div class="news-item__date">-->
+        <!--											<strong>{{ $new->date }}</strong>-->
+        <!--										</div>-->
+        <!--										<div class="news-item__text">-->
+        <!--											{!! $new['discription_' . $lang] !!}-->
+        <!--										</div>-->
+        <!--									</div>-->
+        <!--									<div class="news-item__bot">-->
+        <!--										<a href="{{ route('news.show', $new) }}" class="news-item__btn btn btn-gray">-->
+        <!--											{{ __('asd.Читать подробнее') }}-->
+        <!--										</a>-->
+        <!--									</div>-->
+        <!--								</div>-->
+        <!--							</div>-->
+        <!--
+    @endforeach-->
+        <!--					</div>-->
+        <!--
+    @endforeach-->
+        <!--			</div>--> --}}
 
 
-    <!--	</div>-->
+    {{-- <!--	</div>-->
     <!--</section>-->
 
     <!-- CONTACT -->
@@ -550,7 +510,7 @@
     <!-- changes -->
 
 
-    <!-- CONTACT -->
+    <!-- CONTACT --> --}}
 
     <section class="contact">
         <div class="contact-main">
@@ -559,9 +519,7 @@
                     {{ __('asd.Свяжитесь с нами') }}
                 </h2>
                 <div class="contact__text">
-                    {!! __(
-                        'asd.Если у Вас остались вопросы по реализации Вашего проекта, и хотите получить консультацию по продуктам и услугам - оставляйте заявку на сайте, в социальных сетях или по телефону: <a href="#">+998(99) 635-44-44.</a> Мы всегда рады Вам ответить!',
-                    ) !!}
+                    {!!__('asd.Если у Вас остались вопросы по реализации Вашего проекта, и хотите получить консультацию по продуктам и услугам - оставляйте заявку на сайте, в социальных сетях или по телефону: <a href="#">+998(99) 635-44-44.</a> Мы всегда рады Вам ответить!')!!}
                 </div>
                 <div class="get__form">
                     <input type="text" id="first_name1" placeholder="Ваше имя*">

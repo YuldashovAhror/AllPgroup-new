@@ -51,7 +51,7 @@
     <!-- PAGE-HEAD -->
     <section class="page-head">
         <div class="page-head__img">
-            <img src="/issets/img/about/bg.jpg" alt="about">
+            <img src="/issets/img/about/bg.jpg" alt="{{ $metateg->name }}">
         </div>
         <h1 class="page-head__title">
             {{ __('asd.О компании') }}
@@ -103,7 +103,7 @@
                     </div>
                 </div>
                 <div class="about-info__img">
-                    <img src="{{$aboutphoto->photo}}" alt="about">
+                    <img src="{{$aboutphoto->photo}}" alt="{{ $metateg->name }}">
                 </div>
             </div>
         </div>
@@ -125,7 +125,7 @@
                     @foreach ($postavchiks as $postavchik)
                     <a href="#" class="about-provider__item">
                         <div class="about-provider__img">
-                            <img src="{{$postavchik->photo}}" alt="provider">
+                            <img src="{{$postavchik->photo}}" alt="{!!$postavchik['discription_'.$lang]!!}">
                         </div>
                         <div class="about-provider__text">
                             {!!$postavchik['discription_'.$lang]!!}
@@ -177,7 +177,7 @@
                     @foreach ($teams as $team)
                         <li class="about-management__item">
                             <div class="about-management__img">
-                                <img src="{{ $team->photo }}" alt="about">
+                                <img src="{{ $team->photo }}" alt="{{ $team['name_' . $lang] }}">
                             </div>
                             <div class="about-management__wrap">
                                 <div class="about-management__name">
@@ -199,12 +199,15 @@
                     <div class="get__title">
                         {{__('asd.Получите презентацию о компании All-P Group (Олпи Груп) и каталог реализованных проектов на e-mail :')}}
                     </div>
-                    <div class="get__form">
-                        <input type="email" placeholder="e-mail">
-                        <button class="btn btn-white">
-                            {{__('asd.Получить')}}
-                        </button>
-                    </div>
+                    <form action="{{route('email.store')}}" method="POST">
+                        @csrf
+                        <div class="get__form">
+                            <input type="email" name="email_name" placeholder="e-mail">
+                            <button class="btn btn-white">
+                                {{ __('asd.Получить') }}
+                            </button>
+                        </div>
+                    </form>
                 </div>
                 <div class="get__img">
                     <img src="/issets/img/get.png" alt="get">

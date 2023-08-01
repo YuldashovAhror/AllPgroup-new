@@ -24,6 +24,7 @@ return new class extends Migration
             $table->text('discription_uz')->nullable();
             $table->text('discription_ru')->nullable();
             $table->text('discription_en')->nullable();
+            $table->integer('view')->default(0);
             $table->timestamps();
         });
     }

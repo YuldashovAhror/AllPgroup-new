@@ -19,6 +19,7 @@ class Project extends Model
         'discription_uz',
         'discription_ru',
         'discription_en',
+        'view',
     ];
 
     public function projecttos()

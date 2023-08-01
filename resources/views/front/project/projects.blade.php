@@ -37,7 +37,7 @@
 <body>
     <div class="preloader">
         <div class="preloader__logo">
-            <img src="/issets/img/logo-white.svg" alt="logo">
+            <img src="/issets/img/logo-white.svg" alt="{{ $metateg->name }}">
         </div>
     </div>
     <!-- FEEDBACK -->
@@ -144,7 +144,7 @@
                 @foreach ($projects as $project)
                     <li class="projects-item">
                         <div class="projects-item__img">
-                            <img src="{{ $project->photo }}" alt="projects">
+                            <img src="{{ $project->photo }}" alt="{{ $project['name_' . $lang] }}">
                         </div>
                         <div class="projects-item__name">
                             {{ $project['name_' . $lang] }}
@@ -161,12 +161,15 @@
                     <div class="get__title">
                         {{ __('asd.Получите презентацию о компании All-P Group (Олпи Груп) и каталог реализованных проектов на e-mail :') }}
                     </div>
-                    <div class="get__form">
-                        <input type="email" placeholder="e-mail">
-                        <button class="btn btn-white">
-                            {{ __('asd.Получить') }}
-                        </button>
-                    </div>
+                    <form action="{{route('email.store')}}" method="POST">
+                        @csrf
+                        <div class="get__form">
+                            <input type="email" name="email_name" placeholder="e-mail">
+                            <button class="btn btn-white">
+                                {{ __('asd.Получить') }}
+                            </button>
+                        </div>
+                    </form>
                 </div>
                 <div class="get__img">
                     <img src="/issets/img/get.png" alt="get">

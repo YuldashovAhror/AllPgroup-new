@@ -24,7 +24,7 @@
                 <!-- changes -->
 
                 <div class="submenu">
-                    @foreach (App\Models\Service::all() as $service)
+                    @foreach (App\Models\Service::orderBy('id', 'desc')->get() as $service)
                         <div>
                             <a href="{{route('service.show', $service->id)}}">
                                 {{$service['name_'.$lang]}}

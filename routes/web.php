@@ -32,6 +32,7 @@ use App\Http\Controllers\Dashboard\WordController;
 use App\Http\Controllers\Front\AboutController;
 use App\Http\Controllers\Front\CategoryController as FrontCategoryController;
 use App\Http\Controllers\Front\ContactController;
+use App\Http\Controllers\Front\EmailController;
 use App\Http\Controllers\Front\FeedbackController as FrontFeedbackController;
 use App\Http\Controllers\Front\NewsController as FrontNewsController;
 use App\Http\Controllers\Front\ProjectController as FrontProjectController;
@@ -62,6 +63,7 @@ Route::resource('/service', FrontServiceController::class);
 Route::resource('project', FrontProjectController::class);
 Route::resource('about', AboutController::class);
 Route::resource('category', FrontCategoryController::class);
+Route::resource('email', EmailController::class);
 Route::post('/feedback/store', [FrontFeedbackController::class, 'store'])->name('front.feedback.store');
 
 Route::resource('/contact', ContactController::class);
