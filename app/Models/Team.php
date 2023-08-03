@@ -17,5 +17,11 @@ class Team extends Model
         'type_uz',
         'type_ru',
         'type_en',
+        'alt_uz',
+        'alt_ru',
+        'alt_en',
+        'title_uz',
+        'title_ru',
+        'title_en',
     ];
 }

@@ -19,19 +19,19 @@
     <meta property="og:site_name" content="ALL-P Group">
     <meta property="og:description" content="{{ $metateg->discription }}">
     <meta property="og:url" content="https://all-p.uz/">
-    <meta property="og:image" content="{{ $metateg->photo }}">
+    <meta property="og:image" content="{{ $metateg->photo }}" alt="{{$metateg['alt_'.$lang]}}" title="{{$metateg['title_'.$lang]}}">
     <meta property="og:type" content="website">
 
     <!-- Google Plus -->
     <meta itemprop="name" content="ALL-P Group">
     <meta itemprop="description" content="{{ $metateg->discription }}">
-    <meta itemprop="image" content="{{ $metateg->photo }}">
+    <meta itemprop="image" content="{{ $metateg->photo }}" alt="{{$metateg['alt_'.$lang]}}" title="{{$metateg['title_'.$lang]}}">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ALL-P Group">
     <meta name="twitter:description" content="{{ $metateg->discription }}">
-    <meta name="twitter:image" content="{{ $metateg->photo }}">
+    <meta name="twitter:image" content="{{ $metateg->photo }}" alt="{{$metateg['alt_'.$lang]}}" title="{{$metateg['title_'.$lang]}}">
 </head>
 
 <body>
@@ -51,7 +51,7 @@
     <!-- PAGE-HEAD -->
     <section class="page-head">
         <div class="page-head__img">
-            <img src="/issets/img/about/bg.jpg" alt="{{ $metateg->name }}">
+            <img src="/issets/img/about/bg.jpg" alt="{{$metateg['alt_'.$lang]}}" title="{{$metateg['title_'.$lang]}}">
         </div>
         <h1 class="page-head__title">
             {{ __('asd.О компании') }}
@@ -85,7 +85,7 @@
                     <div class="about-info__partners">
                         @foreach ($parknyors as $parknyor)
                         <div class="about-info__partner">
-                            <img src="{{$parknyor->photo}}" alt="img">
+                            <img src="{{$parknyor->photo}}" alt="{{$parknyor['alt_'.$lang]}}" title="{{$parknyor['title_'.$lang]}}">
                         </div>
                         @endforeach
                         
@@ -103,7 +103,7 @@
                     </div>
                 </div>
                 <div class="about-info__img">
-                    <img src="{{$aboutphoto->photo}}" alt="{{ $metateg->name }}">
+                    <img src="{{$aboutphoto->photo}}" alt="{{$aboutphoto['alt_'.$lang]}}" title="{{$aboutphoto['title_'.$lang]}}">
                 </div>
             </div>
         </div>
@@ -125,7 +125,7 @@
                     @foreach ($postavchiks as $postavchik)
                     <a href="#" class="about-provider__item">
                         <div class="about-provider__img">
-                            <img src="{{$postavchik->photo}}" alt="{!!$postavchik['discription_'.$lang]!!}">
+                            <img src="{{$postavchik->photo}}" alt="{{$postavchik['alt_'.$lang]}}" title="{{$postavchik['title_'.$lang]}}">
                         </div>
                         <div class="about-provider__text">
                             {!!$postavchik['discription_'.$lang]!!}
@@ -177,7 +177,7 @@
                     @foreach ($teams as $team)
                         <li class="about-management__item">
                             <div class="about-management__img">
-                                <img src="{{ $team->photo }}" alt="{{ $team['name_' . $lang] }}">
+                                <img src="{{ $team->photo }}" alt="{{$team['alt_'.$lang]}}" title="{{$team['title_'.$lang]}}">
                             </div>
                             <div class="about-management__wrap">
                                 <div class="about-management__name">

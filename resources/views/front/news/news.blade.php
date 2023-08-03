@@ -18,19 +18,19 @@
     <meta property="og:site_name" content="ALL-P Group">
     <meta property="og:description" content="{{$metateg->discription}}">
     <meta property="og:url" content="https://all-p.uz/">
-    <meta property="og:image" content="{{$metateg->photo}}">
+    <meta property="og:image" content="{{$metateg->photo}}" alt="{{$metateg['alt_'.$lang]}}" title="{{$metateg['title_'.$lang]}}">
     <meta property="og:type" content="website">
 
     <!-- Google Plus -->
     <meta itemprop="name" content="ALL-P Group">
     <meta itemprop="description" content="{{$metateg->discription}}">
-    <meta itemprop="image" content="{{$metateg->photo}}">
+    <meta itemprop="image" content="{{$metateg->photo}}" alt="{{$metateg['alt_'.$lang]}}" title="{{$metateg['title_'.$lang]}}">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ALL-P Group">
     <meta name="twitter:description" content="{{$metateg->discription}}">
-    <meta name="twitter:image" content="{{$metateg->photo}}">
+    <meta name="twitter:image" content="{{$metateg->photo}}" alt="{{$metateg['alt_'.$lang]}}" title="{{$metateg['title_'.$lang]}}">
 </head>
 <body>
 
@@ -52,7 +52,7 @@
 
 	<section class="page-head">
 		<div class="page-head__img">
-			<img src="issets/img/news-bg.jpg" alt="{{$metateg->name}}">
+			<img src="issets/img/news-bg.jpg" alt="{{$metateg['alt_'.$lang]}}" title="{{$metateg['title_'.$lang]}}">
 		</div>
 		<h1 class="page-head__title">
 			{{__('asd.Новости')}}
@@ -76,7 +76,7 @@
 					@foreach ($category->news as $new)
 					<div class="news-item">
 						<div class="news-item__img">
-							<img src="{{$new->photo}}" alt="{{$new['name_'.$lang]}}">
+							<img src="{{$new->photo}}" alt="{{$new['alt_'.$lang]}}" title="{{$new['title_'.$lang]}}">
 						</div>
 						<div class="news-item__wrap">
 							<div class="news-item__top">

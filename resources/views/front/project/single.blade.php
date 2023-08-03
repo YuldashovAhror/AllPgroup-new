@@ -19,19 +19,19 @@
     <meta property="og:site_name" content="ALL-P Group">
     <meta property="og:description" content="{!! $project['discription_' . $lang] !!}">
     <meta property="og:url" content="https://all-p.uz/">
-    <meta property="og:image" content="{{ $project->photo }}">
+    <meta property="og:image" content="{{ $project->photo }}" alt="{{$project['alt_'.$lang]}}" title="{{$project['title_'.$lang]}}">
     <meta property="og:type" content="website">
 
     <!-- Google Plus -->
     <meta itemprop="name" content="ALL-P Group">
     <meta itemprop="description" content="{!! $project['discription_' . $lang] !!}">
-    <meta itemprop="image" content="{{ $project->photo }}">
+    <meta itemprop="image" content="{{ $project->photo }}" alt="{{$project['alt_'.$lang]}}" title="{{$project['title_'.$lang]}}">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ALL-P Group">
     <meta name="twitter:description" content="{!! $project['discription_' . $lang] !!}">
-    <meta name="twitter:image" content="{{ $project->photo }}">
+    <meta name="twitter:image" content="{{ $project->photo }}" alt="{{$project['alt_'.$lang]}}" title="{{$project['title_'.$lang]}}">
 </head>
 
 <body>
@@ -107,7 +107,7 @@
 
     <section class="page-head">
         <div class="page-head__img">
-            <img src="{{ $project->photo }}" alt="{{ $project['name_' . $lang] }}">
+            <img src="{{ $project->photo }}" alt="{{$project['alt_'.$lang]}}" title="{{$project['title_'.$lang]}}">
         </div>
         <h1 class="page-head__title page-head__title-single">
             {{ $project['name_' . $lang] }}
@@ -123,14 +123,14 @@
                     <p>
                         {!! $project['discription_' . $lang] !!}
                     </p>
-                    <img src="{{ $project->second_photo }}" alt="{{ $project['name_' . $lang] }}">
+                    <img src="{{ $project->second_photo }}" alt="{{$project['alt_'.$lang]}}" title="{{$project['title_'.$lang]}}">
 
                     @foreach ($project->projecttos as $projectto)
                         <p>
                             {!! $projectto['discription_' . $lang] !!}
                         </p>
                         @if ($projectto->photo != null)
-                            <img src="{{ $projectto->photo }}" alt="{{ $project['name_' . $lang] }}">
+                            <img src="{{ $projectto->photo }}" alt="{{$projectto['alt_'.$lang]}}" title="{{$projectto['title_'.$lang]}}">
                         @endif
                     @endforeach
 
@@ -148,7 +148,7 @@
                     @foreach ($projects as $project)
                         <a href="{{ route('project.show', $project) }}" class="single-item">
                             <div class="single-item__img">
-                                <img src="{{ $project->photo }}" alt="{{ $project['name_' . $lang] }}">
+                                <img src="{{ $project->photo }}" alt="{{$project['alt_'.$lang]}}" title="{{$project['title_'.$lang]}}">
                             </div>
                             <div class="single-item__title">
                                 {{ $project['name_' . $lang] }}

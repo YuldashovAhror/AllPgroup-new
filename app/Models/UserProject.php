@@ -14,5 +14,11 @@ class UserProject extends Model
         'name_uz',
         'name_ru',
         'name_en',
+        'alt_uz',
+        'alt_ru',
+        'alt_en',
+        'title_uz',
+        'title_ru',
+        'title_en',
     ];
 }

@@ -16,6 +16,12 @@ return new class extends Migration
         Schema::create('parknyors', function (Blueprint $table) {
             $table->id();
             $table->string('photo');
+            $table->string('alt_uz')->nullable();
+            $table->string('alt_ru')->nullable();
+            $table->string('alt_en')->nullable();
+            $table->string('title_uz')->nullable();
+            $table->string('title_ru')->nullable();
+            $table->string('title_en')->nullable();
             $table->timestamps();
         });
     }

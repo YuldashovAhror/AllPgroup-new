@@ -20,6 +20,12 @@ class News extends Model
         'discription_ru',
         'discription_en',
         'date',
+        'alt_uz',
+        'alt_ru',
+        'alt_en',
+        'title_uz',
+        'title_ru',
+        'title_en',
     ];
 
     public function newcategories()

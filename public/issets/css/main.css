@@ -623,6 +623,10 @@ body {
         position: absolute; }
       .services-side__item:last-child::after {
         content: none; }
+    .services-side__name a {
+      color: #323232; }
+      .services-side__name a:hover {
+        color: #4CAD3B; }
     .services-side__list {
       margin-top: 0.65rem;
       font-size: 0.8rem;
@@ -772,6 +776,8 @@ body {
       margin-bottom: 1.7rem;
       font-size: 0.8rem;
       line-height: 1.2rem; }
+      .services-list__text img {
+        display: none; }
     .services-list__btn {
       position: absolute;
       left: 50%;
@@ -1047,9 +1053,13 @@ body {
       color: #4CAD3B;
       background: #fff;
       cursor: pointer; }
+      .projects-nav li a {
+        color: #4CAD3B; }
       .projects-nav li.current {
         background: #4CAD3B;
         color: #fff; }
+        .projects-nav li.current a {
+          color: #fff; }
 
 .how {
   padding: 7.5rem 0;
@@ -1346,7 +1356,8 @@ body {
         border-radius: .5rem;
         display: -webkit-inline-box;
         display: -ms-inline-flexbox;
-        display: inline-flex; }
+        display: inline-flex;
+        pointer-events: none; }
       .contact-form__input input {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -1366,7 +1377,7 @@ body {
           .contact-form__input input:focus + span, .contact-form__input input:not(:placeholder-shown) + span {
             font-size: 0.75rem;
             background: #4CAD3B;
-            padding: 0.3rem 1.5rem;
+            padding: 0.15rem 1.5rem;
             color: #fff;
             left: 0;
             top: -0.8rem; }

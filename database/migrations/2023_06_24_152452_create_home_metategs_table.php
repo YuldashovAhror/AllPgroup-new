@@ -18,6 +18,12 @@ return new class extends Migration
             $table->string('name');
             $table->string('photo');
             $table->text('discription')->nullable();
+            $table->string('alt_uz')->nullable();
+            $table->string('alt_ru')->nullable();
+            $table->string('alt_en')->nullable();
+            $table->string('title_uz')->nullable();
+            $table->string('title_ru')->nullable();
+            $table->string('title_en')->nullable();
             $table->timestamps();
         });
     }

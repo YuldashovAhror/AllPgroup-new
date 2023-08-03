@@ -19,25 +19,25 @@
     <meta property="og:site_name" content="ALL-P Group">
     <meta property="og:description" content="{{ $metateg->discription }}">
     <meta property="og:url" content="https://all-p.uz/">
-    <meta property="og:image" content="{{ $metateg->photo }}">
+    <meta property="og:image" content="{{ $metateg->photo }}" alt="{{$metateg['alt_'.$lang]}}" title="{{$metateg['title_'.$lang]}}">
     <meta property="og:type" content="website">
 
     <!-- Google Plus -->
     <meta itemprop="name" content="ALL-P Group">
     <meta itemprop="description" content="{{ $metateg->discription }}">
-    <meta itemprop="image" content="{{ $metateg->photo }}">
+    <meta itemprop="image" content="{{ $metateg->photo }}" alt="{{$metateg['alt_'.$lang]}}" title="{{$metateg['title_'.$lang]}}">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ALL-P Group">
     <meta name="twitter:description" content="{{ $metateg->discription }}">
-    <meta name="twitter:image" content="{{ $metateg->photo }}">
+    <meta name="twitter:image" content="{{ $metateg->photo }}" alt="{{$metateg['alt_'.$lang]}}" title="{{$metateg['title_'.$lang]}}">
 </head>
 
 <body>
     <div class="preloader">
         <div class="preloader__logo">
-            <img src="/issets/img/logo-white.svg" alt="{{ $metateg->name }}">
+            <img src="/issets/img/logo-white.svg" alt="{{$metateg['alt_'.$lang]}}" title="{{$metateg['title_'.$lang]}}">
         </div>
     </div>
     <!-- FEEDBACK -->
@@ -144,7 +144,7 @@
                 @foreach ($projects as $project)
                     <li class="projects-item">
                         <div class="projects-item__img">
-                            <img src="{{ $project->photo }}" alt="{{ $project['name_' . $lang] }}">
+                            <img src="{{ $project->photo }}" alt="{{$project['alt_'.$lang]}}" title="{{$project['title_'.$lang]}}">
                         </div>
                         <div class="projects-item__name">
                             {{ $project['name_' . $lang] }}

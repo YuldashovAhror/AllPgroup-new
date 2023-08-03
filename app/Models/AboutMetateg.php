@@ -11,6 +11,12 @@ class AboutMetateg extends Model
 
     protected $fillable = [
         'name',
+        'alt_uz',
+        'alt_ru',
+        'alt_en',
+        'title_uz',
+        'title_ru',
+        'title_en',
         'photo',
         'discription',
     ];

@@ -39,13 +39,19 @@ class UseProjectController extends BaseController
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:20480',
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:20480',
             'name_uz' => 'required|string|max:255',
             'name_ru' => 'required|string|max:255',
             'name_en' => 'required|string|max:255',
             'discription_uz' => 'nullable',
             'discription_ru' => 'nullable',
             'discription_en' => 'nullable',
+            'alt_uz' => 'nullable',
+            'alt_ru' => 'nullable',
+            'alt_en' => 'nullable',
+            'title_uz' => 'nullable',
+            'title_ru' => 'nullable',
+            'title_en' => 'nullable',
         ]);
         
         if (!empty($validatedData['photo'])){
@@ -55,45 +61,22 @@ class UseProjectController extends BaseController
         return redirect()->route('dashboard.useproject.index')->with('success', 'Data uploaded successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
-            'photo' => 'image|mimes:jpeg,png,jpg,gif|max:20480',
+            'photo' => 'image|mimes:jpeg,png,jpg,gif,webp|max:20480',
             'name_uz' => 'required|string|max:255',
             'name_ru' => 'required|string|max:255',
             'name_en' => 'required|string|max:255',
             'discription_uz' => 'nullable',
             'discription_ru' => 'nullable',
             'discription_en' => 'nullable',
+            'alt_uz' => 'nullable',
+            'alt_ru' => 'nullable',
+            'alt_en' => 'nullable',
+            'title_uz' => 'nullable',
+            'title_ru' => 'nullable',
+            'title_en' => 'nullable',
         ]);
         if (!empty($validatedData['photo'])){
             $this->fileDelete('\UserProject', $id, 'photo');

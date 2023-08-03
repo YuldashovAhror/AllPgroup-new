@@ -18,7 +18,7 @@
                             <h6>Меню</h6>
                         </div>
                     </li>
-                    <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="file-text"></i><span>Услугe</span></a>
+                    <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i data-feather="file-text"></i><span>Услуги</span></a>
                         <ul class="nav-submenu menu-content">
                             <li><a href="{{route('dashboard.Service.index')}}">Лист</a></li>
                             <li><a href="{{route('dashboard.Service.create')}}">Создать</a></li>

@@ -21,32 +21,22 @@ class TeamController extends BaseController
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:20480',
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:20480',
             'name_uz' => 'required|string|max:255',
             'name_ru' => 'required|string|max:255',
             'name_en' => 'required|string|max:255',
             'type_uz' => 'nullable',
             'type_ru' => 'nullable',
             'type_en' => 'nullable',
+            'alt_uz' => 'nullable',
+            'alt_ru' => 'nullable',
+            'alt_en' => 'nullable',
+            'title_uz' => 'nullable',
+            'title_ru' => 'nullable',
+            'title_en' => 'nullable',
         ]);
         
         if (!empty($validatedData['photo'])){
@@ -59,13 +49,19 @@ class TeamController extends BaseController
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
-            'photo' => 'image|mimes:jpeg,png,jpg,gif|max:20480',
+            'photo' => 'image|mimes:jpeg,png,jpg,gif,webp|max:20480',
             'name_uz' => 'required|string|max:255',
             'name_ru' => 'required|string|max:255',
             'name_en' => 'required|string|max:255',
             'type_uz' => 'nullable',
             'type_ru' => 'nullable',
             'type_en' => 'nullable',
+            'alt_uz' => 'nullable',
+            'alt_ru' => 'nullable',
+            'alt_en' => 'nullable',
+            'title_uz' => 'nullable',
+            'title_ru' => 'nullable',
+            'title_en' => 'nullable',
         ]);
         
         if (!empty($validatedData['photo'])){

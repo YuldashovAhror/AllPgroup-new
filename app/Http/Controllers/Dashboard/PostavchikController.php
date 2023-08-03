@@ -20,11 +20,17 @@ class PostavchikController extends BaseController
     {
         // dd($request->all());
         $validatedData = $request->validate([
-            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:20480',
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:20480',
             'link' => 'required|string|max:255',
             'discription_uz' => 'required',
             'discription_ru' => 'required',
             'discription_en' => 'required',
+            'alt_uz' => 'nullable',
+            'alt_ru' => 'nullable',
+            'alt_en' => 'nullable',
+            'title_uz' => 'nullable',
+            'title_ru' => 'nullable',
+            'title_en' => 'nullable',
         ]);
         
         if (!empty($validatedData['photo'])){
@@ -37,11 +43,17 @@ class PostavchikController extends BaseController
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
-            'photo' => 'image|mimes:jpeg,png,jpg,gif|max:20480',
+            'photo' => 'image|mimes:jpeg,png,jpg,gif,webp|max:20480',
             'link' => 'required|string|max:255',
             'discription_uz' => 'required',
             'discription_ru' => 'required',
             'discription_en' => 'required',
+            'alt_uz' => 'nullable',
+            'alt_ru' => 'nullable',
+            'alt_en' => 'nullable',
+            'title_uz' => 'nullable',
+            'title_ru' => 'nullable',
+            'title_en' => 'nullable',
         ]);
         
         if (!empty($validatedData['photo'])){

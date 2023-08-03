@@ -836,6 +836,16 @@ body {
 			}
 		}
 
+		&__name {
+			a {
+				color: $black;
+
+				&:hover {
+					color: $green;
+				}
+			}
+		}
+
 		&__list {
 			margin-top: 0.65rem;
 			font-size: 0.8rem;
@@ -1034,6 +1044,10 @@ body {
 			margin-bottom: 1.7rem;
 			font-size: 0.8rem;
 			line-height: 1.2rem;
+
+			img {
+				display: none;
+			}
 		}
 
 		&__btn {
@@ -1347,10 +1361,18 @@ body {
 			color: $green;
 			background: #fff;
 			cursor: pointer;
+			
+			a {
+				color: $green;
+			}
 
 			&.current {
 				background: $green;
 				color: #fff;
+
+				a {
+					color: #fff;
+				}
 			}
 		}
 	}
@@ -1725,6 +1747,7 @@ body {
 				padding: 0;
 				border-radius: .5rem;
 				display: inline-flex;
+				pointer-events: none;
 			}
 
 			input {
@@ -1744,7 +1767,7 @@ body {
 					& + span {
 						font-size: 0.75rem;
 						background: $green;
-						padding: 0.3rem 1.5rem;
+						padding: 0.15rem 1.5rem;
 						color: #fff;
 						left: 0;
 						top: -0.8rem;

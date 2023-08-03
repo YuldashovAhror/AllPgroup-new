@@ -22,6 +22,12 @@ return new class extends Migration
             $table->string('type_uz')->nullable();
             $table->string('type_ru')->nullable();
             $table->string('type_en')->nullable();
+            $table->string('alt_uz')->nullable();
+            $table->string('alt_ru')->nullable();
+            $table->string('alt_en')->nullable();
+            $table->string('title_uz')->nullable();
+            $table->string('title_ru')->nullable();
+            $table->string('title_en')->nullable();
             $table->timestamps();
         });
     }

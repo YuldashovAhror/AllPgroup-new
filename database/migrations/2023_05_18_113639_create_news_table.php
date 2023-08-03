@@ -26,6 +26,12 @@ return new class extends Migration
             $table->text('discription_en')->nullable();
             $table->string('date')->nullable();
             $table->text('youtube')->nullable();
+            $table->string('alt_uz')->nullable();
+            $table->string('alt_ru')->nullable();
+            $table->string('alt_en')->nullable();
+            $table->string('title_uz')->nullable();
+            $table->string('title_ru')->nullable();
+            $table->string('title_en')->nullable();
             $table->timestamps();
         });
     }

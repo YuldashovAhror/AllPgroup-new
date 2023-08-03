@@ -19,19 +19,19 @@
     <meta property="og:site_name" content="ALL-P Group">
     <meta property="og:description" content="{{ $metateg->discription }}">
     <meta property="og:url" content="https://all-p.uz/">
-    <meta property="og:image" content="{{ $metateg->photo }}">
+    <meta property="og:image" content="{{ $metateg->photo }}" alt="{{$metateg['alt_'.$lang]}}" title="{{$metateg['title_'.$lang]}}">
     <meta property="og:type" content="website">
 
     <!-- Google Plus -->
     <meta itemprop="name" content="ALL-P Group">
     <meta itemprop="description" content="{{ $metateg->discription }}">
-    <meta itemprop="image" content="{{ $metateg->photo }}">
+    <meta itemprop="image" content="{{ $metateg->photo }}" alt="{{$metateg['alt_'.$lang]}}" title="{{$metateg['title_'.$lang]}}">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ALL-P Group">
     <meta name="twitter:description" content="{{ $metateg->discription }}">
-    <meta name="twitter:image" content="{{ $metateg->photo }}">
+    <meta name="twitter:image" content="{{ $metateg->photo }}" alt="{{$metateg['alt_'.$lang]}}" title="{{$metateg['title_'.$lang]}}">
 </head>
 
 <body>
@@ -122,7 +122,7 @@
                 <div class="main-item">
                     <div class="container">
                         <div class="main-item__img">
-                            <img src="{{ $mainslider->photo }}" alt="{{ $mainslider['name_' . $lang] }}">
+                            <img src="{{ $mainslider->photo }}" alt="{{ $mainslider['name_' . $lang] }}" title="{{$mainslider['title_'.$lang]}}">
                         </div>
                         <h2 class="main-item__title">
                             {{ $mainslider['name_' . $lang] }}
@@ -218,7 +218,7 @@
                 @foreach ($services as $service)
                     <li class="services-list__item">
                         <div class="services-list__img">
-                            <img src="{{ $service->photo }}" alt="{{ $service['name_' . $lang] }}">
+                            <img src="{{ $service->photo }}" alt="{{ $service['name_' . $lang] }}" title="{{$service['title_'.$lang]}}">
                         </div>
                         <div class="services-list__wrap">
                             <div class="services-list__title">
@@ -257,7 +257,7 @@
                 @foreach ($useprojects as $useproject)
                     <div class="area-item">
                         <div class="area-item__img">
-                            <img src="{{ $useproject->photo }}" alt="{{ $useproject['name_' . $lang] }}">
+                            <img src="{{ $useproject->photo }}" alt="{{ $useproject['name_' . $lang] }}" title="{{$useproject['title_'.$lang]}}">
                         </div>
                         <div class="area-item__title">
                             {{ $useproject['name_' . $lang] }}
@@ -355,7 +355,7 @@
                 @foreach ($projects as $project)
                     <div class="projects-item">
                         <div class="projects-item__img">
-                            <img src="{{ $project->photo }}" alt="project">
+                            <img src="{{ $project->photo }}" alt="{{ $project['name_' . $lang] }}" title="{{$project['title_'.$lang]}}">
                         </div>
                         <div class="projects-item__name">
                             {{ $project['name_'.$lang] }}

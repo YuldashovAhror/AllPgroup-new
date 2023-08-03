@@ -20,19 +20,19 @@
     <meta property="og:site_name" content="ALL-P Group">
     <meta property="og:description" content="{!! $new['discription_' . $lang] !!}">
     <meta property="og:url" content="https://all-p.uz/">
-    <meta property="og:image" content="{{ $new->photo }}">
+    <meta property="og:image" content="{{ $new->photo }}" alt="{{$new['alt_'.$lang]}}" title="{{$new['title_'.$lang]}}">
     <meta property="og:type" content="website">
 
     <!-- Google Plus -->
     <meta itemprop="name" content="ALL-P Group">
     <meta itemprop="description" content="{!! $new['discription_' . $lang] !!}">
-    <meta itemprop="image" content="{{ $new->photo }}">
+    <meta itemprop="image" content="{{ $new->photo }}" alt="{{$new['alt_'.$lang]}}" title="{{$new['title_'.$lang]}}">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ALL-P Group">
     <meta name="twitter:description" content="{!! $new['discription_' . $lang] !!}">
-    <meta name="twitter:image" content="{{ $new->photo }}">
+    <meta name="twitter:image" content="{{ $new->photo }}" alt="{{$new['alt_'.$lang]}}" title="{{$new['title_'.$lang]}}">
 </head>
 
 <body>
@@ -111,7 +111,7 @@
     {{-- @dd($news) --}}
     <section class="page-head">
         <div class="page-head__img">
-            <img src="{{ $new->photo }}" alt="{{ $new['name_' . $lang] }}">
+            <img src="{{ $new->photo }}" alt="{{$new['alt_'.$lang]}}" title="{{$new['title_'.$lang]}}">
         </div>
         <h1 class="page-head__title page-head__title-single">
             {{ $new['name_' . $lang] }}
@@ -140,13 +140,13 @@
                     <p>
                         {!! $new['discription_' . $lang] !!}
                     </p>
-                    <img src="{{ $new->second_photo }}" alt="{{ $new['name_' . $lang] }}">
+                    <img src="{{ $new->second_photo }}" alt="{{$new['alt_'.$lang]}}" title="{{$new['title_'.$lang]}}">
                     @foreach ($new->newtos as $newto)
                         <p>
                             {!! $newto['discription_' . $lang] !!}
                         </p>
                         @if ($newto->photo != null)
-                            <img src="{{ $newto->photo }}" alt="{{ $new['name_' . $lang] }}">
+                            <img src="{{ $newto->photo }}" alt="{{$newto['alt_'.$lang]}}" title="{{$newto['title_'.$lang]}}">
                         @endif
                     @endforeach
                 </div>
@@ -175,7 +175,7 @@
                     @foreach ($news as $new)
                         <a href="{{ route('news.show', $new) }}" class="single-item">
                             <div class="single-item__img">
-                                <img src="{{ $new->photo }}" alt="{{ $new['name_' . $lang] }}">
+                                <img src="{{ $new->photo }}" alt="{{$new['alt_'.$lang]}}" title="{{$new['title_'.$lang]}}">
                             </div>
                             <div class="single-item__title">
                                 {{ $new['name_' . $lang] }}

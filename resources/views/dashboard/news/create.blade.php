@@ -16,7 +16,7 @@
                                 <div>
                                     <span >Категории новостей:</span>
                                     <i data-feather="loader" style="height: 100px; width: 100px" ></i>
-                                    <select class="" id="newcategory" class="calc__type" name="newcategory"  id="calc__type" style="width: 100%; padding:6px 12px; border-color: #ced4da; border-radius: 5px " >
+                                    <select class="" id="newcategory" class="calc__type" name="newcategory_id"  id="calc__type" style="width: 100%; padding:6px 12px; border-color: #ced4da; border-radius: 5px " >
                                         @foreach ($categories as $category)
                                             <option value="{{ $category->id }}" >{{ $category['name_' . $lang] }}</option>
                                         @endforeach
@@ -59,6 +59,38 @@
                                     <input class="form-control" name="name_en" id="name_en" type="text"
                                         placeholder="..." aria-describedby="inputGroupPrepend2" required=""
                                         value="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="form-label" for="alt_uz">Альт Uz</label>
+                                <input class="form-control" name="alt_uz" id="alt_uz" type="text" placeholder="..." required="" value="">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label" for="alt_ru">Альт Ru</label>
+                                <input class="form-control" name="alt_ru" id="alt_ru" type="text" placeholder="..." required="" value="">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label" for="alt_en">Альт En</label>
+                                <div class="input-group">
+                                    <input class="form-control" name="alt_en" id="alt_en" type="text" placeholder="..." aria-describedby="inputGroupPrepend2" required="" value="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="form-label" for="title_uz">Заголовок Uz</label>
+                                <input class="form-control" name="title_uz" id="title_uz" type="text" placeholder="..." required="" value="">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label" for="title_ru">Заголовок Ru</label>
+                                <input class="form-control" name="title_ru" id="title_ru" type="text" placeholder="..." required="" value="">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label" for="title_en">Заголовок En</label>
+                                <div class="input-group">
+                                    <input class="form-control" name="title_en" id="title_en" type="text" placeholder="..." aria-describedby="inputGroupPrepend2" required="" value="">
                                 </div>
                             </div>
                         </div>

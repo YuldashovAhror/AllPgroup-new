@@ -19,19 +19,19 @@
     <meta property="og:site_name" content="ALL-P Group">
     <meta property="og:description" content="{!! $serviceess['discription_' . $lang] !!}">
     <meta property="og:url" content="https://all-p.uz/">
-    <meta property="og:image" content="{{ $serviceess->photo }}">
+    <meta property="og:image" content="{{ $serviceess->photo }}" alt="{{$serviceess['alt_'.$lang]}}" title="{{$serviceess['title_'.$lang]}}">
     <meta property="og:type" content="website">
 
     <!-- Google Plus -->
     <meta itemprop="name" content="ALL-P Group">
     <meta itemprop="description" content="{!! $serviceess['discription_' . $lang] !!}">
-    <meta itemprop="image" content="{{ $serviceess->photo }}">
+    <meta itemprop="image" content="{{ $serviceess->photo }}" alt="{{$serviceess['alt_'.$lang]}}" title="{{$serviceess['title_'.$lang]}}">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ALL-P Group">
     <meta name="twitter:description" content="{!! $serviceess['discription_' . $lang] !!}">
-    <meta name="twitter:image" content="{{ $serviceess->photo }}">
+    <meta name="twitter:image" content="{{ $serviceess->photo }}" alt="{{$serviceess['alt_'.$lang]}}" title="{{$serviceess['title_'.$lang]}}">
 </head>
 
 <body>
@@ -111,7 +111,7 @@
     </div>
     <section class="page-head">
         <div class="page-head__img">
-            <img src="{{$serviceess->photo}}" alt="{{ $serviceess['name_' . $lang] }}">
+            <img src="{{$serviceess->photo}}" alt="{{$serviceess['alt_'.$lang]}}" title="{{$serviceess['title_'.$lang]}}">
         </div>
         <h1 class="page-head__title">
             {{ $serviceess['name_' . $lang] }}

@@ -15,6 +15,12 @@ class ProjectTo extends Model
         'discription_uz',
         'discription_ru',
         'discription_en',
+        'alt_uz',
+        'alt_ru',
+        'alt_en',
+        'title_uz',
+        'title_ru',
+        'title_en',
     ];
 
     public function projects()

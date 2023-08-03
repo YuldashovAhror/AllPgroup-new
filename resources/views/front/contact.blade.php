@@ -22,21 +22,21 @@
     <meta property="og:description"
         content="{{ $metateg->discription }}">
     <meta property="og:url" content="https://all-p.uz/">
-    <meta property="og:image" content="{{ $metateg->photo }}">
+    <meta property="og:image" content="{{ $metateg->photo }}" alt="{{$metateg['alt_'.$lang]}}" title="{{$metateg['title_'.$lang]}}">
     <meta property="og:type" content="website">
 
     <!-- Google Plus -->
     <meta itemprop="name" content="ALL-P Group">
     <meta itemprop="description"
         content="{{ $metateg->discription }}">
-    <meta itemprop="image" content="{{ $metateg->photo }}">
+    <meta itemprop="image" content="{{ $metateg->photo }}" alt="{{$metateg['alt_'.$lang]}}" title="{{$metateg['title_'.$lang]}}">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ALL-P Group">
     <meta name="twitter:description"
         content="{{ $metateg->discription }}">
-    <meta name="twitter:image" content="{{ $metateg->photo }}">
+    <meta name="twitter:image" content="{{ $metateg->photo }}" alt="{{$metateg['alt_'.$lang]}}" title="{{$metateg['title_'.$lang]}}">
 </head>
 <body>
     <div class="preloader">
@@ -202,7 +202,7 @@
                                         <span>
                                             {{ $vacancy['name_' . $lang] }}
                                         </span>
-                                        <img src="/issets/img/plus.svg" alt="ico">
+                                        <img src="/issets/img/plus.svg" alt="{{$metateg['alt_'.$lang]}}" title="{{$metateg['title_'.$lang]}}">
                                     </div>
                                     <div class="projects-faq__answer">
                                         <p>{!! $vacancy['discription_' . $lang] !!}</p>

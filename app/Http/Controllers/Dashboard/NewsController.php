@@ -36,37 +36,37 @@ class NewsController extends BaseController
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:20480',
-            'second_photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:20480',
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:20480',
+            'second_photo' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:20480',
             'name_uz' => 'required|string|max:255',
             'name_ru' => 'required|string|max:255',
             'name_en' => 'required|string|max:255',
             'discription_uz' => 'nullable',
             'discription_ru' => 'nullable',
             'discription_en' => 'nullable',
-            'newcategory' => 'integer',
+            'newcategory_id' => 'integer',
             'youtube' => 'nullable',
             'date' => 'nullable',
+            'alt_uz' => 'nullable',
+            'alt_ru' => 'nullable',
+            'alt_en' => 'nullable',
+            'title_uz' => 'nullable',
+            'title_ru' => 'nullable',
+            'title_en' => 'nullable',
         ]);
 
-        $news = new News();
-        if(!empty($validatedData['photo'])){
-            $news['photo'] = $this->photoSave($validatedData['photo'], 'image/news');
+        if (!empty($validatedData['photo'])){
+            $validatedData['photo'] = $this->photoSave($validatedData['photo'], 'image/news');
         }
-        if(!empty($validatedData['second_photo'])){
-            $news['second_photo'] = $this->photoSave($validatedData['second_photo'], 'image/news');
+        if (!empty($validatedData['second_photo'])){
+            $validatedData['second_photo'] = $this->photoSave($validatedData['second_photo'], 'image/news');
         }
-        $news->newcategory_id = $validatedData['newcategory'];
-        $news->name_uz = $validatedData['name_uz'];
-        $news->name_ru = $validatedData['name_ru'];
-        $news->name_en = $validatedData['name_en'];
-        $news->discription_uz = $validatedData['discription_uz'];
-        $news->discription_ru = $validatedData['discription_ru'];
-        $news->discription_en = $validatedData['discription_en'];
-        $news->date = $validatedData['date'];
-        $news->youtube = $validatedData['youtube'];
-        $news->save();
-        return redirect()->route('dashboard.news.index')->with('success', 'Data uploaded successfully.');
+        // if(!empty($validatedData['second_photo'])){
+        //     $this->fileDelete('\News', $id, 'second_photo');
+        //     $news['second_photo'] = $this->photoSave($validatedData['second_photo'], 'image/news');
+        // }
+        News::create($validatedData);
+        return redirect()->route('dashboard.news.index')->with('success', 'Data updated successfully.');
     }
 
     public function show($id)
@@ -88,8 +88,8 @@ class NewsController extends BaseController
     {
         // dd($request->all());
         $validatedData = $request->validate([
-            'photo' => 'image|mimes:jpeg,png,jpg,gif|max:20480',
-            'second_photo' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'photo' => 'image|mimes:jpeg,png,jpg,gif,webp|max:20480',
+            'second_photo' => 'image|mimes:jpeg,png,jpg,gif,webp|max:20480',
             'name_uz' => 'required|string|max:255',
             'name_ru' => 'required|string|max:255',
             'name_en' => 'required|string|max:255',
@@ -99,28 +99,24 @@ class NewsController extends BaseController
             'newcategory' => 'integer',
             'youtube' => 'nullable',
             'date' => 'nullable',
+            'alt_uz' => 'nullable',
+            'alt_ru' => 'nullable',
+            'alt_en' => 'nullable',
+            'title_uz' => 'nullable',
+            'title_ru' => 'nullable',
+            'title_en' => 'nullable',
         ]);
-        // dd($validatedData);
-        $new = News::find($id);
-        if(!empty($validatedData['photo'])){
+        if (!empty($validatedData['photo'])){
             $this->fileDelete('\News', $id, 'photo');
-            $news['photo'] = $this->photoSave($validatedData['photo'], 'image/news');
+            $validatedData['photo'] = $this->photoSave($validatedData['photo'], 'image/news');
         }
-        if(!empty($validatedData['second_photo'])){
+        if (!empty($validatedData['second_photo'])){
             $this->fileDelete('\News', $id, 'second_photo');
-            $news['second_photo'] = $this->photoSave($validatedData['second_photo'], 'image/news');
+            $validatedData['second_photo'] = $this->photoSave($validatedData['second_photo'], 'image/news');
         }
-        $new->newcategory_id = $validatedData['newcategory'];
-        $new->name_uz = $validatedData['name_uz'];
-        $new->name_ru = $validatedData['name_ru'];
-        $new->name_en = $validatedData['name_en'];
-        $new->discription_uz = $validatedData['discription_uz'];
-        $new->discription_ru = $validatedData['discription_ru'];
-        $new->discription_en = $validatedData['discription_en'];
-        $new->date = $validatedData['date'];
-        $new->youtube = $validatedData['youtube'];
-        $new->save();
+        News::find($id)->update($validatedData);
         return redirect()->route('dashboard.news.index')->with('success', 'Data updated successfully.');
+
     }
 
     public function destroy($id)

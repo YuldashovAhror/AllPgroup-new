@@ -19,7 +19,7 @@
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-header pb-0">
-                    <h5>Добавить категорию</h5>
+                    <h5>Добавить Дополнительный Новости</h5>
                 </div>
                 <form action="{{ route('dashboard.newsto.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
@@ -33,7 +33,7 @@
                                 </div>
                             </div>
                             <div class="col-6">
-                                <label class="form-label" for="exampleFormControlInput1">new</label>
+                                <label class="form-label" for="exampleFormControlInput1">Новости</label>
                                 <div >
                                     <select class="calc__type" name="news" id="calc__type" style="width: 100%; padding:6px 12px; border-color: #ced4da; border-radius: 5px; margin-top: 39px">
                                         @foreach ($news as $new)
@@ -43,7 +43,38 @@
                                 </div>
                             </div>
                         </div>
-
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="form-label" for="alt_uz">Альт Uz</label>
+                                <input class="form-control" name="alt_uz" id="alt_uz" type="text" placeholder="..." required="" value="">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label" for="alt_ru">Альт Ru</label>
+                                <input class="form-control" name="alt_ru" id="alt_ru" type="text" placeholder="..." required="" value="">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label" for="alt_en">Альт En</label>
+                                <div class="input-group">
+                                    <input class="form-control" name="alt_en" id="alt_en" type="text" placeholder="..." aria-describedby="inputGroupPrepend2" required="" value="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="form-label" for="title_uz">Заголовок Uz</label>
+                                <input class="form-control" name="title_uz" id="title_uz" type="text" placeholder="..." required="" value="">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label" for="title_ru">Заголовок Ru</label>
+                                <input class="form-control" name="title_ru" id="title_ru" type="text" placeholder="..." required="" value="">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label" for="title_en">Заголовок En</label>
+                                <div class="input-group">
+                                    <input class="form-control" name="title_en" id="title_en" type="text" placeholder="..." aria-describedby="inputGroupPrepend2" required="" value="">
+                                </div>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-md-4">
                                 <label for="discription_uz" class="form-label">Описание Uz</label>
@@ -76,7 +107,7 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-md-10">
-                            <h5>Все категории</h5>
+                            <h5>Все Дополнительный Новости</h5>
                         </div>
                     </div>
                 </div>
@@ -133,7 +164,7 @@
                                                                     </div>
                                                                     <div class="col-6 mt-4">
                                                                         <label class="form-label"
-                                                                            for="exampleFormControlInput1">new</label>
+                                                                            for="exampleFormControlInput1">Новости</label>
                                                                         <div>
                                                                             <i data-feather="loader" style="height: 100px; width: 100px"></i>
                                                                             <select class="calc__type" name="news"
@@ -143,6 +174,38 @@
                                                                                         {{ $new->name_ru }}</option>
                                                                                 @endforeach
                                                                             </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-4">
+                                                                        <label class="form-label" for="alt_uz">Альт Uz</label>
+                                                                        <input class="form-control" name="alt_uz" id="alt_uz" type="text" placeholder="..." required="" value="{{$newsto->alt_uz}}">
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <label class="form-label" for="alt_ru">Альт Ru</label>
+                                                                        <input class="form-control" name="alt_ru" id="alt_ru" type="text" placeholder="..." required="" value="{{$newsto->alt_uz}}">
+                                                                    </div>
+                                                                    <div class="col-md-4 mb-3">
+                                                                        <label class="form-label" for="alt_en">Альт En</label>
+                                                                        <div class="input-group">
+                                                                            <input class="form-control" name="alt_en" id="alt_en" type="text" placeholder="..." aria-describedby="inputGroupPrepend2" required="" value="{{$newsto->alt_uz}}">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-4">
+                                                                        <label class="form-label" for="title_uz">Заголовок Uz</label>
+                                                                        <input class="form-control" name="title_uz" id="title_uz" type="text" placeholder="..." required="" value="{{$newsto->title_uz}}">
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <label class="form-label" for="title_ru">Заголовок Ru</label>
+                                                                        <input class="form-control" name="title_ru" id="title_ru" type="text" placeholder="..." required="" value="{{$newsto->title_uz}}">
+                                                                    </div>
+                                                                    <div class="col-md-4 mb-3">
+                                                                        <label class="form-label" for="title_en">Заголовок En</label>
+                                                                        <div class="input-group">
+                                                                            <input class="form-control" name="title_en" id="title_en" type="text" placeholder="..." aria-describedby="inputGroupPrepend2" required="" value="{{$newsto->title_uz}}">
                                                                         </div>
                                                                     </div>
                                                                 </div>

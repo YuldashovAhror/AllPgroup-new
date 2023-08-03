@@ -19,19 +19,19 @@
     <meta property="og:site_name" content="ALL-P Group">
     <meta property="og:description" content="{!! $service['discription_' . $lang] !!}">
     <meta property="og:url" content="https://all-p.uz/">
-    <meta property="og:image" content="{{ $service->photo }}">
+    <meta property="og:image" content="{{ $service->photo }}" alt="{{$service['alt_'.$lang]}}" title="{{$service['title_'.$lang]}}">
     <meta property="og:type" content="website">
 
     <!-- Google Plus -->
     <meta itemprop="name" content="ALL-P Group">
     <meta itemprop="description" content="{!! $service['discription_' . $lang] !!}">
-    <meta itemprop="image" content="{{ $service->photo }}">
+    <meta itemprop="image" content="{{ $service->photo }}" alt="{{$service['alt_'.$lang]}}" title="{{$service['title_'.$lang]}}">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ALL-P Group">
     <meta name="twitter:description" content="{!! $service['discription_' . $lang] !!}">
-    <meta name="twitter:image" content="{{ $service->photo }}">
+    <meta name="twitter:image" content="{{ $service->photo }}" alt="{{$service['alt_'.$lang]}}" title="{{$service['title_'.$lang]}}">
 </head>
 
 <body>
@@ -54,7 +54,7 @@
     {{-- @dd($service->name_uz) --}}
     <section class="page-head">
         <div class="page-head__img">
-            <img src="{{ $service->photo }}" alt="single">
+            <img src="{{ $service->photo }}" alt="{{$service['alt_'.$lang]}}" title="{{$service['title_'.$lang]}}">
         </div>
         <h1 class="page-head__title page-head__title-single">
             {{ $service['name_' . $lang] }}
@@ -73,14 +73,14 @@
                     <p>
                         {!! $service['discription_' . $lang] !!}
                     </p>
-                    <img src="{{ $service->second_photo }}" alt="img">
+                    <img src="{{ $service->second_photo }}" alt="{{$service['alt_'.$lang]}}" title="{{$service['title_'.$lang]}}">
 
                     @foreach ($service->servicetos as $serviceto)
                         <p>
                             {!! $serviceto['discription_' . $lang] !!}
                         </p>
                         @if ($serviceto->photo != null)
-                            <img src="{{ $serviceto->photo }}" alt="img">
+                            <img src="{{ $serviceto->photo }}" alt="{{$serviceto['alt_'.$lang]}}" title="{{$serviceto['title_'.$lang]}}">
                         @endif
                     @endforeach
                 </div>
@@ -99,7 +99,7 @@
                     @foreach ($services as $service)
                         <a href="{{ route('service.show', $service) }}" class="single-item">
                             <div class="single-item__img">
-                                <img src="{{ $service->photo }}" alt="project">
+                                <img src="{{ $service->photo }}" alt="{{$service['alt_'.$lang]}}" title="{{$service['title_'.$lang]}}">
                             </div>
                             <div class="single-item__title">
                                 {{ $service['name_' . $lang] }}

@@ -51,6 +51,38 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="form-label" for="alt_uz">Альт Uz</label>
+                                <input class="form-control" name="alt_uz" id="alt_uz" type="text" placeholder="..." required="" value="{{$homemeta->alt_uz}}">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label" for="alt_ru">Альт Ru</label>
+                                <input class="form-control" name="alt_ru" id="alt_ru" type="text" placeholder="..." required="" value="{{$homemeta->alt_uz}}">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label" for="alt_en">Альт En</label>
+                                <div class="input-group">
+                                    <input class="form-control" name="alt_en" id="alt_en" type="text" placeholder="..." aria-describedby="inputGroupPrepend2" required="" value="{{$homemeta->alt_uz}}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="form-label" for="title_uz">Заголовок Uz</label>
+                                <input class="form-control" name="title_uz" id="title_uz" type="text" placeholder="..." required="" value="{{$homemeta->title_uz}}">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label" for="title_ru">Заголовок Ru</label>
+                                <input class="form-control" name="title_ru" id="title_ru" type="text" placeholder="..." required="" value="{{$homemeta->title_uz}}">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label" for="title_en">Заголовок En</label>
+                                <div class="input-group">
+                                    <input class="form-control" name="title_en" id="title_en" type="text" placeholder="..." aria-describedby="inputGroupPrepend2" required="" value="{{$homemeta->title_uz}}">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="card-footer text-end">
                         <button class="btn btn-primary" type="submit">Сохранить</button>
@@ -92,6 +124,38 @@
                                 <div class="mb-3">
                                     <label class="form-label" for="exampleFormControlInput1">Описание</label>
                                     <input class="form-control" id="exampleFormControlInput1" type="text" name="discription" value="{{ $aboutmeta->discription }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="form-label" for="alt_uz">Альт Uz</label>
+                                <input class="form-control" name="alt_uz" id="alt_uz" type="text" placeholder="..." required="" value="{{$aboutmeta->alt_uz}}">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label" for="alt_ru">Альт Ru</label>
+                                <input class="form-control" name="alt_ru" id="alt_ru" type="text" placeholder="..." required="" value="{{$aboutmeta->alt_uz}}">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label" for="alt_en">Альт En</label>
+                                <div class="input-group">
+                                    <input class="form-control" name="alt_en" id="alt_en" type="text" placeholder="..." aria-describedby="inputGroupPrepend2" required="" value="{{$aboutmeta->alt_uz}}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="form-label" for="title_uz">Заголовок Uz</label>
+                                <input class="form-control" name="title_uz" id="title_uz" type="text" placeholder="..." required="" value="{{$aboutmeta->title_uz}}">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label" for="title_ru">Заголовок Ru</label>
+                                <input class="form-control" name="title_ru" id="title_ru" type="text" placeholder="..." required="" value="{{$aboutmeta->title_uz}}">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label" for="title_en">Заголовок En</label>
+                                <div class="input-group">
+                                    <input class="form-control" name="title_en" id="title_en" type="text" placeholder="..." aria-describedby="inputGroupPrepend2" required="" value="{{$aboutmeta->title_uz}}">
                                 </div>
                             </div>
                         </div>
@@ -139,6 +203,38 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="form-label" for="alt_uz">Альт Uz</label>
+                                <input class="form-control" name="alt_uz" id="alt_uz" type="text" placeholder="..." required="" value="{{$servicemeta->alt_uz}}">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label" for="alt_ru">Альт Ru</label>
+                                <input class="form-control" name="alt_ru" id="alt_ru" type="text" placeholder="..." required="" value="{{$servicemeta->alt_uz}}">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label" for="alt_en">Альт En</label>
+                                <div class="input-group">
+                                    <input class="form-control" name="alt_en" id="alt_en" type="text" placeholder="..." aria-describedby="inputGroupPrepend2" required="" value="{{$servicemeta->alt_uz}}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="form-label" for="title_uz">Заголовок Uz</label>
+                                <input class="form-control" name="title_uz" id="title_uz" type="text" placeholder="..." required="" value="{{$servicemeta->title_uz}}">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label" for="title_ru">Заголовок Ru</label>
+                                <input class="form-control" name="title_ru" id="title_ru" type="text" placeholder="..." required="" value="{{$servicemeta->title_uz}}">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label" for="title_en">Заголовок En</label>
+                                <div class="input-group">
+                                    <input class="form-control" name="title_en" id="title_en" type="text" placeholder="..." aria-describedby="inputGroupPrepend2" required="" value="{{$servicemeta->title_uz}}">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="card-footer text-end">
                         <button class="btn btn-primary" type="submit">Сохранить</button>
@@ -180,6 +276,38 @@
                                 <div class="mb-3">
                                     <label class="form-label" for="exampleFormControlInput1">Описание</label>
                                     <input class="form-control" id="exampleFormControlInput1" type="text" name="discription" value="{{ $projectmeta->discription }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="form-label" for="alt_uz">Альт Uz</label>
+                                <input class="form-control" name="alt_uz" id="alt_uz" type="text" placeholder="..." required="" value="{{$projectmeta->alt_uz}}">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label" for="alt_ru">Альт Ru</label>
+                                <input class="form-control" name="alt_ru" id="alt_ru" type="text" placeholder="..." required="" value="{{$projectmeta->alt_uz}}">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label" for="alt_en">Альт En</label>
+                                <div class="input-group">
+                                    <input class="form-control" name="alt_en" id="alt_en" type="text" placeholder="..." aria-describedby="inputGroupPrepend2" required="" value="{{$projectmeta->alt_uz}}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="form-label" for="title_uz">Заголовок Uz</label>
+                                <input class="form-control" name="title_uz" id="title_uz" type="text" placeholder="..." required="" value="{{$projectmeta->title_uz}}">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label" for="title_ru">Заголовок Ru</label>
+                                <input class="form-control" name="title_ru" id="title_ru" type="text" placeholder="..." required="" value="{{$projectmeta->title_uz}}">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label" for="title_en">Заголовок En</label>
+                                <div class="input-group">
+                                    <input class="form-control" name="title_en" id="title_en" type="text" placeholder="..." aria-describedby="inputGroupPrepend2" required="" value="{{$projectmeta->title_uz}}">
                                 </div>
                             </div>
                         </div>
@@ -227,6 +355,38 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="form-label" for="alt_uz">Альт Uz</label>
+                                <input class="form-control" name="alt_uz" id="alt_uz" type="text" placeholder="..." required="" value="{{$newsmeta->alt_uz}}">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label" for="alt_ru">Альт Ru</label>
+                                <input class="form-control" name="alt_ru" id="alt_ru" type="text" placeholder="..." required="" value="{{$newsmeta->alt_uz}}">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label" for="alt_en">Альт En</label>
+                                <div class="input-group">
+                                    <input class="form-control" name="alt_en" id="alt_en" type="text" placeholder="..." aria-describedby="inputGroupPrepend2" required="" value="{{$newsmeta->alt_uz}}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="form-label" for="title_uz">Заголовок Uz</label>
+                                <input class="form-control" name="title_uz" id="title_uz" type="text" placeholder="..." required="" value="{{$newsmeta->title_uz}}">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label" for="title_ru">Заголовок Ru</label>
+                                <input class="form-control" name="title_ru" id="title_ru" type="text" placeholder="..." required="" value="{{$newsmeta->title_uz}}">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label" for="title_en">Заголовок En</label>
+                                <div class="input-group">
+                                    <input class="form-control" name="title_en" id="title_en" type="text" placeholder="..." aria-describedby="inputGroupPrepend2" required="" value="{{$newsmeta->title_uz}}">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="card-footer text-end">
                         <button class="btn btn-primary" type="submit">Сохранить</button>
@@ -268,6 +428,38 @@
                                 <div class="mb-3">
                                     <label class="form-label" for="exampleFormControlInput1">Описание</label>
                                     <input class="form-control" id="exampleFormControlInput1" type="text" name="discription" value="{{ $contactmeta->discription }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="form-label" for="alt_uz">Альт Uz</label>
+                                <input class="form-control" name="alt_uz" id="alt_uz" type="text" placeholder="..." required="" value="{{$contactmeta->alt_uz}}">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label" for="alt_ru">Альт Ru</label>
+                                <input class="form-control" name="alt_ru" id="alt_ru" type="text" placeholder="..." required="" value="{{$contactmeta->alt_uz}}">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label" for="alt_en">Альт En</label>
+                                <div class="input-group">
+                                    <input class="form-control" name="alt_en" id="alt_en" type="text" placeholder="..." aria-describedby="inputGroupPrepend2" required="" value="{{$contactmeta->alt_uz}}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="form-label" for="title_uz">Заголовок Uz</label>
+                                <input class="form-control" name="title_uz" id="title_uz" type="text" placeholder="..." required="" value="{{$contactmeta->title_uz}}">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label" for="title_ru">Заголовок Ru</label>
+                                <input class="form-control" name="title_ru" id="title_ru" type="text" placeholder="..." required="" value="{{$contactmeta->title_uz}}">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label" for="title_en">Заголовок En</label>
+                                <div class="input-group">
+                                    <input class="form-control" name="title_en" id="title_en" type="text" placeholder="..." aria-describedby="inputGroupPrepend2" required="" value="{{$contactmeta->title_uz}}">
                                 </div>
                             </div>
                         </div>

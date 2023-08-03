@@ -10,7 +10,7 @@
                     <i data-feather="shopping-bag"></i>
                 </div>
                 <h5>{{count($products)}}</h5>
-                <p>All Products</p><a class="btn-arrow arrow-primary" href="javascript:void(0)"><i
+                <p>Количество проектов</p><a class="btn-arrow arrow-primary" href="javascript:void(0)"><i
                         class="toprightarrow-primary fa fa-arrow-up me-2"></i></a>
                 <div class="parrten">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -43,7 +43,7 @@
                     <i data-feather="pocket"></i>
                 </div>
                 <h5>{{count($category)}}</h5>
-                <p>All Categories</p><a class="btn-arrow arrow-primary" href="javascript:void(0)"><i
+                <p>Количество Категории</p><a class="btn-arrow arrow-primary" href="javascript:void(0)"><i
                         class="toprightarrow-primary fa fa-arrow-up me-2"></i></a>
                 <div class="parrten">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -76,7 +76,7 @@
                     <i data-feather="smartphone"></i>
                 </div>
                 <h5>{{count($fedback)}}</h5>
-                <p>All Feedbacks</p><a class="btn-arrow arrow-primary" href="javascript:void(0)"><i
+                <p>Количество обратной связи</p><a class="btn-arrow arrow-primary" href="javascript:void(0)"><i
                         class="toprightarrow-primary fa fa-arrow-up me-2"></i></a>
                 <div class="parrten">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -109,7 +109,7 @@
                     <i data-feather="user-check"></i>
                 </div>
                 <h5>{{$project_view_count}}</h5>
-                <p>Project Shows</p><a class="btn-arrow arrow-primary" href="javascript:void(0)"><i
+                <p>Количество просмотров проектов</p><a class="btn-arrow arrow-primary" href="javascript:void(0)"><i
                         class="toprightarrow-primary fa fa-arrow-up me-2"></i></a>
                 <div class="parrten">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -143,7 +143,7 @@
                     <i data-feather="user-check"></i>
                 </div>
                 <h5>{{$service_view_count}}</h5>
-                <p>Обувь для обслуживания</p><a class="btn-arrow arrow-primary" href="javascript:void(0)"><i
+                <p>Количество просмотров услуг</p><a class="btn-arrow arrow-primary" href="javascript:void(0)"><i
                         class="toprightarrow-primary fa fa-arrow-up me-2"></i></a>
                 <div class="parrten">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"

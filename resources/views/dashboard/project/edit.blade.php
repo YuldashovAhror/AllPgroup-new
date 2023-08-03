@@ -72,6 +72,38 @@
                         </div>
                         <div class="row">
                             <div class="col-md-4">
+                                <label class="form-label" for="alt_uz">Альт Uz</label>
+                                <input class="form-control" name="alt_uz" id="alt_uz" type="text" placeholder="..." required="" value="{{$project->alt_uz}}">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label" for="alt_ru">Альт Ru</label>
+                                <input class="form-control" name="alt_ru" id="alt_ru" type="text" placeholder="..." required="" value="{{$project->alt_uz}}">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label" for="alt_en">Альт En</label>
+                                <div class="input-group">
+                                    <input class="form-control" name="alt_en" id="alt_en" type="text" placeholder="..." aria-describedby="inputGroupPrepend2" required="" value="{{$project->alt_uz}}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="form-label" for="title_uz">Заголовок Uz</label>
+                                <input class="form-control" name="title_uz" id="title_uz" type="text" placeholder="..." required="" value="{{$project->title_uz}}">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label" for="title_ru">Заголовок Ru</label>
+                                <input class="form-control" name="title_ru" id="title_ru" type="text" placeholder="..." required="" value="{{$project->title_uz}}">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label" for="title_en">Заголовок En</label>
+                                <div class="input-group">
+                                    <input class="form-control" name="title_en" id="title_en" type="text" placeholder="..." aria-describedby="inputGroupPrepend2" required="" value="{{$project->title_uz}}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
                                 <label for="discription_uz" class="form-label">Описание Uz</label>
                                 <div class="form-group">
                                     <textarea class="ckeditor form-control" name="discription_uz">{{$project->discription_uz}}</textarea>
