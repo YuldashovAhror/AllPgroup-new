@@ -45,7 +45,7 @@
                                             style="height: 100px; width: 200px"></td>
                                     <td>{{ $project->name_ru }}</td>
                                     @if ($project->categories != null)
-                                        <td>{{ $project->name_ru }}</td>
+                                        <td>{{ $project->categories->name_ru }}</td>
                                     @endif
                                     @if ($project->categories == null)
                                         <td><h3>Null</h3></td>

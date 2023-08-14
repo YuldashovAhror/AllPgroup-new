@@ -81,7 +81,7 @@
                             </p>
 
                             <p>{{ __('asd.Свои предложения вы можете направлять на нашу электронную почту:') }} <a
-                                    href="mailto:sales@all-p.uz">sales@all-p.uz</a></p>
+                                    href="">{{__('asd.sales@all-p.uz')}}</a></p>
 
                             <p>{{ __('asd.Также можете воспользоваться нашей формой быстрого заполнения.') }}</p>
                         </div>
@@ -95,7 +95,7 @@
                                     </div>
                                     <div class="contact-form__input">
                                         <input type="tel" class="form_tel" name="phone" pattern="^[0-9-+\s()]*$"
-                                            placeholder=" " required>
+                                            required>
                                         <span>{{ __('asd.Номер телефона:') }}</span>
                                     </div>
                                     {{-- @dd($clients->all()) --}}
@@ -132,11 +132,11 @@
                     <div class="contact-tab">
                         <div class="contact__text">
 
-                            <p>{{ __('asd.Мы успешно развивающаяся динамичная компания, вот уже 15 лет, как мы вместе с нашими заказчиками и партнерами реализуем разнообразные проекты и добиваемся хороших результатов. Будем рады, если и вы присоединитесь к нам, и мы вместе с Вами разработаем индивидуальные варианты предложений сотрудничества и решения ваших задач в отрасли устройства бетонных покрытий, устройства наливных декоративных, виниловых, полимерных покрытий. Компания All-P-Group открыта к сотрудничеству и реализации совместных проектов.') }}
+                            <p>{{ __('asd.Компания All-P-Group придерживается принципов открытого диалога и реализации совместных проектов. Мы стремимся к установлению долгосрочных партнерских отношений и готовы внимательно выслушать ваши требования, предлагая индивидуальные решения, адаптированные к вашим проектам. Будучи открытыми к сотрудничеству, мы готовы реализовывать совместные проекты и успешно воплощать ваши идеи.') }}
                             </p>
 
-                            <p>{{ __('asd.Свои предложения вы можете направлять на нашу электронную почту:') }} </p>
-                            <a href="mailto:sales@all-p.uz">sales@all-p.uz</a></p>
+                            <p>{{ __('asd.Свои предложения вы можете направлять на нашу электронную почту:') }} <a href="">{{__('asd.sales@all-p.uz')}}</a></p></p>
+                            
 
                             <p>{{ __('asd.Также можете воспользоваться нашей формой быстрого заполнения.') }}</p>
 
@@ -146,13 +146,13 @@
                                 <div class="contact-form">
                                     <div class="contact-form__col">
                                         <div class="contact-form__input">
-                                            <input type="text" class="form_name" placeholder=" "
+                                            <input type="text" class="form_name"
                                                 name="name" required>
                                             <span>{{ __('asd.Ф.И.О.') }}</span>
                                         </div>
                                         <div class="contact-form__input">
                                             <input type="tel" class="form_tel" pattern="^[0-9-+\s()]*$"
-                                                placeholder=" " name="phone" required>
+                                            name="phone" required>
                                             <span>{{ __('asd.Номер телефона:') }}</span>
                                         </div>
                                         <div class="contact-form__select">
@@ -176,7 +176,7 @@
                                     </div>
                                     <div class="contact-form__col">
                                         <div class="contact-form__message">
-                                            <textarea placeholder="" name="discription"></textarea>
+                                            <textarea name="discription"></textarea>
                                             <span>{{ __('asd.Текст сообщения:') }}</span>
                                         </div>
                                         <button class="contact-form__btn btn" type="submit">
@@ -193,7 +193,7 @@
                             </p>
 
                             <p>{{ __('asd.Свои резюме можете направлять на нашу электронную почту:') }} <a
-                                    href="mailto:hr@all-p.uz">{{__('asd.hr@all-p.uz')}}</a></p>
+                                    href="">{{__('asd.hr@all-p.uz')}}</a></p>
                         </div>
                         <ul class="projects-faq">
                             @foreach ($vacancies as $vacancy)
@@ -218,19 +218,19 @@
                             <div class="contact-form">
                                 <div class="contact-form__col">
                                     <div class="contact-form__input">
-                                        <input type="text" class="form_name" id="first_name3" placeholder=" "
+                                        <input type="text" class="form_name" id="first_name3"
                                             name="name">
                                         <span>{{ __('asd.Ф.И.О.') }}</span>
                                     </div>
                                     <div class="contact-form__input">
                                         <input type="tel" class="form_tel" id="phone3"
-                                            pattern="^[0-9-+\s()]*$" placeholder=" " name="phone">
+                                            pattern="^[0-9-+\s()]*$" name="phone">
                                         <span>{{ __('asd.Номер телефона:') }}</span>
                                     </div>
                                 </div>
                                 <div class="contact-form__col">
                                     <div class="contact-form__input">
-                                        <input class="form_tel" placeholder=" " id="vacancy_number"
+                                        <input type="text" id="vacancy_number"
                                             name="vacancy_number">
                                         <span>{{ __('asd.Введите номер вакансии') }}</span>
                                     </div>
@@ -281,6 +281,18 @@
     @include('components.front.scripts')
 
     @livewireScripts
+    <script data-b24-form="inline/4/bwnvw4" data-skip-moving="true">
+        (function(w,d,u){
+        var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);
+        var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+        })(window,document,'https://cdn-ru.bitrix24.ru/b18647668/crm/form/loader_4.js');
+    </script>
+    <script>
+        (function(w,d,u){
+                var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/60000|0);
+                var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+        })(window,document,'https://cdn-ru.bitrix24.ru/b18647668/crm/site_button/loader_4_arvi7b.js');
+    </script>
     {{-- <script>
         function send1() {
     

@@ -44,10 +44,9 @@
 
     <div class="feedback" style="display: none">
         <div class="feedback-content">
-
             <!-- feedback-wrap спрятать feedback-done показать при отправке -->
 
-            <div class="feedback-wrap" @if (session('message')) style="display: none" @endif>
+            <div class="feedback-wrap">
                 <div class="feedback__title">
                     {{ __('asd.Оставьте свои данные и мы свяжемся с вами!') }}
                 </div>
@@ -77,24 +76,20 @@
                     {{ __('asd.Нажимая на кнопку, вы даете согласие на обработку моих персональных данных') }}
                 </div>
             </div>
-
-            @if (session('message'))
-                <div class="feedback-done" style="display: block">
-                    <div class="feedback__title">
-                        {{ __('asd.Заяка отправлена!') }}
-                    </div>
-                    <div class="feedback__img">
-                        <img src="/issets/img/done.svg" alt="ico">
-                    </div>
-                    <div class="feedback__info">
-                        {{ __('asd.Ваш запрос получен. мы свяжемся с вами в ближайшее время') }}
-                    </div>
-                    <button class="feedback-form__btn">
-                        {{ __('asd.Закрыть') }}
-                    </button>
+            <div class="feedback-done" style="display: none">
+                <div class="feedback__title">
+                    {{ __('asd.Заяка отправлена!') }}
                 </div>
-            @endif
-
+                <div class="feedback__img">
+                    <img src="/issets/img/done.svg" alt="ico">
+                </div>
+                <div class="feedback__info">
+                    {{ __('asd.Ваш запрос получен. мы свяжемся с вами в ближайшее время') }}
+                </div>
+                <button class="feedback-form__btn">
+                    {{ __('asd.Закрыть') }}
+                </button>
+            </div>
         </div>
     </div>
     <!-- CHAT -->
@@ -135,7 +130,7 @@
             <!-- changes -->
             <ul class="projects-nav">
                 @foreach ($categories as $key=>$category)
-                    <li @if ($projects->first()->category_id == $category->id) class="current" @endif>
+                    <li @if ($select_category == $category->id) class="current" @endif>
                         <a href="{{route('category.show', $category->id)}}"><span>{{$category['name_'.$lang]}}</span></a>
                     </li>
                 @endforeach
@@ -185,11 +180,24 @@
     @include('components.front.footer')
 
     <script src="/issets/js/jquery-3.4.1.min.js"></script>
+    <script src="/issets/js/jquery.inputmask.min.js"></script>
     <script src="/issets/js/owl.carousel.js"></script>
     <script src="/issets/js/jquery.custom-select.js"></script>
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     <script src="/issets/js/wow.min.js"></script>
     <script src="/issets/js/main.js"></script>
+    <script data-b24-form="inline/4/bwnvw4" data-skip-moving="true">
+        (function(w,d,u){
+        var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);
+        var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+        })(window,document,'https://cdn-ru.bitrix24.ru/b18647668/crm/form/loader_4.js');
+    </script>
+    <script>
+        (function(w,d,u){
+                var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/60000|0);
+                var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+        })(window,document,'https://cdn-ru.bitrix24.ru/b18647668/crm/site_button/loader_4_arvi7b.js');
+    </script>
     <script>
         function send2() {
 

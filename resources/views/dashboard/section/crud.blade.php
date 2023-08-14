@@ -113,97 +113,11 @@
                                     <td>{{ $section->name_ru }}</td>
                                     <td class="text-center"><a href="{{ route('dashboard.item.index', $section) }}"><button class="btn btn-primary"><i class="bx bxs-file-doc"></i>+</button></a></td>
                                     <td class="text-center">
-                                        <button class="btn btn-xs btn-success mb-1" type="button" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModalCenter{{ $section->id }}Edit"><i
-                                                class="bx bx-pencil"></i>Изменить</button>
-                                        <div class="modal fade" id="exampleModalCenter{{ $section->id }}Edit"
-                                            tabindex="-1" aria-labelledby="exampleModalCenter" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-centered" role="document"
-                                                style="max-width: 50vw">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title">Изменить</h5>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <form action="{{ route('dashboard.section.update', $section) }}"
-                                                            method="post" enctype="multipart/form-data">
-                                                            @csrf
-                                                            {{ method_field('put') }}
-                                                            <div class="card-body">
-                                                                <div class="row">
-                                                                    <div class="col-4">
-                                                                        <input type="hidden" value="{{ $service_id }}" name="service_id">
-                                                                        <div class="mb-3">
-                                                                            <label class="form-label"
-                                                                                for="exampleFormControlInput1">Название
-                                                                                RU</label>
-                                                                            <input class="form-control"
-                                                                                id="exampleFormControlInput1"
-                                                                                type="text"  name="name_ru"
-                                                                                value="{{ $section->name_ru }}">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-4">
-                                                                        <div class="mb-3">
-                                                                            <label class="form-label"
-                                                                                for="exampleFormControlInput1">Название
-                                                                                UZ</label>
-                                                                            <input class="form-control"
-                                                                                id="exampleFormControlInput1"
-                                                                                type="text"  name="name_uz"
-                                                                                value="{{ $section->name_uz }}">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-4">
-                                                                        <div class="mb-3">
-                                                                            <label class="form-label"
-                                                                                for="exampleFormControlInput1">Название
-                                                                                EN</label>
-                                                                            <input class="form-control"
-                                                                                id="exampleFormControlInput1"
-                                                                                type="text"  name="name_en"
-                                                                                value="{{ $section->name_en }}">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-md-4">
-                                                                        <label class="form-label" for="discription_ru">Описание Ru</label>
-                                                                        <textarea class="ckeditor form-control" name="discription_ru">{{ $section->discription_ru }}</textarea>
-                                                                    </div>
-                                                                    <div class="col-md-4">
-                                                                        <label for="discription_uz" class="form-label">Описание Uz</label>
-                                                                        <div class="form-group">
-                                                                            <textarea class="ckeditor form-control" name="discription_uz">{{ $section->discription_uz }}</textarea>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-4 mb-3">
-                                                                        <label class="form-label" for="discription_en">Описание En</label>
-                                                                        <div class="input-group">
-                                                                            <textarea class="ckeditor form-control" name="discription_en">{{ $section->discription_en }}</textarea>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <label class="form-label" for="name_en">Хорошо</label>
-                                                                <div class="row">
-                                                                    <div class="col-12">
-                                                                        <div class="input-group" style="font-size: 15px">
-                                                                            <input type="checkbox" id="ok" @if ($section->ok == 1) @checked(true) @endif name="ok">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="card-footer text-end">
-                                                                <button class="btn btn-primary"
-                                                                    type="submit">Изменить</button>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
+                                        <a href="{{ route('dashboard.section.edit', $section) }}">
+                                            <button class="btn btn-xs btn-success mb-1">Изменить
+                                                <i class="bx bx-pencil"></i>
+                                            </button>
+                                        </a>
                                         <button class="btn btn-xs btn-danger" type="button" data-bs-toggle="modal"
                                             data-bs-target="#exampleModalCenter{{ $section->id }}"><i
                                                 class="bx bx-trash"></i>Удалить</button>
@@ -240,3 +154,4 @@
         </div>
     </div>
 @endsection
+

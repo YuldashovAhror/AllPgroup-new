@@ -12,26 +12,29 @@
     <link rel="stylesheet" href="/issets/css/main.css">
     <title>ALL-P Group | {{ $serviceess['name_' . $lang] }}</title>
 
-    <meta name="description" content="{!! $serviceess['discription_' . $lang] !!}">
+    <meta name="description" content="{{ strip_tags($serviceess['discription_' . $lang]) }}">
 
     <!-- Facebook -->
     <meta property="og:title" content="ALL-P Group">
     <meta property="og:site_name" content="ALL-P Group">
-    <meta property="og:description" content="{!! $serviceess['discription_' . $lang] !!}">
+    <meta property="og:description" content="{{ strip_tags($serviceess['discription_' . $lang]) }}">
     <meta property="og:url" content="https://all-p.uz/">
-    <meta property="og:image" content="{{ $serviceess->photo }}" alt="{{$serviceess['alt_'.$lang]}}" title="{{$serviceess['title_'.$lang]}}">
+    <meta property="og:image" content="{{ $serviceess->photo }}" alt="{{ $serviceess['alt_' . $lang] }}"
+        title="{{ $serviceess['title_' . $lang] }}">
     <meta property="og:type" content="website">
 
     <!-- Google Plus -->
     <meta itemprop="name" content="ALL-P Group">
-    <meta itemprop="description" content="{!! $serviceess['discription_' . $lang] !!}">
-    <meta itemprop="image" content="{{ $serviceess->photo }}" alt="{{$serviceess['alt_'.$lang]}}" title="{{$serviceess['title_'.$lang]}}">
+    <meta itemprop="description" content="{{ strip_tags($serviceess['discription_' . $lang]) }}">
+    <meta itemprop="image" content="{{ $serviceess->photo }}" alt="{{ $serviceess['alt_' . $lang] }}"
+        title="{{ $serviceess['title_' . $lang] }}">
 
-    <!-- Twitter -->
+    <!--Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ALL-P Group">
-    <meta name="twitter:description" content="{!! $serviceess['discription_' . $lang] !!}">
-    <meta name="twitter:image" content="{{ $serviceess->photo }}" alt="{{$serviceess['alt_'.$lang]}}" title="{{$serviceess['title_'.$lang]}}">
+    <meta name="twitter:description" content="{{ strip_tags($serviceess['discription_' . $lang]) }}">
+    <meta name="twitter:image" content="{{ $serviceess->photo }}" alt="{{ $serviceess['alt_' . $lang] }}"
+        title="{{ $serviceess['title_' . $lang] }}">
 </head>
 
 <body>
@@ -61,7 +64,7 @@
         <div class="feedback-content">
             <!-- feedback-wrap спрятать feedback-done показать при отправке -->
 
-            <div class="feedback-wrap" @if (session('message')) style="display: none" @endif>
+            <div class="feedback-wrap">
                 <div class="feedback__title">
                     {{ __('asd.Оставьте свои данные и мы свяжемся с вами!') }}
                 </div>
@@ -91,36 +94,34 @@
                     {{ __('asd.Нажимая на кнопку, вы даете согласие на обработку моих персональных данных') }}
                 </div>
             </div>
-            @if (session('message'))
-                <div class="feedback-done" style="display: block">
-                    <div class="feedback__title">
-                        {{ __('asd.Заяка отправлена!') }}
-                    </div>
-                    <div class="feedback__img">
-                        <img src="/issets/img/done.svg" alt="ico">
-                    </div>
-                    <div class="feedback__info">
-                        {{ __('asd.Ваш запрос получен. мы свяжемся с вами в ближайшее время') }}
-                    </div>
-                    <button class="feedback-form__btn">
-                        {{ __('asd.Закрыть') }}
-                    </button>
+            <div class="feedback-done" style="display: none">
+                <div class="feedback__title">
+                    {{ __('asd.Заяка отправлена!') }}
                 </div>
-            @endif
+                <div class="feedback__img">
+                    <img src="/issets/img/done.svg" alt="ico">
+                </div>
+                <div class="feedback__info">
+                    {{ __('asd.Ваш запрос получен. мы свяжемся с вами в ближайшее время') }}
+                </div>
+                <button class="feedback-form__btn">
+                    {{ __('asd.Закрыть') }}
+                </button>
+            </div>
         </div>
     </div>
     <section class="page-head">
         <div class="page-head__img">
-            <img src="{{$serviceess->photo}}" alt="{{$serviceess['alt_'.$lang]}}" title="{{$serviceess['title_'.$lang]}}">
+            <img src="{{ $serviceess->photo }}" alt="{{ $serviceess['alt_' . $lang] }}"
+                title="{{ $serviceess['title_' . $lang] }}">
         </div>
         <h1 class="page-head__title">
             {{ $serviceess['name_' . $lang] }}
         </h1>
-        <div>
-            <a href="#" class="page-head__btn btn feedback-open">
-                {{ __('asd.Консультация со специалистом') }}
-            </a>
-        </div>
+
+        <a href="#" class="page-head__btn btn feedback-open">
+            {{ __('asd.Консультация со специалистом') }}
+        </a>
     </section>
     <section class="services">
         <div class="container">
@@ -129,7 +130,8 @@
                     @foreach ($services as $key => $service)
                         <div class="services-side__item current">
                             <div class="services-side__name">
-                                <a href="{{route('service.show', $service->id)}}">{{ $service['name_' . $lang] }}</a>
+                                <a
+                                    href="{{ route('service.show', $service->id) }}">{{ $service['name_' . $lang] }}</a>
                             </div>
                             @if ($serviceess->id == $service->id)
                                 <ul class="services-side__list">
@@ -151,16 +153,21 @@
                                 {!! $serviceess['discription_' . $lang] !!}
                             </p>
                         </div>
+                        @if ($serviceess->ok != 0)
+                            <button class="services-main__btn feedback-open">
+                                {{ __('asd.Рассчитать стоимость монтажа') }}
+                            </button>
+                        @endif
                         @foreach ($sections as $section)
-                            <section class="services-main__block" id="{{ $section->id }}" >
-                                <div >
+                            <section class="services-main__block" id="{{ $section->id }}">
+                                <div>
                                     <h3 class="services-main__title">
                                         {{ $section['name_' . $lang] }}
                                     </h3>
                                     <div class="services-main__desc">
                                         {!! $section['discription_' . $lang] !!}
                                     </div>
-                                    @foreach ( $section->items as $item)
+                                    @foreach ($section->items as $item)
                                         <div class="services-main__item">
                                             <h4 class="services-main__item-title">
                                                 {{ $item['name_' . $lang] }}
@@ -170,14 +177,16 @@
                                                     {!! $item['discription_' . $lang] !!}
                                                 </p>
                                             </div>
-                                            @if ($item->ok != 0)
-                                                <button class="services-main__btn feedback-open">
-                                                    {{ __('asd.Рассчитать стоимость монтажа') }}
-                                                </button>
-                                            @endif
+                                            <!--@if ($item->ok != 0)
+-->
+                                            <!--    <button class="services-main__btn feedback-open">-->
+                                            <!--        {{ __('asd.Рассчитать стоимость монтажа') }}-->
+                                            <!--    </button>-->
+                                            <!--
+@endif-->
                                         </div>
                                     @endforeach
-                                    @if ($service->ok != 0)
+                                    @if ($section->ok != 0)
                                         <button class="services-main__btn feedback-open">
                                             {{ __('asd.Рассчитать стоимость монтажа') }}
                                         </button>
@@ -195,10 +204,29 @@
     @include('components.front.footer')
     <script src="/issets/js/jquery-3.4.1.min.js"></script>
     <script src="/issets/js/owl.carousel.js"></script>
+    <script src="/issets/js/jquery.inputmask.min.js"></script>
     <script src="/issets/js/jquery.custom-select.js"></script>
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     <script src="/issets/js/wow.min.js"></script>
     <script src="/issets/js/main.js"></script>
+    <script data-b24-form="inline/4/bwnvw4" data-skip-moving="true">
+        (function(w, d, u) {
+            var s = d.createElement('script');
+            s.async = true;
+            s.src = u + '?' + (Date.now() / 180000 | 0);
+            var h = d.getElementsByTagName('script')[0];
+            h.parentNode.insertBefore(s, h);
+        })(window, document, 'https://cdn-ru.bitrix24.ru/b18647668/crm/form/loader_4.js');
+    </script>
+    <script>
+        (function(w, d, u) {
+            var s = d.createElement('script');
+            s.async = true;
+            s.src = u + '?' + (Date.now() / 60000 | 0);
+            var h = d.getElementsByTagName('script')[0];
+            h.parentNode.insertBefore(s, h);
+        })(window, document, 'https://cdn-ru.bitrix24.ru/b18647668/crm/site_button/loader_4_arvi7b.js');
+    </script>
     <script>
         function send2() {
             let token = $("#token").val();
@@ -222,6 +250,12 @@
                     // Обработка успешного ответа от сервера
                     console.log("Запрос выполнен успешно.");
                     console.log(response);
+                    $('#feedback-wrap').hide();
+                    $('#feedback-done').show();
+                    $("#token").val('');
+                    $('#first_name2').val('');
+                    $('#phone2').val('');
+                    $('#first_email2').val('');
                 },
                 error: function(xhr, status, error) {
                     // Обработка ошибки запроса

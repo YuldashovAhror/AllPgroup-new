@@ -13,15 +13,19 @@ class ProjectController extends Controller
 {
     public function index()
     {
+        
         $categories = Category::orderBy('id', 'asc')->get();
         $projects = Project::where('category_id', $categories->first()->id)->get();
+        $select_category = $categories->first()->id;
         $metateg = ProjectMetateg::find(1);
         $services = Service::orderBy('id', 'asc')->get();
+       
         return view('front.project.projects', [
             'projects'=>$projects,
             'metateg'=>$metateg,
             'services'=>$services,
             'categories'=>$categories,
+             'select_category' => $select_category
         ]);
     }
 
@@ -32,7 +36,8 @@ class ProjectController extends Controller
         $project->increment('view');
         return view('front.project.single', [
             'project'=>$project,
-            'projects'=>$projects
+            'projects'=>$projects,
+          
         ]);
     }
 

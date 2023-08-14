@@ -17,7 +17,7 @@ class ServiceController extends BaseController
 
     public function index()
     {
-        $services = Service::orderBy('id', 'desc')->get();
+        $services = Service::orderBy('id', 'asc')->get();
         return view('dashboard.service.index', [
             'services'=>$services
         ]);
@@ -35,6 +35,7 @@ class ServiceController extends BaseController
             'name_uz' => 'required|string|max:255',
             'name_ru' => 'required|string|max:255',
             'name_en' => 'required|string|max:255',
+            'ok' => 'nullable',
             'alt_uz' => 'nullable',
             'alt_ru' => 'nullable',
             'alt_en' => 'nullable',
@@ -45,7 +46,12 @@ class ServiceController extends BaseController
             'discription_ru' => 'nullable',
             'discription_en' => 'nullable',
         ]);
-        
+        if (!empty($validatedData['ok'])){
+            $validatedData['ok'] = 1;
+        }
+        if (empty($validatedData['ok'])){
+            $validatedData['ok'] = 0;
+        }
         if (!empty($validatedData['photo'])){
             $validatedData['photo'] = $this->photoSave($validatedData['photo'], 'image/service');   
         }
@@ -68,6 +74,7 @@ class ServiceController extends BaseController
             'name_uz' => 'required|string|max:255',
             'name_ru' => 'required|string|max:255',
             'name_en' => 'required|string|max:255',
+            'ok' => 'nullable',
             'alt_uz' => 'nullable',
             'alt_ru' => 'nullable',
             'alt_en' => 'nullable',
@@ -78,7 +85,12 @@ class ServiceController extends BaseController
             'discription_ru' => 'nullable',
             'discription_en' => 'nullable',
         ]);
-        
+        if (!empty($validatedData['ok'])){
+            $validatedData['ok'] = 1;
+        }
+        if (empty($validatedData['ok'])){
+            $validatedData['ok'] = 0;
+        }
         if (!empty($validatedData['photo'])){
             $this->fileDelete('\Service', $id, 'photo');
             $validatedData['photo'] = $this->photoSave($validatedData['photo'], 'image/service');

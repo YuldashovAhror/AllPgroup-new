@@ -102,11 +102,13 @@ Route::group(['prefix' => 'dashboard'], function (){
 
         Route::get('service/{id}/section', [SectionController::class, 'index'])->name('section.index');
         Route::post('section', [SectionController::class, 'store'])->name('section.store');
+        Route::get('section/{id}/edit', [SectionController::class, 'edit'])->name('section.edit');
         Route::put('section/{id}/update', [SectionController::class, 'update'])->name('section.update');
         Route::delete('section/{id}', [SectionController::class, 'destroy'])->name('section.destroy');
 
         Route::get('section/{id}/item', [ItemController::class, 'index'])->name('item.index');
         Route::post('item', [ItemController::class, 'store'])->name('item.store');
+        Route::get('item/{id}/edit', [ItemController::class, 'edit'])->name('item.edit');
         Route::put('item/{id}/update', [ItemController::class, 'update'])->name('item.update');
         Route::delete('item/{id}', [ItemController::class, 'destroy'])->name('item.destroy');
 

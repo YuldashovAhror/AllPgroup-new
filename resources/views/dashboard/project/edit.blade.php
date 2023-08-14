@@ -18,11 +18,12 @@
                                     <img class="mb-3" src="/issets/size.png" alt=""
                                     style="height: 242px; width: 270px">
                                 </div>
+                                
                                 <div>
                                     <select class="calc__type" name="category_id" id="calc__type"
                                         style="width: 100%; padding:6px 12px; border-color: #ced4da; border-radius: 5px">
                                         @foreach ($categories as $category)
-                                            <option value="{{ $category->id }}">{{ $category->name_ru }}</option>
+                                            <option value="{{ $category->id }}" @if($category->id == $project->category_id) selected @endif>{{ $category->name_ru }} 
                                         @endforeach
                                     </select>
                                 </div>

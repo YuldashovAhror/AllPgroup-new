@@ -1,4 +1,5 @@
 <script src="/issets/js/jquery-3.4.1.min.js"></script>
+<script src="/issets/js/jquery.inputmask.min.js"></script>
 <script src="/issets/js/owl.carousel.js"></script>
 <script src="/issets/js/jquery.custom-select.js"></script>
 <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>

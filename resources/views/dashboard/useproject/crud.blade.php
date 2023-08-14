@@ -19,7 +19,7 @@
         <div class="col-sm-12">
             <div class="card">
                 <div class="card-header pb-0">
-                    <h5>Добавить Использовать проект</h5>
+                    <h5>Добавить Области применения</h5>
                 </div>
                 <form action="{{ route('dashboard.useproject.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
@@ -105,7 +105,7 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-md-10">
-                            <h5>Все Использовать проект</h5>
+                            <h5>Все Области применения</h5>
                         </div>
                     </div>
                 </div>

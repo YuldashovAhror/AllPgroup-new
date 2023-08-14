@@ -46,7 +46,17 @@ class SectionController extends Controller
         $section->name_en = $validatedData['name_en'];
         $section->ok = $validatedData['ok'];
         $section->save();
-        return back()->with('success', 'Data uploaded successfully.')->with('success', 'Data uploaded successfully.');
+        return back()->with('success', 'Data uploaded successfully.');
+    }
+
+    public function edit($id)
+    {
+        $section = Section::find($id);
+        // $service_id = $section->service_id;
+        // $section->service_id = 'service_id';
+        return view('dashboard.section.edit', [
+            'section'=>$section
+        ]);
     }
 
     public function update(Request $request, $id)
@@ -59,7 +69,6 @@ class SectionController extends Controller
             'discription_uz' => 'required',
             'discription_ru' => 'required',
             'discription_en' => 'required',
-            'service_id' => 'integer',
             'ok' => 'nullable',
         ]);
 
@@ -70,7 +79,6 @@ class SectionController extends Controller
         if (empty($validatedData['ok'])){
             $validatedData['ok'] = 0;
         }
-        $section->service_id = $validatedData['service_id'];
         $section->discription_uz = $validatedData['discription_uz'];
         $section->discription_ru = $validatedData['discription_ru'];
         $section->discription_en = $validatedData['discription_en'];
@@ -79,7 +87,8 @@ class SectionController extends Controller
         $section->name_en = $validatedData['name_en'];
         $section->ok = $validatedData['ok'];
         $section->save();
-        return back()->with('success', 'Data uploaded successfully.');
+        // dd($section->service_id);
+        return redirect()->route('dashboard.section.index', $section->service_id)->with('success', 'Data updated successfully.');
     }
 
     public function destroy($id)

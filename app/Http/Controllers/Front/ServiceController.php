@@ -22,7 +22,7 @@ class ServiceController extends Controller
 
     public function show($id)
     {
-        $services = Service::with('sections')->orderBy('id', 'desc')->get();
+        $services = Service::with('sections')->orderBy('id', 'asc')->get();
         $serviceess = Service::find($id);
         $serviceess->increment('view');
         $sections = Section::with('items')->where('service_id', $serviceess->id)->get();

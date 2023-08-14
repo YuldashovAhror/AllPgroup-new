@@ -14,6 +14,10 @@
             <li>
                 <a href="#">
                     {{__('asd.НАШИ УСЛУГИ')}}
+                    
+                    <div class="submenu-open">
+						<img src="/issets/img/chevron-down.svg" alt="ico">
+					</div>
                 </a>
                 {{-- {{route('service.index')}} --}}
                 <!-- changes -->

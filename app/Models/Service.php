@@ -17,6 +17,7 @@ class Service extends Model
         'discription_uz',
         'discription_ru',
         'discription_en',
+        'ok',
         'view',
         'alt_uz',
         'alt_ru',

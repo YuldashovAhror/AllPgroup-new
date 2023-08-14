@@ -50,7 +50,7 @@
                             <li><a href="{{route('dashboard.project.index')}}">Лист</a></li>
                             <li><a href="{{route('dashboard.project.create')}}">Создать</a></li>
                             <li><a href="{{route('dashboard.projectto.index')}}">Дополнения к проекту</a></li>
-                            <li><a href="{{route('dashboard.useproject.index')}}">Использовать проект</a></li>
+                            <li><a href="{{route('dashboard.useproject.index')}}">Области применения</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">

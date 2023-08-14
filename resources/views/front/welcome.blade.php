@@ -47,12 +47,12 @@
 
     <!-- FEEDBACK -->
 
-    <div class="feedback" style="display: none">
+    <div class="feedback">
         <div class="feedback-content">
 
             <!-- feedback-wrap спрятать feedback-done показать при отправке -->
 
-            <div class="feedback-wrap" @if (session('message')) style="display: none" @endif>
+            <div class="feedback-wrap">
                 <div class="feedback__title">
                     {{ __('asd.Оставьте свои данные и мы свяжемся с вами!') }}
                 </div>
@@ -83,8 +83,7 @@
                 </div>
             </div>
 
-            @if (session('message'))
-                <div class="feedback-done" style="display: block">
+                <div class="feedback-done">
                     <div class="feedback__title">
                         {{ __('asd.Заяка отправлена!') }}
                     </div>
@@ -98,7 +97,6 @@
                         {{ __('asd.Закрыть') }}
                     </button>
                 </div>
-            @endif
 
         </div>
     </div>
@@ -128,10 +126,10 @@
                             {{ $mainslider['name_' . $lang] }}
                         </h2>
                         <div class="main-btns">
-                            <a href="#" class="main__btn feedback-open">
+                            <a href="#" class="btn feedback-open">
                                 {{__('asd.Заказать расчёт')}}
                             </a>
-                            <a href="{{ $mainslider->link }}" class="btn">
+                            <a href="{{ $mainslider->link }}" class="main__btn">
                                 {{ __('asd.Подробнее') }}
                             </a>
                         </div>
@@ -225,7 +223,7 @@
                                 {{ $service['name_' . $lang] }}
                             </div>
                             <div class="services-list__text">
-                                {!! $service['discription_' . $lang] !!}
+                                {!!mb_substr($service['discription_'.$lang], 0, 300)!!}...
                             </div>
                             <a href="{{ route('service.show', $service->id) }}" class="services-list__btn btn">
                                 {{ __('asd.Узнать больше') }}
@@ -577,17 +575,17 @@
 			});
 			
 
-			// setTimeout(() => {
-			// 	$('.feedback-wrap').hide()
-			// 	$('.feedback-done').show()
-			// 	$("#first_name").val('');
-			// 	$("#phone").val('');
-			// }, 1000)
-			// setTimeout(() => {
-			// 	$('.feedback-wrap').show()
-			// 	$('.feedback-done').hide()
-			// 	$('.feedback').hide()
-			// }, 3000)
+			setTimeout(() => {
+				$('.feedback-wrap').hide()
+				$('.feedback-done').show()
+				$("#first_name").val('');
+				$("#phone").val('');
+			}, 1000)
+			setTimeout(() => {
+			    $('.feedback-wrap').show()
+			    $('.feedback-done').hide()
+			    $('.feedback').hide()
+			}, 3000)
 		}
 	</script>
 	<script>
@@ -636,8 +634,21 @@
 			}, 3000)
 		}
 	</script>
+	<script data-b24-form="inline/4/bwnvw4" data-skip-moving="true">
+        (function(w,d,u){
+        var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);
+        var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+        })(window,document,'https://cdn-ru.bitrix24.ru/b18647668/crm/form/loader_4.js');
+    </script>
+    <script>
+        (function(w,d,u){
+                var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/60000|0);
+                var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+        })(window,document,'https://cdn-ru.bitrix24.ru/b18647668/crm/site_button/loader_4_arvi7b.js');
+    </script>
 
     <script src="/issets/js/jquery-3.4.1.min.js"></script>
+    <script src="/issets/js/jquery.inputmask.min.js"></script>
     <script src="/issets/js/owl.carousel.js"></script>
     <script src="/issets/js/jquery.custom-select.js"></script>
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>

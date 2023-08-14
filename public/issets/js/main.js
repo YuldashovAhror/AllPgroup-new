@@ -2,9 +2,9 @@ $(window).on('load', () => {
 
     let rootFont = parseInt($(':root').css('font-size'))
 
-
     $('.preloader').delay(500).fadeOut(800)
-    
+
+
     
     //______________HEADER_______________
 
@@ -12,7 +12,8 @@ $(window).on('load', () => {
         $(this).toggleClass('active')
         $('.mobile-menu').slideToggle(500)
     })
-    
+
+
     $('.header-submenu').mouseenter(function() {
         $(this).find('.submenu').fadeIn(400)
     })
@@ -21,7 +22,12 @@ $(window).on('load', () => {
         $(this).fadeOut(400)
     })
 
-
+    $('.submenu-open').click(function(e) {
+        e.preventDefault()
+        $(this).toggleClass('active')
+        $(this).parents('li').find('.submenu').slideToggle(400)
+    })
+    
 
     //_______________MAIN________________
 
@@ -44,8 +50,8 @@ $(window).on('load', () => {
     }, function() {
         $(this).parent().removeClass('hover')
     })
-    
-    
+
+
     //_________________NUMBERS_________________
 
     let showCounter = true;
@@ -93,9 +99,10 @@ $(window).on('load', () => {
     $('.services-arrows .arrow-right').click(() => {
         $('.services-carousel').trigger('next.owl.carousel', [700]);
     })
-    
-    
-     let sectionIds = $('.services-side__list li a');
+
+
+
+    let sectionIds = $('.services-side__list li a');
 
     $(document).scroll(function(){
         sectionIds.each(function(){ 
@@ -121,8 +128,6 @@ $(window).on('load', () => {
         let containerOffset = $(container).offset().top
         window.scrollTo({top: containerOffset - 6*rootFont, behavior: 'smooth'})
     })
-
-
 
 
     //_______________AREA________________
@@ -161,8 +166,8 @@ $(window).on('load', () => {
     $('.area-arrows .arrow-right').click(() => {
         $('.area-carousel').trigger('next.owl.carousel', [700]);
     })
-    
-    
+
+
     if($(window).width() < 768) {
         $('.area-carousel').owlCarousel('destroy') 
         $('.area-carousel').removeClass('owl-carousel')
@@ -201,9 +206,10 @@ $(window).on('load', () => {
     $('.projects-arrows .arrow-right').click(() => {
         $('.projects-carousel').trigger('next.owl.carousel', [700]);
     })
+
+
+
     
-    
-        
     //______________ABOUT________________
 
 
@@ -247,6 +253,7 @@ $(window).on('load', () => {
 
 
 
+
     // __________NEWS__________
 
 
@@ -268,21 +275,24 @@ $(window).on('load', () => {
     }
     function init() {
         var myMap = new ymaps.Map("map", {
-            center: [41.30990730039374, 69.27306037301392],
+            center: [41.325310, 69.320423],
             zoom: 14,
         }, {
             searchControlProvider: 'yandex#search'
         },
     );
     myMap.geoObjects
-    .add(new ymaps.Placemark([41.30990730039374, 69.27306037301392], {
+    .add(new ymaps.Placemark([41.325310, 69.320423], {
     }, {
         iconLayout: 'default#image',
-        iconImageHref: '/issets/img/marker.svg',
-        iconImageSize: [3.25*rootFont, 4.5*rootFont],
+        iconImageHref: 'issets/img/marker.svg',
+        iconImageSize: [34, 41],
     }))
 
         myMap.behaviors.disable('scrollZoom')
+
+
+            
         
     }
 
@@ -312,25 +322,23 @@ $(window).on('load', () => {
         }
     })
 
-    $('.form_tel').on('input', event => {
-        const inputValue = event.target.value;
-        const sanitizedValue = inputValue.replace(/[^\d+\-() ]/g, '');
-        event.target.value = sanitizedValue;
-      });
+    //_____________INPUTMASK__________
+
+
+    $('.form_tel').inputmask("+\\9\\98 99 999 99 99")
 
     $('.contact-done').click(function() {
         $(this).fadeOut(600)
     })
-    
-    
+
+
     //_____________FEEDBACK_________________
-    
-    
+
+
     $('.services-main__content button').click(e => {
         e.preventDefault()
         $('.feedback').fadeIn(600); 
     })
-
 
     $('.feedback-open').click(e => {
         e.preventDefault()
@@ -352,7 +360,6 @@ $(window).on('load', () => {
             $('.feedback').fadeOut(600); 
         }
     })
-
 
     
     //__________WOW____________

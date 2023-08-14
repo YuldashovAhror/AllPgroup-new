@@ -71,7 +71,7 @@
                         {{__('asd.E-mail')}}
                     </div>
                     <div class="footer-item__text">
-                        <a href="mailto:office@all-p.uz">office@all-p.uz</a>
+                        <a href="">{{__('asd.office@all-p.uz')}}</a>
                     </div>
                 </div>
             </div>

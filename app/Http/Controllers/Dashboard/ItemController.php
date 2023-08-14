@@ -46,7 +46,15 @@ class ItemController extends Controller
         $section->name_en = $validatedData['name_en'];
         $section->ok = $validatedData['ok'];
         $section->save();
-        return back()->with('success', 'Data uploaded successfully.')->with('success', 'Data uploaded successfully.');
+        return back()->with('success', 'Data uploaded successfully.');
+    }
+
+    public function edit($id)
+    {
+        $item = Item::find($id);
+        return view('dashboard.item.edit', [
+            'item'=>$item
+        ]);
     }
 
     public function update(Request $request, $id)
@@ -58,7 +66,6 @@ class ItemController extends Controller
             'discription_uz' => 'required',
             'discription_ru' => 'required',
             'discription_en' => 'required',
-            'section_id' => 'integer',
             'ok' => 'nullable',
         ]);
 
@@ -69,7 +76,6 @@ class ItemController extends Controller
         if (empty($validatedData['ok'])){
             $validatedData['ok'] = 0;
         }
-        $section->section_id = $validatedData['section_id'];
         $section->discription_uz = $validatedData['discription_uz'];
         $section->discription_ru = $validatedData['discription_ru'];
         $section->discription_en = $validatedData['discription_en'];
@@ -78,7 +84,7 @@ class ItemController extends Controller
         $section->name_en = $validatedData['name_en'];
         $section->ok = $validatedData['ok'];
         $section->save();
-        return back()->with('success', 'Data updated successfully.')->with('success', 'Data uploaded successfully.');
+        return redirect()->route('dashboard.item.index', $section->section_id)->with('success', 'Data updated successfully.');
     }
 
     public function destroy($id)
