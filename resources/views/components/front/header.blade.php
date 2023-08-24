@@ -88,10 +88,10 @@
 
 
         <div class="header-social">
-            <a href="#" target="_blank" rel="nofollow">
+            <a href="https://wa.me/+998996354444" target="_blank" rel="nofollow">
                 <img src="/issets/img/whatsapp.svg" alt="ico">
             </a>
-            <a href="#" target="_blank" rel="nofollow">
+            <a href="https://t.me/+998996354444" target="_blank" rel="nofollow">
                 <img src="/issets/img/tg.svg" alt="ico">
             </a>
         </div>

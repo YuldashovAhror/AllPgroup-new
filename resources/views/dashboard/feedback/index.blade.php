@@ -30,7 +30,7 @@
                                 <th scope="col">Партнеры</th>
                                 <th scope="col">Название</th>
                                 <th scope="col">Электронная почта</th>
-                                <th scope="col">Фото</th>
+                                <th scope="col">Файл</th>
                                 <th scope="col">Телефон</th>
                                 <th scope="col">Описание</th>
                                 <th scope="col" class="text-center">Действия</th>
@@ -46,7 +46,7 @@
                                     @endif
                                     @if ($feedback->clients == null)
                                         <td>
-                                            <h3>null</h3>
+                                            <h3>-----</h3>
                                         </td>
                                     @endif
 
@@ -55,19 +55,20 @@
                                     @endif
                                     @if ($feedback->partners == null)
                                         <td>
-                                            <h3>null</h3>
+                                            <h3>-----</h3>
                                         </td>
                                     @endif
                                     <td>{{ $feedback->name }}</td>
                                     <td>{{ $feedback->email }}</td>
-                                    {{-- <td><img src="{{ $feedback->photo }}" alt=""></td> --}}
+                                    
                                     @if ($feedback->photo != null)
-                                        <td><a href="{{ $feedback->photo }}"><img src="{{ $feedback->photo }}"
-                                                    alt="" style="width: 100px; height: 100px;"></a></td>
+                                        <td><a href="{{ $feedback->photo }}">
+                                        <button class="btn btn-primary" type="submit">Скачать</button></a>
+                                        </td>
                                     @endif
                                     @if ($feedback->photo == null)
                                         <td>
-                                            <h3>null</h3>
+                                            <h3>-----</h3>
                                         </td>
                                     @endif
                                     

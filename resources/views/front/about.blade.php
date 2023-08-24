@@ -13,6 +13,8 @@
     <title>ALL-P Group | {{ $metateg->name }}</title>
 
     <meta name="description" content="{{ $metateg->discription }}">
+    
+    <meta name="keywords" content="Allp, Allp-group, Промышленный бетонный пол, Производство бетонного пола, Монтаж промышленных полов, Ремонт бетонных полов, Промышленный бетонный пол, Штампованный бетон, Полированный бетонный пол, Топпинг бетонных полов, Полимерные покрытия пола, Полиуретановые полы, Эпоксидные полы, Полимерные покрытия пола, Наливные полы, Декоративные полы, Полы Тераццо, Мозаичные полы, Бетонная стяжка, Наружная стяжка, Стяжка бетона, Виниловые полы">
 
     <!-- Facebook -->
     <meta property="og:title" content="ALL-P Group">
@@ -32,6 +34,34 @@
     <meta name="twitter:title" content="ALL-P Group">
     <meta name="twitter:description" content="{{ $metateg->discription }}">
     <meta name="twitter:image" content="{{ $metateg->photo }}" alt="{{$metateg['alt_'.$lang]}}" title="{{$metateg['title_'.$lang]}}">
+    
+    	<!-- Yandex.Metrika counter -->
+	<script type="text/javascript" >
+		(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+		m[i].l=1*new Date();
+		for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+		k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+		(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+	
+		ym(94295729, "init", {
+			clickmap:true,
+			trackLinks:true,
+			accurateTrackBounce:true,
+			webvisor:true
+		});
+	</script>
+	<noscript><div><img src="https://mc.yandex.ru/watch/94295729" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	<!-- /Yandex.Metrika counter -->
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WG4XCM61P"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-8WG4XCM61P');
+	</script>
 </head>
 
 <body>
@@ -118,7 +148,7 @@
                 </div>
                 <div class="about-provider__carousel owl-carousel">
                     @foreach ($postavchiks as $postavchik)
-                    <a href="#" class="about-provider__item">
+                    <a href="{{$postavchik->link}}" class="about-provider__item">
                         <div class="about-provider__img">
                             <img src="{{$postavchik->photo}}" alt="{{$postavchik['alt_'.$lang]}}" title="{{$postavchik['title_'.$lang]}}">
                         </div>
@@ -163,30 +193,30 @@
 
             </div>
         </div>
-        <div class="about-management">
-            <div class="container">
-                <div class="about__title section-title">
-                    {{ __('asd.Наша команда') }}
-                </div>
-                <ul class="about-management__list">
-                    @foreach ($teams as $team)
-                        <li class="about-management__item">
-                            <div class="about-management__img">
-                                <img src="{{ $team->photo }}" alt="{{$team['alt_'.$lang]}}" title="{{$team['title_'.$lang]}}">
-                            </div>
-                            <div class="about-management__wrap">
-                                <div class="about-management__name">
-                                    {{ $team['name_' . $lang] }}
-                                </div>
-                                <div class="about-management__pos">
-                                    {!! $team['discription_' . $lang] !!}
-                                </div>
-                            </div>
-                        </li>
-                    @endforeach
-                </ul>
-            </div>
-        </div>
+        <!--<div class="about-management">-->
+        <!--    <div class="container">-->
+        <!--        <div class="about__title section-title">-->
+        <!--            {{ __('asd.Наша команда') }}-->
+        <!--        </div>-->
+        <!--        <ul class="about-management__list">-->
+        <!--            @foreach ($teams as $team)-->
+        <!--                <li class="about-management__item">-->
+        <!--                    <div class="about-management__img">-->
+        <!--                        <img src="{{ $team->photo }}" alt="{{$team['alt_'.$lang]}}" title="{{$team['title_'.$lang]}}">-->
+        <!--                    </div>-->
+        <!--                    <div class="about-management__wrap">-->
+        <!--                        <div class="about-management__name">-->
+        <!--                            {{ $team['name_' . $lang] }}-->
+        <!--                        </div>-->
+        <!--                        <div class="about-management__pos">-->
+        <!--                            {!! $team['discription_' . $lang] !!}-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                </li>-->
+        <!--            @endforeach-->
+        <!--        </ul>-->
+        <!--    </div>-->
+        <!--</div>-->
         <!-- changes -->
         <div class="container">
             <div class="get">

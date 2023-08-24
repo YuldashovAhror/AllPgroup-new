@@ -1,2 +1,4 @@
 User-agent: *
-Disallow:
+Disallow: /dashboard
+Sitemap: https://all-p.uz/sitemap.xml 
+Crawl-delay: 30

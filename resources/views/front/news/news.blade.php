@@ -12,6 +12,7 @@
 	<title>ALL-P Group | {{$metateg->name}}</title>
 	
 		<meta name="description" content="{{$metateg->discription}}">
+		<meta name="keywords" content="Allp, Allp-group, Промышленные бетонные полы, Бетонная стяжка, Полимерные покрытия, Декоративные полы, Виниловые напольные покрытия, Ремонт бетонных полов, Промышленные предприятия, устройство полов, Складские комплексы, Торговые центры, Автопарковки, Офисные помещения, Медицинские учреждения, Благоустройство,ЗАВОД COCA-COLA, ЗАВОД МИНЕРАЛЬНЫХ ВОД IDS BORJOMI, ВИНЗАВОД BUGEULI, ШАТО МУХРАНИ, КОНДИТЕРСКАЯ ФУДМАРТ, ТЕЛАВСКИЙ ВИННЫЙ ПОГРЕБ, ВИНЗАВОД МОСМЬЕРИ,ЗАВОД КОНЬЯКОВ SARADJISHVILI, ГУРМЕ, ВИНЗАВОД ВИНОАРТАНА, МЯСОКОМБИНАТ ВАКЕ, БРАТЬЯ АСКАНЕЛИ – ТБИЛИСИ, ЗАВОД ГАЗОБЕТОННЫХ БЛОКОВ YTONG, ЗАВОД МОРОЖЕННОГО TOLIA ICE CREAM, ПРОИЗВОДСТВЕННЫЙ КОМПЛЕКС LIDERFOOD ENTERPRISE, напольные покрытия, деревянные полы, ламинат, паркет, виниловые покрытия, линолеум, террасная доска, полимерные покрытия, эпоксидные полы, укладка полов, ремонт полов, гидроизоляция полов, звукоизоляция полов, теплый пол, уход за напольными покрытиями, выравнивание полов, подпольная система, материалы для полов, дизайн напольных покрытий">
 	
 	<!-- Facebook -->
     <meta property="og:title" content="ALL-P Group">
@@ -31,6 +32,34 @@
     <meta name="twitter:title" content="ALL-P Group">
     <meta name="twitter:description" content="{{$metateg->discription}}">
     <meta name="twitter:image" content="{{$metateg->photo}}" alt="{{$metateg['alt_'.$lang]}}" title="{{$metateg['title_'.$lang]}}">
+    
+    	<!-- Yandex.Metrika counter -->
+	<script type="text/javascript" >
+		(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+		m[i].l=1*new Date();
+		for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+		k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+		(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+	
+		ym(94295729, "init", {
+			clickmap:true,
+			trackLinks:true,
+			accurateTrackBounce:true,
+			webvisor:true
+		});
+	</script>
+	<noscript><div><img src="https://mc.yandex.ru/watch/94295729" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	<!-- /Yandex.Metrika counter -->
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WG4XCM61P"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-8WG4XCM61P');
+	</script>
 </head>
 <body>
 
