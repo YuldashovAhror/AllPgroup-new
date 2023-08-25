@@ -17,7 +17,12 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('photo');
-            $table->text('discription')->nullable();
+            $table->text('discription_uz')->nullable();
+            $table->text('discription_ru')->nullable();
+            $table->text('discription_en')->nullable();
+            $table->string('keyword_uz')->nullable();
+            $table->string('keyword_ru')->nullable();
+            $table->string('keyword_en')->nullable();
             $table->string('alt_uz')->nullable();
             $table->string('alt_ru')->nullable();
             $table->string('alt_en')->nullable();

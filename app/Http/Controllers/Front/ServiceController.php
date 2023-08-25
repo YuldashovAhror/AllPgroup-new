@@ -22,6 +22,7 @@ class ServiceController extends Controller
 
     public function show($id)
     {
+        $metateg = ServiceMetateg::find(1);
         $services = Service::with('sections')->orderBy('id', 'asc')->get();
         $serviceess = Service::find($id);
         $serviceess->increment('view');
@@ -29,6 +30,7 @@ class ServiceController extends Controller
         return view('front.service.services', [
             'serviceess'=>$serviceess,
             'sections'=>$sections,
+            'metateg'=>$metateg,
             'services'=>$services,
         ]);
     }

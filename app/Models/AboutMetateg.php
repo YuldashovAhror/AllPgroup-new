@@ -10,14 +10,21 @@ class AboutMetateg extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name',
+        'name_uz',
+        'name_ru',
+        'name_en',
+        'photo',
+        'discription_uz',
+        'discription_ru',
+        'discription_en',
+        'keyword_uz',
+        'keyword_ru',
+        'keyword_en',
         'alt_uz',
         'alt_ru',
         'alt_en',
         'title_uz',
         'title_ru',
         'title_en',
-        'photo',
-        'discription',
     ];
 }

@@ -13,9 +13,11 @@
     <title>ALL-P Group | {{ $serviceess['name_' . $lang] }}</title>
 
     <meta name="description" content="{{ strip_tags($serviceess['discription_' . $lang]) }}">
+    @if ($serviceess->id != null)
+        <meta name="keywords" content="{{ $serviceess['keyword_' . $lang] }}">
+        @else <meta name="keywords" content="{{ $metateg['keyword_' . $lang] }}">
+    @endif
     
-    <meta name="keywords" content="Allp, Allp-group, Промышленный бетонный пол, Производство бетонного пола, Монтаж промышленных полов, Ремонт бетонных полов, Промышленный бетонный пол, Штампованный бетон, Полированный бетонный пол, Топпинг бетонных полов, Полимерные покрытия пола, Полиуретановые полы, Эпоксидные полы, Полимерные покрытия пола, Наливные полы, Декоративные полы, Полы Тераццо, Мозаичные полы, Бетонная стяжка, Наружная стяжка, Стяжка бетона, Виниловые полы">
-
     <!-- Facebook -->
     <meta property="og:title" content="ALL-P Group">
     <meta property="og:site_name" content="ALL-P Group">
@@ -37,35 +39,50 @@
     <meta name="twitter:description" content="{{ strip_tags($serviceess['discription_' . $lang]) }}">
     <meta name="twitter:image" content="{{ $serviceess->photo }}" alt="{{ $serviceess['alt_' . $lang] }}"
         title="{{ $serviceess['title_' . $lang] }}">
-        
-        
-        	<!-- Yandex.Metrika counter -->
-	<script type="text/javascript" >
-		(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-		m[i].l=1*new Date();
-		for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-		k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-		(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-	
-		ym(94295729, "init", {
-			clickmap:true,
-			trackLinks:true,
-			accurateTrackBounce:true,
-			webvisor:true
-		});
-	</script>
-	<noscript><div><img src="https://mc.yandex.ru/watch/94295729" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-	<!-- /Yandex.Metrika counter -->
 
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WG4XCM61P"></script>
-	<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
 
-	gtag('config', 'G-8WG4XCM61P');
-	</script>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m, e, t, r, i, k, a) {
+            m[i] = m[i] || function() {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) {
+                if (document.scripts[j].src === r) {
+                    return;
+                }
+            }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(
+                k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(94295729, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/94295729" style="position:absolute; left:-9999px;" alt="" />
+        </div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8WG4XCM61P"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-8WG4XCM61P');
+    </script>
 </head>
 
 <body>

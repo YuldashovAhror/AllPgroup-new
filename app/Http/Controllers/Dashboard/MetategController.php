@@ -43,6 +43,7 @@ class MetategController extends BaseController
      */
     public function aboute(Request $request, $id)
     {
+        // dd($request->all());
         $request = $request->toArray();
         if (!empty($request['photo'])){
             $this->fileDelete('\AboutMetateg', $id, 'photo');

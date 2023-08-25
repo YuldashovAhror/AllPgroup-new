@@ -13,61 +13,81 @@
     <title>ALL-P Group | {{ $metateg->name }}</title>
 
     <meta name="description" content="{{ $metateg->discription }}">
-    <meta name="keywords" content="Allp, Allp-group, Промышленный бетонный пол, Производство бетонного пола, Монтаж промышленных полов, Ремонт бетонных полов, Промышленный бетонный пол, Штампованный бетон, Полированный бетонный пол, Топпинг бетонных полов, Полимерные покрытия пола, Полиуретановые полы, Эпоксидные полы, Полимерные покрытия пола, Наливные полы, Декоративные полы, Полы Тераццо, Мозаичные полы, Бетонная стяжка, Наружная стяжка, Стяжка бетона, Виниловые полы">
+
+    <meta name="keywords" content="{{ $metateg['keyword_' . $lang] }}">
 
     <!-- Facebook -->
     <meta property="og:title" content="ALL-P Group">
     <meta property="og:site_name" content="ALL-P Group">
     <meta property="og:description" content="{{ $metateg->discription }}">
     <meta property="og:url" content="https://all-p.uz/">
-    <meta property="og:image" content="{{ $metateg->photo }}" alt="{{$metateg['alt_'.$lang]}}" title="{{$metateg['title_'.$lang]}}">
+    <meta property="og:image" content="{{ $metateg->photo }}" alt="{{ $metateg['alt_' . $lang] }}"
+        title="{{ $metateg['title_' . $lang] }}">
     <meta property="og:type" content="website">
 
     <!-- Google Plus -->
     <meta itemprop="name" content="ALL-P Group">
     <meta itemprop="description" content="{{ $metateg->discription }}">
-    <meta itemprop="image" content="{{ $metateg->photo }}" alt="{{$metateg['alt_'.$lang]}}" title="{{$metateg['title_'.$lang]}}">
+    <meta itemprop="image" content="{{ $metateg->photo }}" alt="{{ $metateg['alt_' . $lang] }}"
+        title="{{ $metateg['title_' . $lang] }}">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ALL-P Group">
     <meta name="twitter:description" content="{{ $metateg->discription }}">
-    <meta name="twitter:image" content="{{ $metateg->photo }}" alt="{{$metateg['alt_'.$lang]}}" title="{{$metateg['title_'.$lang]}}">
-    
-    
-    	<!-- Yandex.Metrika counter -->
-	<script type="text/javascript" >
-		(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-		m[i].l=1*new Date();
-		for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-		k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-		(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-	
-		ym(94295729, "init", {
-			clickmap:true,
-			trackLinks:true,
-			accurateTrackBounce:true,
-			webvisor:true
-		});
-	</script>
-	<noscript><div><img src="https://mc.yandex.ru/watch/94295729" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-	<!-- /Yandex.Metrika counter -->
+    <meta name="twitter:image" content="{{ $metateg->photo }}" alt="{{ $metateg['alt_' . $lang] }}"
+        title="{{ $metateg['title_' . $lang] }}">
 
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WG4XCM61P"></script>
-	<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
 
-	gtag('config', 'G-8WG4XCM61P');
-	</script>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m, e, t, r, i, k, a) {
+            m[i] = m[i] || function() {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) {
+                if (document.scripts[j].src === r) {
+                    return;
+                }
+            }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(
+                k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(94295729, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/94295729" style="position:absolute; left:-9999px;" alt="" />
+        </div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8WG4XCM61P"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-8WG4XCM61P');
+    </script>
 </head>
 
 <body>
     <div class="preloader">
         <div class="preloader__logo">
-            <img src="/issets/img/logo-white.svg" alt="{{$metateg['alt_'.$lang]}}" title="{{$metateg['title_'.$lang]}}">
+            <img src="/issets/img/logo-white.svg" alt="{{ $metateg['alt_' . $lang] }}"
+                title="{{ $metateg['title_' . $lang] }}">
         </div>
     </div>
     <!-- FEEDBACK -->
@@ -159,9 +179,10 @@
         <div class="container">
             <!-- changes -->
             <ul class="projects-nav">
-                @foreach ($categories as $key=>$category)
+                @foreach ($categories as $key => $category)
                     <li @if ($select_category == $category->id) class="current" @endif>
-                        <a href="{{route('category.show', $category->id)}}"><span>{{$category['name_'.$lang]}}</span></a>
+                        <a
+                            href="{{ route('category.show', $category->id) }}"><span>{{ $category['name_' . $lang] }}</span></a>
                     </li>
                 @endforeach
             </ul>
@@ -169,7 +190,8 @@
                 @foreach ($projects as $project)
                     <li class="projects-item">
                         <div class="projects-item__img">
-                            <img src="{{ $project->photo }}" alt="{{$project['alt_'.$lang]}}" title="{{$project['title_'.$lang]}}">
+                            <img src="{{ $project->photo }}" alt="{{ $project['alt_' . $lang] }}"
+                                title="{{ $project['title_' . $lang] }}">
                         </div>
                         <div class="projects-item__name">
                             {{ $project['name_' . $lang] }}
@@ -186,7 +208,7 @@
                     <div class="get__title">
                         {{ __('asd.Получите презентацию о компании All-P Group (Олпи Груп) и каталог реализованных проектов на e-mail :') }}
                     </div>
-                    <form action="{{route('email.store')}}" method="POST">
+                    <form action="{{ route('email.store') }}" method="POST">
                         @csrf
                         <div class="get__form">
                             <input type="email" name="email_name" placeholder="e-mail">
@@ -217,16 +239,22 @@
     <script src="/issets/js/wow.min.js"></script>
     <script src="/issets/js/main.js"></script>
     <script data-b24-form="inline/4/bwnvw4" data-skip-moving="true">
-        (function(w,d,u){
-        var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);
-        var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
-        })(window,document,'https://cdn-ru.bitrix24.ru/b18647668/crm/form/loader_4.js');
+        (function(w, d, u) {
+            var s = d.createElement('script');
+            s.async = true;
+            s.src = u + '?' + (Date.now() / 180000 | 0);
+            var h = d.getElementsByTagName('script')[0];
+            h.parentNode.insertBefore(s, h);
+        })(window, document, 'https://cdn-ru.bitrix24.ru/b18647668/crm/form/loader_4.js');
     </script>
     <script>
-        (function(w,d,u){
-                var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/60000|0);
-                var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
-        })(window,document,'https://cdn-ru.bitrix24.ru/b18647668/crm/site_button/loader_4_arvi7b.js');
+        (function(w, d, u) {
+            var s = d.createElement('script');
+            s.async = true;
+            s.src = u + '?' + (Date.now() / 60000 | 0);
+            var h = d.getElementsByTagName('script')[0];
+            h.parentNode.insertBefore(s, h);
+        })(window, document, 'https://cdn-ru.bitrix24.ru/b18647668/crm/site_button/loader_4_arvi7b.js');
     </script>
     <script>
         function send2() {

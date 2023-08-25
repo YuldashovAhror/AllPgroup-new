@@ -67,6 +67,29 @@
                         </div>
                         <div class="row">
                             <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="keyword_uz">Ключевое слово Uz</label>
+                                    <input class="form-control" id="keyword_uz" type="text" required
+                                        name="keyword_uz" value="{{ $service->keyword_uz }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="keyword_ru">Ключевое слово Ru</label>
+                                    <input class="form-control" id="keyword_ru" type="text" required
+                                        name="keyword_ru" value="{{ $service->keyword_ru }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="keyword_en">Ключевое слово En</label>
+                                    <input class="form-control" id="keyword_en" type="text" required
+                                        name="keyword_en" value="{{ $service->keyword_en }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
                                 <label class="form-label" for="alt_uz">Альт Uz</label>
                                 <input class="form-control" name="alt_uz" id="alt_uz" type="text" placeholder="..."
                                     required="" value="{{ $service->alt_uz }}">

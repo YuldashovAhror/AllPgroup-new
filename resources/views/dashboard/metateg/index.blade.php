@@ -30,24 +30,77 @@
                                 <img style="height: 70px; width: 70px; " src="{{ $homemeta->photo }}">
                             </div>
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-12">
                                 <div class="mb-3">
                                     <label class="form-label" for="exampleFormControlInput1">Фото</label>
                                     <input class="form-control" id="exampleFormControlInput1" type="file"
                                         name="photo">
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-4">
                                 <div class="mb-3">
-                                    <label class="form-label" for="exampleFormControlInput1">Название</label>
-                                    <input class="form-control" id="exampleFormControlInput1" type="text" required
-                                        name="name" value="{{ $homemeta->name }}">
+                                    <label class="form-label" for="name_uz">Название Uz</label>
+                                    <input class="form-control" id="name_uz" type="text" required
+                                        name="name_uz" value="{{ $homemeta->name_uz }}">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="mb-3">
-                                    <label class="form-label" for="exampleFormControlInput1">Описание</label>
-                                    <input class="form-control" id="exampleFormControlInput1" type="text" name="discription" value="{{ $homemeta->discription }}">
+                                    <label class="form-label" for="name_ru">Название Ru</label>
+                                    <input class="form-control" id="name_ru" type="text" required
+                                        name="name_ru" value="{{ $homemeta->name_ru }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="name_en">Название En</label>
+                                    <input class="form-control" id="name_en" type="text" required
+                                        name="name_en" value="{{ $homemeta->name_en }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="keyword_uz">Ключевое слово Uz</label>
+                                    <input class="form-control" id="keyword_uz" type="text" required
+                                        name="keyword_uz" value="{{ $homemeta->keyword_uz }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="keyword_ru">Ключевое слово Ru</label>
+                                    <input class="form-control" id="keyword_ru" type="text" required
+                                        name="keyword_ru" value="{{ $homemeta->keyword_ru }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="keyword_en">Ключевое слово En</label>
+                                    <input class="form-control" id="keyword_en" type="text" required
+                                        name="keyword_en" value="{{ $homemeta->keyword_en }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="discription_uz">Описание Uz</label>
+                                    <input class="form-control" id="discription_uz" type="text" name="discription_uz" value="{{ $homemeta->discription_uz }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="discription_ru">Описание Ru</label>
+                                    <input class="form-control" id="discription_ru" type="text" name="discription_ru" value="{{ $homemeta->discription_ru }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="discription_en">Описание En</label>
+                                    <input class="form-control" id="discription_en" type="text" name="discription_en" value="{{ $homemeta->discription_en }}">
                                 </div>
                             </div>
                         </div>
@@ -106,24 +159,77 @@
                                 <img style="height: 70px; width: 70px; " src="{{ $aboutmeta->photo }}">
                             </div>
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-12">
                                 <div class="mb-3">
                                     <label class="form-label" for="exampleFormControlInput1">Фото</label>
                                     <input class="form-control" id="exampleFormControlInput1" type="file"
                                         name="photo">
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-4">
                                 <div class="mb-3">
-                                    <label class="form-label" for="exampleFormControlInput1">Название</label>
-                                    <input class="form-control" id="exampleFormControlInput1" type="text" required
-                                        name="name" value="{{ $aboutmeta->name }}">
+                                    <label class="form-label" for="name_uz">Название Uz</label>
+                                    <input class="form-control" id="name_uz" type="text" required
+                                        name="name_uz" value="{{ $aboutmeta->name_uz }}">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="mb-3">
-                                    <label class="form-label" for="exampleFormControlInput1">Описание</label>
-                                    <input class="form-control" id="exampleFormControlInput1" type="text" name="discription" value="{{ $aboutmeta->discription }}">
+                                    <label class="form-label" for="name_ru">Название Ru</label>
+                                    <input class="form-control" id="name_ru" type="text" required
+                                        name="name_ru" value="{{ $aboutmeta->name_ru }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="name_en">Название En</label>
+                                    <input class="form-control" id="name_en" type="text" required
+                                        name="name_en" value="{{ $aboutmeta->name_en }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="keyword_uz">Ключевое слово Uz</label>
+                                    <input class="form-control" id="keyword_uz" type="text" required
+                                        name="keyword_uz" value="{{ $aboutmeta->keyword_uz }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="keyword_ru">Ключевое слово Ru</label>
+                                    <input class="form-control" id="keyword_ru" type="text" required
+                                        name="keyword_ru" value="{{ $aboutmeta->keyword_ru }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="keyword_en">Ключевое слово En</label>
+                                    <input class="form-control" id="keyword_en" type="text" required
+                                        name="keyword_en" value="{{ $aboutmeta->keyword_en }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="discription_uz">Описание Uz</label>
+                                    <input class="form-control" id="discription_uz" type="text" name="discription_uz" value="{{ $aboutmeta->discription_uz }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="discription_ru">Описание Ru</label>
+                                    <input class="form-control" id="discription_ru" type="text" name="discription_ru" value="{{ $aboutmeta->discription_ru }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="discription_en">Описание En</label>
+                                    <input class="form-control" id="discription_en" type="text" name="discription_en" value="{{ $aboutmeta->discription_en }}">
                                 </div>
                             </div>
                         </div>
@@ -182,24 +288,77 @@
                                 <img style="height: 70px; width: 70px; " src="{{ $servicemeta->photo }}">
                             </div>
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-12">
                                 <div class="mb-3">
                                     <label class="form-label" for="exampleFormControlInput1">Фото</label>
                                     <input class="form-control" id="exampleFormControlInput1" type="file"
                                         name="photo">
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-4">
                                 <div class="mb-3">
-                                    <label class="form-label" for="exampleFormControlInput1">Название</label>
-                                    <input class="form-control" id="exampleFormControlInput1" type="text" required
-                                        name="name" value="{{ $servicemeta->name }}">
+                                    <label class="form-label" for="name_uz">Название Uz</label>
+                                    <input class="form-control" id="name_uz" type="text" required
+                                        name="name_uz" value="{{ $servicemeta->name_uz }}">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="mb-3">
-                                    <label class="form-label" for="exampleFormControlInput1">Описание</label>
-                                    <input class="form-control" id="exampleFormControlInput1" type="text" name="discription" value="{{ $servicemeta->discription }}">
+                                    <label class="form-label" for="name_ru">Название Ru</label>
+                                    <input class="form-control" id="name_ru" type="text" required
+                                        name="name_ru" value="{{ $servicemeta->name_ru }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="name_en">Название En</label>
+                                    <input class="form-control" id="name_en" type="text" required
+                                        name="name_en" value="{{ $servicemeta->name_en }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="keyword_uz">Ключевое слово Uz</label>
+                                    <input class="form-control" id="keyword_uz" type="text" required
+                                        name="keyword_uz" value="{{ $servicemeta->keyword_uz }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="keyword_ru">Ключевое слово Ru</label>
+                                    <input class="form-control" id="keyword_ru" type="text" required
+                                        name="keyword_ru" value="{{ $servicemeta->keyword_ru }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="keyword_en">Ключевое слово En</label>
+                                    <input class="form-control" id="keyword_en" type="text" required
+                                        name="keyword_en" value="{{ $servicemeta->keyword_en }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="discription_uz">Описание Uz</label>
+                                    <input class="form-control" id="discription_uz" type="text" name="discription_uz" value="{{ $servicemeta->discription_uz }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="discription_ru">Описание Ru</label>
+                                    <input class="form-control" id="discription_ru" type="text" name="discription_ru" value="{{ $servicemeta->discription_ru }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="discription_en">Описание En</label>
+                                    <input class="form-control" id="discription_en" type="text" name="discription_en" value="{{ $servicemeta->discription_en }}">
                                 </div>
                             </div>
                         </div>
@@ -258,24 +417,77 @@
                                 <img style="height: 70px; width: 70px; " src="{{ $projectmeta->photo }}">
                             </div>
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-12">
                                 <div class="mb-3">
                                     <label class="form-label" for="exampleFormControlInput1">Фото</label>
                                     <input class="form-control" id="exampleFormControlInput1" type="file"
                                         name="photo">
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-4">
                                 <div class="mb-3">
-                                    <label class="form-label" for="exampleFormControlInput1">Название</label>
-                                    <input class="form-control" id="exampleFormControlInput1" type="text" required
-                                        name="name" value="{{ $projectmeta->name }}">
+                                    <label class="form-label" for="name_uz">Название Uz</label>
+                                    <input class="form-control" id="name_uz" type="text" required
+                                        name="name_uz" value="{{ $projectmeta->name_uz }}">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="mb-3">
-                                    <label class="form-label" for="exampleFormControlInput1">Описание</label>
-                                    <input class="form-control" id="exampleFormControlInput1" type="text" name="discription" value="{{ $projectmeta->discription }}">
+                                    <label class="form-label" for="name_ru">Название Ru</label>
+                                    <input class="form-control" id="name_ru" type="text" required
+                                        name="name_ru" value="{{ $projectmeta->name_ru }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="name_en">Название En</label>
+                                    <input class="form-control" id="name_en" type="text" required
+                                        name="name_en" value="{{ $projectmeta->name_en }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="keyword_uz">Ключевое слово Uz</label>
+                                    <input class="form-control" id="keyword_uz" type="text" required
+                                        name="keyword_uz" value="{{ $projectmeta->keyword_uz }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="keyword_ru">Ключевое слово Ru</label>
+                                    <input class="form-control" id="keyword_ru" type="text" required
+                                        name="keyword_ru" value="{{ $projectmeta->keyword_ru }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="keyword_en">Ключевое слово En</label>
+                                    <input class="form-control" id="keyword_en" type="text" required
+                                        name="keyword_en" value="{{ $projectmeta->keyword_en }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="discription_uz">Описание Uz</label>
+                                    <input class="form-control" id="discription_uz" type="text" name="discription_uz" value="{{ $projectmeta->discription_uz }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="discription_ru">Описание Ru</label>
+                                    <input class="form-control" id="discription_ru" type="text" name="discription_ru" value="{{ $projectmeta->discription_ru }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="discription_en">Описание En</label>
+                                    <input class="form-control" id="discription_en" type="text" name="discription_en" value="{{ $projectmeta->discription_en }}">
                                 </div>
                             </div>
                         </div>
@@ -334,24 +546,77 @@
                                 <img style="height: 70px; width: 70px; " src="{{ $newsmeta->photo }}">
                             </div>
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-12">
                                 <div class="mb-3">
                                     <label class="form-label" for="exampleFormControlInput1">Фото</label>
                                     <input class="form-control" id="exampleFormControlInput1" type="file"
                                         name="photo">
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-4">
                                 <div class="mb-3">
-                                    <label class="form-label" for="exampleFormControlInput1">Название</label>
-                                    <input class="form-control" id="exampleFormControlInput1" type="text" required
-                                        name="name" value="{{ $newsmeta->name }}">
+                                    <label class="form-label" for="name_uz">Название Uz</label>
+                                    <input class="form-control" id="name_uz" type="text" required
+                                        name="name_uz" value="{{ $newsmeta->name_uz }}">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="mb-3">
-                                    <label class="form-label" for="exampleFormControlInput1">Описание</label>
-                                    <input class="form-control" id="exampleFormControlInput1" type="text" name="discription" value="{{ $newsmeta->discription }}">
+                                    <label class="form-label" for="name_ru">Название Ru</label>
+                                    <input class="form-control" id="name_ru" type="text" required
+                                        name="name_ru" value="{{ $newsmeta->name_ru }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="name_en">Название En</label>
+                                    <input class="form-control" id="name_en" type="text" required
+                                        name="name_en" value="{{ $newsmeta->name_en }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="keyword_uz">Ключевое слово Uz</label>
+                                    <input class="form-control" id="keyword_uz" type="text" required
+                                        name="keyword_uz" value="{{ $newsmeta->keyword_uz }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="keyword_ru">Ключевое слово Ru</label>
+                                    <input class="form-control" id="keyword_ru" type="text" required
+                                        name="keyword_ru" value="{{ $newsmeta->keyword_ru }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="keyword_en">Ключевое слово En</label>
+                                    <input class="form-control" id="keyword_en" type="text" required
+                                        name="keyword_en" value="{{ $newsmeta->keyword_en }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="discription_uz">Описание Uz</label>
+                                    <input class="form-control" id="discription_uz" type="text" name="discription_uz" value="{{ $newsmeta->discription_uz }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="discription_ru">Описание Ru</label>
+                                    <input class="form-control" id="discription_ru" type="text" name="discription_ru" value="{{ $newsmeta->discription_ru }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="discription_en">Описание En</label>
+                                    <input class="form-control" id="discription_en" type="text" name="discription_en" value="{{ $newsmeta->discription_en }}">
                                 </div>
                             </div>
                         </div>
@@ -410,24 +675,77 @@
                                 <img style="height: 70px; width: 70px; " src="{{ $contactmeta->photo }}">
                             </div>
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-12">
                                 <div class="mb-3">
                                     <label class="form-label" for="exampleFormControlInput1">Фото</label>
                                     <input class="form-control" id="exampleFormControlInput1" type="file"
                                         name="photo">
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-4">
                                 <div class="mb-3">
-                                    <label class="form-label" for="exampleFormControlInput1">Название</label>
-                                    <input class="form-control" id="exampleFormControlInput1" type="text" required
-                                        name="name" value="{{ $contactmeta->name }}">
+                                    <label class="form-label" for="name_uz">Название Uz</label>
+                                    <input class="form-control" id="name_uz" type="text" required
+                                        name="name_uz" value="{{ $contactmeta->name_uz }}">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="mb-3">
-                                    <label class="form-label" for="exampleFormControlInput1">Описание</label>
-                                    <input class="form-control" id="exampleFormControlInput1" type="text" name="discription" value="{{ $contactmeta->discription }}">
+                                    <label class="form-label" for="name_ru">Название Ru</label>
+                                    <input class="form-control" id="name_ru" type="text" required
+                                        name="name_ru" value="{{ $contactmeta->name_ru }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="name_en">Название En</label>
+                                    <input class="form-control" id="name_en" type="text" required
+                                        name="name_en" value="{{ $contactmeta->name_en }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="keyword_uz">Ключевое слово Uz</label>
+                                    <input class="form-control" id="keyword_uz" type="text" required
+                                        name="keyword_uz" value="{{ $contactmeta->keyword_uz }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="keyword_ru">Ключевое слово Ru</label>
+                                    <input class="form-control" id="keyword_ru" type="text" required
+                                        name="keyword_ru" value="{{ $contactmeta->keyword_ru }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="keyword_en">Ключевое слово En</label>
+                                    <input class="form-control" id="keyword_en" type="text" required
+                                        name="keyword_en" value="{{ $contactmeta->keyword_en }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="discription_uz">Описание Uz</label>
+                                    <input class="form-control" id="discription_uz" type="text" name="discription_uz" value="{{ $contactmeta->discription_uz }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="discription_ru">Описание Ru</label>
+                                    <input class="form-control" id="discription_ru" type="text" name="discription_ru" value="{{ $contactmeta->discription_ru }}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" for="discription_en">Описание En</label>
+                                    <input class="form-control" id="discription_en" type="text" name="discription_en" value="{{ $contactmeta->discription_en }}">
                                 </div>
                             </div>
                         </div>

@@ -12,10 +12,10 @@
     <link rel="stylesheet" href="/issets/css/main.css">
     @livewireStyles
     <title>ALL-P Group | {{ $metateg->name }}</title>
-
+    <meta name="keywords" content="{{ $metateg['keyword_' . $lang] }}">
     <meta name="description"
         content="{{ $metateg->discription }}">
-        <meta name="keywords" content="Allp, Allp-group, Промышленный бетонный пол, Производство бетонного пола, Монтаж промышленных полов, Ремонт бетонных полов, Промышленный бетонный пол, Штампованный бетон, Полированный бетонный пол, Топпинг бетонных полов, Полимерные покрытия пола, Полиуретановые полы, Эпоксидные полы, Полимерные покрытия пола, Наливные полы, Декоративные полы, Полы Тераццо, Мозаичные полы, Бетонная стяжка, Наружная стяжка, Стяжка бетона, Виниловые полы">
+    
 
     <!-- Facebook -->
     <meta property="og:title" content="ALL-P Group">
